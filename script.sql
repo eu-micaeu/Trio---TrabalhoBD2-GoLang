@@ -79,7 +79,7 @@ insert into veiculo (ano, placa, marca, modelo, cor, motor) values (2022, 'KLC-0
 insert into veiculo (ano, placa, marca, modelo, cor, motor) values (1994, 'LIU-9875', 'Volkswagen', 'Fusca','Verde','C');
 
 insert into produto (nome_produto,valor,quantidade) 
-values ('Óleo de carro semissintétic0', 30.00, 10);
+values ('Óleo de carro semissintético', 30.00, 10);
 
 insert into produto (nome_produto,valor,quantidade) 
 values ('Roda  Aro 15 4 x100', 590.50, 10);
