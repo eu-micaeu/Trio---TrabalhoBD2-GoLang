@@ -1,10 +1,7 @@
-package cmd
+package main
 
 import (
-	"database/sql"
-	"fmt"
-
-	_ "github.com/lib/pq"
+	"projetobd2/database"
 )
 
 func main() {
