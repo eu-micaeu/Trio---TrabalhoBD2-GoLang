@@ -1,4 +1,4 @@
-package main
+package database
 
 import (
 	"database/sql"
@@ -7,7 +7,7 @@ import (
 	_ "github.com/lib/pq"
 )
 
-func main() {
+func Banco() {
 	dbName := "Projeto"
 	dbUser := "usuario"
 	dbPassword := "usuario"
@@ -31,4 +31,3 @@ func main() {
 
 	fmt.Println("Conexão com o banco de dados estabelecida com sucesso!")
 }
-
