@@ -161,11 +161,14 @@ WHERE cli.id_veiculo = veic.id_veiculo;
 -- Criação de trigger que permita inserção de dados na view, e atribuição de privilégio ao usuário criado anteriormente para ver e inserir usando a view (1,0):
 CREATE OR REPLACE FUNCTION carro_cliente() RETURNS TRIGGER
 AS $$
+DECLARE
+id_veic integer;
 BEGIN
 	insert into veiculo (marca, modelo) 
 	values (NEW.marca, NEW.modelo);
+	id_veic := (SELECT MAX(id_veiculo) FROM veiculo);
 	insert into cliente (nome_cliente, id_veiculo, data_de_registro)
-	values (NEW.nome_cliente, 3, CURRENT_TIMESTAMP);						
+	values (NEW.nome_cliente, id_veic, CURRENT_TIMESTAMP);						
 	RETURN NEW;							
 END;
 $$ LANGUAGE plpgsql;
@@ -178,10 +181,7 @@ GRANT SELECT, INSERT ON carro_cliente TO
 usuario;
 
 insert into carro_cliente(nome_cliente, marca, modelo)
-values('Zeze dos Santos Jesus', 'Nissa', 'Sylvia');	
-
-
-
+values('Sergio Ramos', 'Fiat', 'Uno');	
 
 
 select * from servico;
