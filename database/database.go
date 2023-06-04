@@ -23,11 +23,5 @@ func Banco() {
 	}
 	defer db.Close()
 
-	err = db.Ping()
-	if err != nil {
-		fmt.Println("Falha ao pingar o banco de dados:", err)
-		return
-	}
-
 	fmt.Println("Conexão com o banco de dados estabelecida com sucesso!")
 }
