@@ -11,6 +11,7 @@ package com.mycompany.mechanicalregister;
 public class MechanicalRegister {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Identificacao identificacao = new Identificacao();
+        identificacao.setVisible(true);
     }
 }
