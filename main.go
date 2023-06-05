@@ -2,10 +2,11 @@ package main
 
 import (
 	"projetobd2/database"
-	"projetobd2/http"
+	"projetobd2/rotas"
 )
 
 func main() {
 	database.Banco()
-	http.Servidor()
+	rotas.Servidor()
+	
 }
