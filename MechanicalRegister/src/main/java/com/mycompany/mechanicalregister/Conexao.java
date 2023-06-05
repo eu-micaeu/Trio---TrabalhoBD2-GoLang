@@ -8,14 +8,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-/**
- *
- * @author micae
- */
 public class Conexao {
 
     public Connection getConnection() throws SQLException {
-        Connection conexao = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Projeto", "postgres", "12345678");
+        String url = "jdbc:postgresql://containers-us-west-84.railway.app:5884/railway";
+        String username = "postgres";
+        String password = "BoAfUtIdRiH97dLonFcT";
+
+        Connection conexao = DriverManager.getConnection(url, username, password);
         return conexao;
     }
 }

@@ -19,6 +19,7 @@ public class Menu extends javax.swing.JFrame {
      */
     public Menu() {
         initComponents();
+        getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
     }
 
     /**
@@ -42,7 +43,6 @@ public class Menu extends javax.swing.JFrame {
         btApagarCliente = new javax.swing.JButton();
         btApagarVeiculo = new javax.swing.JButton();
         btApagarServico = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -50,22 +50,18 @@ public class Menu extends javax.swing.JFrame {
                 formWindowActivated(evt);
             }
         });
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         rotInserir.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         rotInserir.setForeground(new java.awt.Color(255, 255, 255));
         rotInserir.setText("INSERIR:");
-        getContentPane().add(rotInserir, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 210, -1, -1));
 
         rotConsultar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         rotConsultar.setForeground(new java.awt.Color(255, 255, 255));
         rotConsultar.setText("CONSULTAR:");
-        getContentPane().add(rotConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 210, -1, -1));
 
         rotApagar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         rotApagar.setForeground(new java.awt.Color(255, 255, 255));
         rotApagar.setText("APAGAR:");
-        getContentPane().add(rotApagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 210, -1, -1));
 
         btInserirCliente.setBackground(new java.awt.Color(93, 40, 221));
         btInserirCliente.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
@@ -77,7 +73,6 @@ public class Menu extends javax.swing.JFrame {
                 btInserirClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(btInserirCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 270, 149, -1));
 
         btInserirVeiculo.setBackground(new java.awt.Color(93, 40, 221));
         btInserirVeiculo.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
@@ -89,7 +84,6 @@ public class Menu extends javax.swing.JFrame {
                 btInserirVeiculoActionPerformed(evt);
             }
         });
-        getContentPane().add(btInserirVeiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 350, 149, -1));
 
         btInserirServico.setBackground(new java.awt.Color(93, 40, 221));
         btInserirServico.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
@@ -101,7 +95,6 @@ public class Menu extends javax.swing.JFrame {
                 btInserirServicoActionPerformed(evt);
             }
         });
-        getContentPane().add(btInserirServico, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 440, 149, 50));
 
         btConsultarCliente.setBackground(new java.awt.Color(93, 40, 221));
         btConsultarCliente.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
@@ -113,7 +106,6 @@ public class Menu extends javax.swing.JFrame {
                 btConsultarClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(btConsultarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, 149, -1));
 
         btConsultarVeiculo.setBackground(new java.awt.Color(93, 40, 221));
         btConsultarVeiculo.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
@@ -125,7 +117,6 @@ public class Menu extends javax.swing.JFrame {
                 btConsultarVeiculoActionPerformed(evt);
             }
         });
-        getContentPane().add(btConsultarVeiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 350, 149, -1));
 
         btConsultarServico.setBackground(new java.awt.Color(93, 40, 221));
         btConsultarServico.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
@@ -137,7 +128,6 @@ public class Menu extends javax.swing.JFrame {
                 btConsultarServicoActionPerformed(evt);
             }
         });
-        getContentPane().add(btConsultarServico, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 440, 149, -1));
 
         btApagarCliente.setBackground(new java.awt.Color(93, 40, 221));
         btApagarCliente.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
@@ -149,7 +139,6 @@ public class Menu extends javax.swing.JFrame {
                 btApagarClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(btApagarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 270, 149, -1));
 
         btApagarVeiculo.setBackground(new java.awt.Color(93, 40, 221));
         btApagarVeiculo.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
@@ -161,7 +150,6 @@ public class Menu extends javax.swing.JFrame {
                 btApagarVeiculoActionPerformed(evt);
             }
         });
-        getContentPane().add(btApagarVeiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 350, 149, -1));
 
         btApagarServico.setBackground(new java.awt.Color(93, 40, 221));
         btApagarServico.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
@@ -173,23 +161,73 @@ public class Menu extends javax.swing.JFrame {
                 btApagarServicoActionPerformed(evt);
             }
         });
-        getContentPane().add(btApagarServico, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 440, 149, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundo .png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 10, -1, -1));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(rotConsultar)
+                        .addGap(147, 147, 147)
+                        .addComponent(rotInserir)
+                        .addGap(205, 205, 205)
+                        .addComponent(rotApagar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btConsultarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(131, 131, 131)
+                        .addComponent(btInserirCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(151, 151, 151)
+                        .addComponent(btApagarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btConsultarVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(131, 131, 131)
+                        .addComponent(btInserirVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(151, 151, 151)
+                        .addComponent(btApagarVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btConsultarServico, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(131, 131, 131)
+                        .addComponent(btInserirServico, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(151, 151, 151)
+                        .addComponent(btApagarServico, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(rotConsultar)
+                    .addComponent(rotInserir)
+                    .addComponent(rotApagar))
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btConsultarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btInserirCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btApagarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btConsultarVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btInserirVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btApagarVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btConsultarServico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btInserirServico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btApagarServico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btInserirClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInserirClienteActionPerformed
-        try (Connection conexao = new Conexao().getConnection()) {
-                String sql = "insert into carro_cliente(nome_cliente, marca, modelo) values('Bre Brena', 'Renault', 'K+');";
-                PreparedStatement statement = conexao.prepareStatement(sql);
-                statement.execute();
-                conexao.close();
-            } catch (SQLException ex) {
-                
-            }
+        InserirCliente inserirCliente = new InserirCliente();
+        inserirCliente.setVisible(true);
     }//GEN-LAST:event_btInserirClienteActionPerformed
 
     private void btInserirVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInserirVeiculoActionPerformed
@@ -273,7 +311,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton btInserirCliente;
     private javax.swing.JButton btInserirServico;
     private javax.swing.JButton btInserirVeiculo;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel rotApagar;
     private javax.swing.JLabel rotConsultar;
     private javax.swing.JLabel rotInserir;
