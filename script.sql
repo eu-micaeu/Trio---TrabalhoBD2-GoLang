@@ -111,7 +111,6 @@ CREATE TABLE backup_cliente(
 	idade INTEGER,
 	id_servico INTEGER,
 	id_produto integer,
-	id_veiculo integer,
 	cpf INTEGER,
 	rg INTEGER,
 	telefone varchar(100),
@@ -123,8 +122,8 @@ RETURNS TRIGGER
 AS
 $$
 BEGIN
-	INSERT INTO backup_cliente(nome_cliente, idade, id_servico, id_produto, id_veiculo, cpf, rg, telefone, data_de_registro)
-	VALUES(OLD.nome_cliente, OLD.idade, OLD.id_servico, OLD.id_produto, OLD.id_veiculo, OLD.cpf, OLD.rg, OLD.telefone, OLD.data_de_registro);
+	INSERT INTO backup_cliente(nome_cliente, idade, id_servico, id_produto, cpf, rg, telefone, data_de_registro)
+	VALUES(OLD.nome_cliente, OLD.idade, OLD.id_servico, OLD.id_produto,OLD.cpf, OLD.rg, OLD.telefone, OLD.data_de_registro);
 	RETURN OLD;
 END;
 $$
@@ -133,7 +132,7 @@ LANGUAGE plpgsql;
 CREATE TRIGGER backup AFTER DELETE ON cliente
 FOR EACH ROW EXECUTE PROCEDURE backup();
 
-DELETE FROM cliente WHERE id_cliente = 1;
+DELETE FROM cliente WHERE id_cliente = 15;
 
 -- Criação de pelo menos 4 índices (1 índice por tabela no máximo) (0,5):
 CREATE INDEX indice_veiculo ON veiculo(id_veiculo);
