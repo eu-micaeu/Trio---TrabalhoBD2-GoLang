@@ -10,6 +10,10 @@ import java.sql.SQLException;
 
 public class Conexao {
 
+    public Conexao() {
+
+    }
+
     public Connection getConnection() throws SQLException {
         String url = "jdbc:postgresql://containers-us-west-84.railway.app:5884/railway";
         String username = "postgres";

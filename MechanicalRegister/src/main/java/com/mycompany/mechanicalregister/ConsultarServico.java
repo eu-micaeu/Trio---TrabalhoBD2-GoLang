@@ -4,6 +4,13 @@
  */
 package com.mycompany.mechanicalregister;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.Timestamp;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author brena
@@ -15,7 +22,8 @@ public class ConsultarServico extends javax.swing.JFrame {
      */
     public ConsultarServico() {
         initComponents();
-                getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
+        getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
+        listarTab();
 
     }
 
@@ -36,6 +44,11 @@ public class ConsultarServico extends javax.swing.JFrame {
         btVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         btConsultar.setBackground(new java.awt.Color(93, 40, 221));
         btConsultar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
@@ -49,18 +62,18 @@ public class ConsultarServico extends javax.swing.JFrame {
 
         tabConsultarServico.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Tipo", "Valor"
+                "ID", "Tipo", "Valor"
             }
         ));
         jScrollPane2.setViewportView(tabConsultarServico);
         if (tabConsultarServico.getColumnModel().getColumnCount() > 0) {
-            tabConsultarServico.getColumnModel().getColumn(0).setResizable(false);
+            tabConsultarServico.getColumnModel().getColumn(1).setResizable(false);
         }
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
@@ -123,9 +136,35 @@ public class ConsultarServico extends javax.swing.JFrame {
     }//GEN-LAST:event_btConsultarActionPerformed
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
-        // TODO add your handling code here:
+        dispose();
     }//GEN-LAST:event_btVoltarActionPerformed
 
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        setLocationRelativeTo(null);
+    }//GEN-LAST:event_formWindowActivated
+
+    
+    public void listarTab() {
+    DefaultTableModel tabModel = (DefaultTableModel) tabConsultarServico.getModel();
+    tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
+
+    Conexao conexao = new Conexao();
+    try (Connection connection = conexao.getConnection()) {
+        String query = "SELECT * FROM servico";
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(query);
+
+        while (resultSet.next()) {
+            int id = resultSet.getInt("id_servico");
+            String tipo = resultSet.getString("tipo");
+            float valor = resultSet.getFloat("valor");
+            tabModel.addRow(new Object[]{id, tipo, valor});
+        }
+
+    } catch (SQLException e) {
+    }
+}
+    
     /**
      * @param args the command line arguments
      */

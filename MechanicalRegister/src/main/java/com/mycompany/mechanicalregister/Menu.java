@@ -38,11 +38,12 @@ public class Menu extends javax.swing.JFrame {
         btInserirVeiculo = new javax.swing.JButton();
         btInserirServico = new javax.swing.JButton();
         btConsultarCliente = new javax.swing.JButton();
-        btConsultarVeiculo = new javax.swing.JButton();
+        btConsultarProduto = new javax.swing.JButton();
         btConsultarServico = new javax.swing.JButton();
         btApagarCliente = new javax.swing.JButton();
         btApagarVeiculo = new javax.swing.JButton();
         btApagarServico = new javax.swing.JButton();
+        btSair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -77,7 +78,7 @@ public class Menu extends javax.swing.JFrame {
         btInserirVeiculo.setBackground(new java.awt.Color(93, 40, 221));
         btInserirVeiculo.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         btInserirVeiculo.setForeground(new java.awt.Color(255, 255, 255));
-        btInserirVeiculo.setText("VEICULO");
+        btInserirVeiculo.setText("PRODUTO");
         btInserirVeiculo.setPreferredSize(new java.awt.Dimension(100, 50));
         btInserirVeiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,14 +108,14 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        btConsultarVeiculo.setBackground(new java.awt.Color(93, 40, 221));
-        btConsultarVeiculo.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        btConsultarVeiculo.setForeground(new java.awt.Color(255, 255, 255));
-        btConsultarVeiculo.setText("VEICULO");
-        btConsultarVeiculo.setPreferredSize(new java.awt.Dimension(100, 50));
-        btConsultarVeiculo.addActionListener(new java.awt.event.ActionListener() {
+        btConsultarProduto.setBackground(new java.awt.Color(93, 40, 221));
+        btConsultarProduto.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        btConsultarProduto.setForeground(new java.awt.Color(255, 255, 255));
+        btConsultarProduto.setText("PRODUTO");
+        btConsultarProduto.setPreferredSize(new java.awt.Dimension(100, 50));
+        btConsultarProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btConsultarVeiculoActionPerformed(evt);
+                btConsultarProdutoActionPerformed(evt);
             }
         });
 
@@ -143,7 +144,7 @@ public class Menu extends javax.swing.JFrame {
         btApagarVeiculo.setBackground(new java.awt.Color(93, 40, 221));
         btApagarVeiculo.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         btApagarVeiculo.setForeground(new java.awt.Color(255, 255, 255));
-        btApagarVeiculo.setText("VEICULO");
+        btApagarVeiculo.setText("PRODUTO");
         btApagarVeiculo.setPreferredSize(new java.awt.Dimension(100, 50));
         btApagarVeiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,47 +163,62 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        btSair.setBackground(new java.awt.Color(93, 40, 221));
+        btSair.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        btSair.setForeground(new java.awt.Color(255, 255, 255));
+        btSair.setText("SAIR");
+        btSair.setPreferredSize(new java.awt.Dimension(100, 50));
+        btSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSairActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btConsultarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btConsultarProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btConsultarServico, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rotConsultar))
+                .addGap(4, 4, 4)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(rotConsultar)
-                        .addGap(147, 147, 147)
-                        .addComponent(rotInserir)
-                        .addGap(205, 205, 205)
+                        .addGap(73, 73, 73)
+                        .addComponent(btInserirCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(73, 73, 73)
+                        .addComponent(btInserirVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(73, 73, 73)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btSair, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btInserirServico, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(104, 104, 104)
+                        .addComponent(rotInserir)))
+                .addGap(75, 75, 75)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
                         .addComponent(rotApagar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btConsultarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(131, 131, 131)
-                        .addComponent(btInserirCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(151, 151, 151)
-                        .addComponent(btApagarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btConsultarVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(131, 131, 131)
-                        .addComponent(btInserirVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(151, 151, 151)
-                        .addComponent(btApagarVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btConsultarServico, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(131, 131, 131)
-                        .addComponent(btInserirServico, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(151, 151, 151)
-                        .addComponent(btApagarServico, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(32, Short.MAX_VALUE))
+                    .addComponent(btApagarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btApagarVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btApagarServico, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rotConsultar)
-                    .addComponent(rotInserir)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(rotConsultar)
+                        .addComponent(rotInserir))
                     .addComponent(rotApagar))
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -211,7 +227,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(btApagarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btConsultarVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btConsultarProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btInserirVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btApagarVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(40, 40, 40)
@@ -219,7 +235,9 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(btConsultarServico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btInserirServico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btApagarServico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 232, Short.MAX_VALUE)
+                .addComponent(btSair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51))
         );
 
         pack();
@@ -231,11 +249,13 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_btInserirClienteActionPerformed
 
     private void btInserirVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInserirVeiculoActionPerformed
-        // TODO add your handling code here:
+        InserirProduto inserirVeiculo = new InserirProduto();
+        inserirVeiculo.setVisible(true);
     }//GEN-LAST:event_btInserirVeiculoActionPerformed
 
     private void btInserirServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInserirServicoActionPerformed
-        // TODO add your handling code here:
+        InserirServico inserirServico = new InserirServico();
+        inserirServico.setVisible(true);
     }//GEN-LAST:event_btInserirServicoActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
@@ -243,28 +263,38 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowActivated
 
     private void btConsultarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarClienteActionPerformed
-        // TODO add your handling code here:
+        ConsultarCliente consultarCliente = new ConsultarCliente();
+        consultarCliente.setVisible(true);
     }//GEN-LAST:event_btConsultarClienteActionPerformed
 
-    private void btConsultarVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarVeiculoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btConsultarVeiculoActionPerformed
+    private void btConsultarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarProdutoActionPerformed
+        ConsultarProduto consultarProduto = new ConsultarProduto();
+        consultarProduto.setVisible(true);
+    }//GEN-LAST:event_btConsultarProdutoActionPerformed
 
     private void btConsultarServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarServicoActionPerformed
-        // TODO add your handling code here:
+        ConsultarServico consultarServico = new ConsultarServico();
+        consultarServico.setVisible(true);
     }//GEN-LAST:event_btConsultarServicoActionPerformed
 
     private void btApagarServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApagarServicoActionPerformed
-        // TODO add your handling code here:
+        ApagarServico apagarServico = new ApagarServico();
+        apagarServico.setVisible(true);
     }//GEN-LAST:event_btApagarServicoActionPerformed
 
     private void btApagarVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApagarVeiculoActionPerformed
-        // TODO add your handling code here:
+        ApagarProduto apagarVeiculo = new ApagarProduto();
+        apagarVeiculo.setVisible(true);
     }//GEN-LAST:event_btApagarVeiculoActionPerformed
 
     private void btApagarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApagarClienteActionPerformed
-        // TODO add your handling code here:
+        ApagarCliente apagarCliente = new ApagarCliente();
+        apagarCliente.setVisible(true);
     }//GEN-LAST:event_btApagarClienteActionPerformed
+
+    private void btSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairActionPerformed
+        dispose();
+    }//GEN-LAST:event_btSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -306,11 +336,12 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton btApagarServico;
     private javax.swing.JButton btApagarVeiculo;
     private javax.swing.JButton btConsultarCliente;
+    private javax.swing.JButton btConsultarProduto;
     private javax.swing.JButton btConsultarServico;
-    private javax.swing.JButton btConsultarVeiculo;
     private javax.swing.JButton btInserirCliente;
     private javax.swing.JButton btInserirServico;
     private javax.swing.JButton btInserirVeiculo;
+    private javax.swing.JButton btSair;
     private javax.swing.JLabel rotApagar;
     private javax.swing.JLabel rotConsultar;
     private javax.swing.JLabel rotInserir;

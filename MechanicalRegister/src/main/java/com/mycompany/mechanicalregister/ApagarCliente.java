@@ -6,17 +6,16 @@ package com.mycompany.mechanicalregister;
 
 /**
  *
- * @author brena
+ * @author micae
  */
 public class ApagarCliente extends javax.swing.JFrame {
 
     /**
-     * Creates new form ApagarCliente
+     * Creates new form ApagarClientee
      */
     public ApagarCliente() {
         initComponents();
         getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
-
     }
 
     /**
@@ -34,28 +33,32 @@ public class ApagarCliente extends javax.swing.JFrame {
         btVoltar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabApagarCliente = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("APAGAR CLIENTE:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
 
         btApagar.setBackground(new java.awt.Color(93, 40, 221));
         btApagar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         btApagar.setForeground(new java.awt.Color(255, 255, 255));
         btApagar.setText("APAGAR");
-        getContentPane().add(btApagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 40, 180, -1));
-        getContentPane().add(cxApagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, 420, 30));
 
         btVoltar.setBackground(new java.awt.Color(93, 40, 221));
         btVoltar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         btVoltar.setForeground(new java.awt.Color(255, 255, 255));
         btVoltar.setText("VOLTAR");
-        getContentPane().add(btVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 100, 180, 40));
+        btVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btVoltarActionPerformed(evt);
+            }
+        });
 
         tabApagarCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -70,13 +73,55 @@ public class ApagarCliente extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tabApagarCliente);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 990, 370));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundo .png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, -1));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1022, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(16, 16, 16)
+                            .addComponent(jLabel2)
+                            .addGap(30, 30, 30)
+                            .addComponent(cxApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(40, 40, 40)
+                            .addComponent(btApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(706, 706, 706)
+                            .addComponent(btVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addContainerGap(136, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 527, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(18, 18, 18)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(btApagar)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(30, 30, 30)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel2)
+                                .addComponent(cxApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(btVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(20, 20, 20)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 389, Short.MAX_VALUE)))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        setLocationRelativeTo(null);
+    }//GEN-LAST:event_formWindowActivated
+
+    private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
+        dispose();
+    }//GEN-LAST:event_btVoltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -104,6 +149,7 @@ public class ApagarCliente extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(ApagarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -117,7 +163,6 @@ public class ApagarCliente extends javax.swing.JFrame {
     private javax.swing.JButton btApagar;
     private javax.swing.JButton btVoltar;
     private javax.swing.JTextField cxApagar;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tabApagarCliente;

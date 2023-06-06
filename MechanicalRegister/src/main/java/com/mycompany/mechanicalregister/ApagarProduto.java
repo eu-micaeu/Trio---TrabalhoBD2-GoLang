@@ -8,14 +8,14 @@ package com.mycompany.mechanicalregister;
  *
  * @author brena
  */
-public class ApagarVeiculo extends javax.swing.JFrame {
+public class ApagarProduto extends javax.swing.JFrame {
 
     /**
      * Creates new form ApagarVeiculo
      */
-    public ApagarVeiculo() {
+    public ApagarProduto() {
         initComponents();
-                getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
+        getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
 
     }
 
@@ -36,10 +36,15 @@ public class ApagarVeiculo extends javax.swing.JFrame {
         tabApagarVeiculo = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("APAGAR VEICULO:");
+        jLabel2.setText("APAGAR PRODUTO:");
 
         btApagar.setBackground(new java.awt.Color(93, 40, 221));
         btApagar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
@@ -50,6 +55,11 @@ public class ApagarVeiculo extends javax.swing.JFrame {
         btVoltar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         btVoltar.setForeground(new java.awt.Color(255, 255, 255));
         btVoltar.setText("VOLTAR");
+        btVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btVoltarActionPerformed(evt);
+            }
+        });
 
         tabApagarVeiculo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -101,12 +111,19 @@ public class ApagarVeiculo extends javax.swing.JFrame {
                         .addComponent(jLabel2)
                         .addComponent(cxApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGap(80, 80, 80)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 9, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        setLocationRelativeTo(null);
+    }//GEN-LAST:event_formWindowActivated
+
+    private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
+        dispose();
+    }//GEN-LAST:event_btVoltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -125,20 +142,21 @@ public class ApagarVeiculo extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ApagarVeiculo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ApagarProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ApagarVeiculo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ApagarProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ApagarVeiculo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ApagarProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ApagarVeiculo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ApagarProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ApagarVeiculo().setVisible(true);
+                new ApagarProduto().setVisible(true);
             }
         });
     }

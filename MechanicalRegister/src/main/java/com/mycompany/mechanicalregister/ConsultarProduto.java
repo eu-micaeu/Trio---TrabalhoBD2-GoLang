@@ -15,12 +15,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author brena
  */
-public class ConsultarCliente extends javax.swing.JFrame {
+public class ConsultarProduto extends javax.swing.JFrame {
 
     /**
-     * Creates new form ConsultarCliente
+     * Creates new form ConsultarVeiculo
      */
-    public ConsultarCliente() {
+    public ConsultarProduto() {
         initComponents();
         getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
         listarTab();
@@ -36,12 +36,12 @@ public class ConsultarCliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        cxConsultar = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabCliente = new javax.swing.JTable();
-        btConsultar = new javax.swing.JButton();
-        btVoltar = new javax.swing.JButton();
+        tabConsultarProduto = new javax.swing.JTable();
+        cxConsultar = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        btVoltar = new javax.swing.JButton();
+        btConsultar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -50,28 +50,22 @@ public class ConsultarCliente extends javax.swing.JFrame {
             }
         });
 
-        tabCliente.setModel(new javax.swing.table.DefaultTableModel(
+        tabConsultarProduto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "ID", "NOME", "IDADE", "RG", "CPF", "TELEFONE", "DATA_REGISTRADO"
+                "ID", "NOME", "VALOR", "QUANTIDADE"
             }
         ));
-        jScrollPane1.setViewportView(tabCliente);
+        jScrollPane1.setViewportView(tabConsultarProduto);
 
-        btConsultar.setBackground(new java.awt.Color(93, 40, 221));
-        btConsultar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        btConsultar.setForeground(new java.awt.Color(255, 255, 255));
-        btConsultar.setText("CONSULTAR");
-        btConsultar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btConsultarActionPerformed(evt);
-            }
-        });
+        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("CONSULTAR PRODUTO:");
 
         btVoltar.setBackground(new java.awt.Color(93, 40, 221));
         btVoltar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
@@ -83,85 +77,86 @@ public class ConsultarCliente extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("CONSULTAR CLIENTE:");
+        btConsultar.setBackground(new java.awt.Color(93, 40, 221));
+        btConsultar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        btConsultar.setForeground(new java.awt.Color(255, 255, 255));
+        btConsultar.setText("CONSULTAR");
+        btConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btConsultarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
+                .addGap(37, 37, 37)
                 .addComponent(jLabel2)
-                .addGap(26, 26, 26)
-                .addComponent(cxConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(100, 100, 100)
-                .addComponent(btConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(730, 730, 730)
-                .addComponent(btVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 930, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(cxConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
+                        .addGap(43, 43, 43)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
-                            .addComponent(cxConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(20, 20, 20)
-                .addComponent(btVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
+                            .addComponent(cxConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(btConsultar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
-        dispose();
-    }//GEN-LAST:event_btVoltarActionPerformed
-
-    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-        setLocationRelativeTo(null);
-
-    }//GEN-LAST:event_formWindowActivated
-
     private void btConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarActionPerformed
 
     }//GEN-LAST:event_btConsultarActionPerformed
 
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        setLocationRelativeTo(null);
+    }//GEN-LAST:event_formWindowActivated
+
+    private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
+        dispose();
+    }//GEN-LAST:event_btVoltarActionPerformed
+
     public void listarTab() {
-    DefaultTableModel tabModel = (DefaultTableModel) tabCliente.getModel();
-    tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
+        DefaultTableModel tabModel = (DefaultTableModel) tabConsultarProduto.getModel();
+        tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
 
-    Conexao conexao = new Conexao();
-    try (Connection connection = conexao.getConnection()) {
-        String query = "SELECT id_cliente, nome_cliente, idade, rg, cpf, telefone, data_de_registro FROM cliente";
-        Statement statement = connection.createStatement();
-        ResultSet resultSet = statement.executeQuery(query);
+        Conexao conexao = new Conexao();
+        try (Connection connection = conexao.getConnection()) {
+            String query = "SELECT * FROM produto";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
 
-        while (resultSet.next()) {
-            int id = resultSet.getInt("id_cliente");
-            String nome = resultSet.getString("nome_cliente");
-            int idade = resultSet.getInt("idade");
-            int rg = resultSet.getInt("rg");
-            int cpf = resultSet.getInt("cpf");
-            String telefone = resultSet.getString("telefone");
-            Timestamp timestamp = resultSet.getTimestamp("data_de_registro");
-            tabModel.addRow(new Object[]{id, nome, idade, rg, cpf, telefone, timestamp});
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id_produto");
+                String nome = resultSet.getString("nome_produto");
+                float valor = resultSet.getFloat("valor");
+                int quantidade = resultSet.getInt("quantidade");
+                tabModel.addRow(new Object[]{id, nome, valor, quantidade});
+            }
+
+        } catch (SQLException e) {
         }
-
-    } catch (SQLException e) {
     }
-}
-
-
 
     /**
      * @param args the command line arguments
@@ -180,20 +175,21 @@ public class ConsultarCliente extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ConsultarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ConsultarProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ConsultarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ConsultarProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ConsultarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ConsultarProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ConsultarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ConsultarProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ConsultarCliente().setVisible(true);
+                new ConsultarProduto().setVisible(true);
             }
         });
     }
@@ -204,6 +200,6 @@ public class ConsultarCliente extends javax.swing.JFrame {
     private javax.swing.JTextField cxConsultar;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tabCliente;
+    private javax.swing.JTable tabConsultarProduto;
     // End of variables declaration//GEN-END:variables
 }
