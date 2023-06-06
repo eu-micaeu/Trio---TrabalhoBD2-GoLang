@@ -6,6 +6,7 @@ package com.mycompany.mechanicalregister;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
@@ -306,13 +307,26 @@ public class InserirCliente extends javax.swing.JFrame {
 
     private void btInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInserirActionPerformed
         try (Connection conexao = new Conexao().getConnection()) {
-                String sql = String.format("insert into cliente (nome_cliente, idade, id_servico, id_produto, cpf , rg , telefone , data_de_registro) values ('%s', %s, 1, 3, 098098098, 32424242, 73999988888, CURRENT_TIMESTAMP);", cxNome.getText(), cxIdade.getText());
-                PreparedStatement statement = conexao.prepareStatement(sql);
-                statement.execute();
-                conexao.close();
-            } catch (SQLException ex) {
-                
+            String sql = String.format("insert into cliente (nome_cliente, idade, id_servico, id_produto, cpf , rg , telefone , data_de_registro) values ('%s', %s, 1, 3, 098098098, 32424242, 73999988888, CURRENT_TIMESTAMP);", cxNome.getText(), cxIdade.getText());
+            PreparedStatement statement = conexao.prepareStatement(sql);
+            statement.execute();
+            String resp;
+            resp = "SELECT MAX(id_cliente) FROM cliente";
+            statement = conexao.prepareStatement(resp);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                int maxIdCliente = resultSet.getInt(1);
+                resp = String.valueOf(maxIdCliente);
+            } else {
+                resp = "Nenhum registro encontrado";
             }
+            sql = String.format("insert into veiculo (ano, placa, marca, modelo, cor, motor, id_cliente) values (2004, '123ABC', 'asss', 'dddd', 'azul', 'E', %s)", resp);
+            statement = conexao.prepareStatement(sql);
+            statement.execute();
+            conexao.close();
+        } catch (SQLException ex) {
+
+        }
     }//GEN-LAST:event_btInserirActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
