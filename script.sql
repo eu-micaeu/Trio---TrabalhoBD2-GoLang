@@ -11,6 +11,15 @@ CREATE TABLE servico(
 	valor numeric(9, 2),
 	primary key(id_servico)
 );
+
+CREATE TABLE produto(
+	id_produto SERIAL,
+	nome_produto varchar(100),
+	valor numeric(9, 2),
+    quantidade int,
+	primary key(id_produto)
+)
+
 CREATE TABLE funcionario(
 	id_funcionario SERIAL,
 	id_servico int, 
@@ -23,13 +32,7 @@ CREATE TABLE funcionario(
 	FOREIGN KEY (id_servico) REFERENCES servico (id_servico)
 );
 
-CREATE TABLE produto(
-	id_produto SERIAL,
-	nome_produto varchar(100),
-	valor numeric(9, 2),
-    quantidade int,
-	primary key(id_produto)
-)
+
 CREATE TYPE tipo_motor AS ENUM('E', 'C', 'H');
 CREATE TABLE veiculo (
 	 id_veiculo SERIAL,
@@ -39,7 +42,9 @@ CREATE TABLE veiculo (
      modelo    	VARCHAR(100),
      cor      	VARCHAR(100),
 	 motor		tipo_motor,
-	primary key (id_veiculo)
+	 id_cliente INTEGER,
+	primary key (id_veiculo),
+	FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente)
 );
 CREATE TABLE cliente(
 	id_cliente SERIAL,
@@ -47,16 +52,18 @@ CREATE TABLE cliente(
 	idade INTEGER,
 	id_servico INTEGER,
 	id_produto integer,
-	id_veiculo integer,
 	cpf INTEGER,
 	rg INTEGER,
 	telefone varchar(100),
 	data_de_registro TIMESTAMP,
 	primary key(id_cliente),
 	FOREIGN KEY (id_servico) REFERENCES servico (id_servico),
-	FOREIGN KEY (id_produto) REFERENCES produto (id_produto),
-	FOREIGN KEY (id_veiculo) REFERENCES veiculo (id_veiculo));
-	
+	FOREIGN KEY (id_produto) REFERENCES produto (id_produto)
+);
+
+insert into servico (tipo, valor)
+values ('Nenhum', 0);
+
 insert into servico (tipo, valor)
 values ('Troca de óleo', 200.00);
 
@@ -72,11 +79,8 @@ values ('Manutenção de embreagem', 300.00);
 insert into servico (tipo, valor)
 values ('Revisão dos componentes do freio', 300.00);
 
-insert into veiculo (ano,placa, marca, modelo, cor, motor) values (2021, 'SDC-1584', 'Honda', 'Civic', 'preto','H');
-insert into veiculo (ano, placa, marca, modelo, cor, motor) values (2010, 'XCR-2165', 'Volkswagen', 'Gol','Vermelho','C');
-insert into veiculo (ano, placa, marca, modelo, cor, motor) values (2020, 'RHY-3265', 'Ford', 'Fusion','Cinza','H');
-insert into veiculo (ano, placa, marca, modelo, cor, motor) values (2022, 'KLC-0376', 'Tesla','Branco', 'ModelS','E');
-insert into veiculo (ano, placa, marca, modelo, cor, motor) values (1994, 'LIU-9875', 'Volkswagen', 'Fusca','Verde','C');
+insert into produto (nome_produto,valor,quantidade) 
+values ('nenhum', 0, 0);
 
 insert into produto (nome_produto,valor,quantidade) 
 values ('Óleo de carro semissintético', 30.00, 10);
@@ -92,15 +96,6 @@ values ('Disco de freio dianteiro', 381, 12);
 
 insert into produto (nome_produto,valor,quantidade) 
 values ('Lubrificante 0W20 honda sintético', 90.25, 15);
-
-insert into cliente (nome_cliente, idade, id_servico, id_produto, id_veiculo, cpf , rg , telefone , data_de_registro)
-values ('Josue do Santos da Silva', 30, 1, 2, 3, 098098098, 32424242, 73999988888, CURRENT_TIMESTAMP);
-
-insert into cliente (nome_cliente, idade, id_servico, id_produto, id_veiculo, cpf , rg , telefone , data_de_registro)
-values ('Mariana Gomes Rocha', 22, 3, 2, 1, 54454545, 343242, 21777774444, CURRENT_TIMESTAMP);
-
-insert into cliente (nome_cliente, idade, id_servico, id_veiculo, cpf , rg , telefone , data_de_registro)
-values ('Micael Ribeiro Rocha', 19, 1, 5, 321123213, 123213323, 5433339999, CURRENT_TIMESTAMP);
 
 insert into funcionario (id_servico, idade, nome, cpf, rg, funcao)
 values ('3', 42, 'Jorse Santos Pratos', 234242423, 34555, 'Mecanico');
@@ -156,19 +151,20 @@ PASSWORD 'usuario';
 -- Criação de no mínimo uma visão (view) a partir de duas ou mais tabelas (0,5):
 CREATE VIEW carro_cliente as 
 SELECT nome_cliente, marca, modelo FROM cliente cli, veiculo veic
-WHERE cli.id_veiculo = veic.id_veiculo;
+WHERE cli.id_cliente = veic.id_cliente;
 
 -- Criação de trigger que permita inserção de dados na view, e atribuição de privilégio ao usuário criado anteriormente para ver e inserir usando a view (1,0):
 CREATE OR REPLACE FUNCTION carro_cliente() RETURNS TRIGGER
 AS $$
 DECLARE
-id_veic integer;
+id_cli integer;
 BEGIN
-	insert into veiculo (marca, modelo) 
-	values (NEW.marca, NEW.modelo);
-	id_veic := (SELECT MAX(id_veiculo) FROM veiculo);
-	insert into cliente (nome_cliente, id_veiculo, data_de_registro)
-	values (NEW.nome_cliente, id_veic, CURRENT_TIMESTAMP);						
+	
+	insert into cliente (nome_cliente, data_de_registro)
+	values (NEW.nome_cliente, CURRENT_TIMESTAMP);
+	id_cli := (SELECT MAX(id_cliente) FROM cliente);
+	insert into veiculo (marca, modelo, id_cliente) 
+	values (NEW.marca, NEW.modelo, id_cli);			
 	RETURN NEW;							
 END;
 $$ LANGUAGE plpgsql;
@@ -182,7 +178,6 @@ usuario;
 
 insert into carro_cliente(nome_cliente, marca, modelo)
 values('Sergio Ramos', 'Fiat', 'Uno');	
-
 
 select * from servico;
 select * from veiculo; 

@@ -4,6 +4,8 @@
  */
 package com.mycompany.mechanicalregister;
 
+import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -118,7 +120,16 @@ public class Identificacao extends javax.swing.JFrame {
             Menu menu = new Menu();
             menu.setVisible(true);
             dispose();
-        }
+        }else{
+            JOptionPane.showMessageDialog(
+                        null,
+                        "NÃO EXISTE ESSE USUARIO",
+                        "USUARIO INCORRETO",
+                        JOptionPane.WARNING_MESSAGE
+                );
+            cxUsuario.setText("");
+            cxSenha.setText("");
+    }
 
     }//GEN-LAST:event_btEntrarActionPerformed
 
