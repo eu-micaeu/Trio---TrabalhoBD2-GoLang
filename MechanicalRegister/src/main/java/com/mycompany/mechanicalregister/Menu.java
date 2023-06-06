@@ -170,7 +170,7 @@ public class Menu extends javax.swing.JFrame {
         btSair.setBackground(new java.awt.Color(93, 40, 221));
         btSair.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         btSair.setForeground(new java.awt.Color(255, 255, 255));
-        btSair.setText("SAIR");
+        btSair.setText("VOLTAR");
         btSair.setPreferredSize(new java.awt.Dimension(100, 50));
         btSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -347,6 +347,8 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_btApagarClienteActionPerformed
 
     private void btSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairActionPerformed
+        Identificacao identificacao = new Identificacao();
+        identificacao.setVisible(true);
         dispose();
     }//GEN-LAST:event_btSairActionPerformed
 

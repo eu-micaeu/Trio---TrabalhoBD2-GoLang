@@ -35,7 +35,9 @@ public class Identificacao extends javax.swing.JFrame {
         cxSenha = new javax.swing.JPasswordField();
         jLabel2 = new javax.swing.JLabel();
         cxUsuario = new javax.swing.JTextField();
+        btFechar = new javax.swing.JButton();
         btEntrar = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 137, 132));
@@ -60,6 +62,16 @@ public class Identificacao extends javax.swing.JFrame {
             }
         });
 
+        btFechar.setBackground(new java.awt.Color(93, 40, 221));
+        btFechar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        btFechar.setForeground(new java.awt.Color(255, 255, 255));
+        btFechar.setText("FECHAR");
+        btFechar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btFecharActionPerformed(evt);
+            }
+        });
+
         btEntrar.setBackground(new java.awt.Color(93, 40, 221));
         btEntrar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         btEntrar.setForeground(new java.awt.Color(255, 255, 255));
@@ -69,6 +81,10 @@ public class Identificacao extends javax.swing.JFrame {
                 btEntrarActionPerformed(evt);
             }
         });
+
+        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("MECHANICAL REGISTER");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -87,14 +103,23 @@ public class Identificacao extends javax.swing.JFrame {
                         .addComponent(cxSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(51, 51, 51))
             .addGroup(layout.createSequentialGroup()
-                .addGap(158, 158, 158)
-                .addComponent(btEntrar)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(158, 158, 158)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btEntrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btFechar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(95, 95, 95)
+                        .addComponent(jLabel3)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(70, 70, 70)
+                .addGap(14, 14, 14)
+                .addComponent(jLabel3)
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(cxUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -102,9 +127,11 @@ public class Identificacao extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(cxSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addGap(34, 34, 34)
                 .addComponent(btEntrar)
-                .addGap(60, 60, 60))
+                .addGap(18, 18, 18)
+                .addComponent(btFechar)
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         pack();
@@ -114,8 +141,15 @@ public class Identificacao extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cxUsuarioActionPerformed
 
-    private void btEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEntrarActionPerformed
+    private void btFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFecharActionPerformed
+        dispose();
+    }//GEN-LAST:event_btFecharActionPerformed
 
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        setLocationRelativeTo(null);
+    }//GEN-LAST:event_formWindowActivated
+
+    private void btEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEntrarActionPerformed
         if ("username".equals(cxUsuario.getText()) && "username".equals(cxSenha.getText())) {
             Menu menu = new Menu();
             menu.setVisible(true);
@@ -130,12 +164,7 @@ public class Identificacao extends javax.swing.JFrame {
             cxUsuario.setText("");
             cxSenha.setText("");
     }
-
     }//GEN-LAST:event_btEntrarActionPerformed
-
-    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-        setLocationRelativeTo(null);
-    }//GEN-LAST:event_formWindowActivated
 
     /**
      * @param args the command line arguments
@@ -175,9 +204,11 @@ public class Identificacao extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btEntrar;
+    private javax.swing.JButton btFechar;
     private javax.swing.JPasswordField cxSenha;
     private javax.swing.JTextField cxUsuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
