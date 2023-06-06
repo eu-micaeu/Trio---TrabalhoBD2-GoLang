@@ -4,6 +4,13 @@
  */
 package com.mycompany.mechanicalregister;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author brena
@@ -16,6 +23,7 @@ public class ApagarProduto extends javax.swing.JFrame {
     public ApagarProduto() {
         initComponents();
         getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
+        listarTab();
 
     }
 
@@ -33,7 +41,7 @@ public class ApagarProduto extends javax.swing.JFrame {
         cxApagar = new javax.swing.JTextField();
         btVoltar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabApagarVeiculo = new javax.swing.JTable();
+        tabApagarProduto = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -50,6 +58,11 @@ public class ApagarProduto extends javax.swing.JFrame {
         btApagar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         btApagar.setForeground(new java.awt.Color(255, 255, 255));
         btApagar.setText("APAGAR");
+        btApagar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btApagarActionPerformed(evt);
+            }
+        });
 
         btVoltar.setBackground(new java.awt.Color(93, 40, 221));
         btVoltar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
@@ -61,7 +74,7 @@ public class ApagarProduto extends javax.swing.JFrame {
             }
         });
 
-        tabApagarVeiculo.setModel(new javax.swing.table.DefaultTableModel(
+        tabApagarProduto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -72,7 +85,7 @@ public class ApagarProduto extends javax.swing.JFrame {
                 "ID", "PLACA", "ANO", "MARCA", "MODELO", "COR"
             }
         ));
-        jScrollPane1.setViewportView(tabApagarVeiculo);
+        jScrollPane1.setViewportView(tabApagarProduto);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -125,6 +138,49 @@ public class ApagarProduto extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btVoltarActionPerformed
 
+    private void btApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApagarActionPerformed
+        listarTabDel();
+        listarTab();
+    }//GEN-LAST:event_btApagarActionPerformed
+    
+    public void listarTabDel() {
+        DefaultTableModel tabModel = (DefaultTableModel) tabApagarProduto.getModel();
+        tabModel.setRowCount(0);
+
+        Conexao conexao = new Conexao();
+        try (Connection connection = conexao.getConnection()) {
+            String query = "DELETE FROM produto WHERE id_produto = ?";
+            String id_cliente = cxApagar.getText();
+            PreparedStatement statement2 = connection.prepareStatement(query);
+            statement2.setInt(1, Integer.parseInt(id_cliente));
+            statement2.executeUpdate();
+
+        } catch (SQLException e) {
+        }
+    }
+    
+    public void listarTab() {
+        DefaultTableModel tabModel = (DefaultTableModel) tabApagarProduto.getModel();
+        tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
+
+        Conexao conexao = new Conexao();
+        try (Connection connection = conexao.getConnection()) {
+            String query = "SELECT * FROM produto";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id_produto");
+                String nome = resultSet.getString("nome_produto");
+                float valor = resultSet.getFloat("valor");
+                int quantidade = resultSet.getInt("quantidade");
+                tabModel.addRow(new Object[]{id, nome, valor, quantidade});
+            }
+
+        } catch (SQLException e) {
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -167,6 +223,6 @@ public class ApagarProduto extends javax.swing.JFrame {
     private javax.swing.JTextField cxApagar;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tabApagarVeiculo;
+    private javax.swing.JTable tabApagarProduto;
     // End of variables declaration//GEN-END:variables
 }

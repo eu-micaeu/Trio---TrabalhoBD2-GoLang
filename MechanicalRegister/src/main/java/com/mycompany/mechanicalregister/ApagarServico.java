@@ -4,6 +4,13 @@
  */
 package com.mycompany.mechanicalregister;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author brena
@@ -15,7 +22,8 @@ public class ApagarServico extends javax.swing.JFrame {
      */
     public ApagarServico() {
         initComponents();
-                getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
+        getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
+        listarTab();
 
     }
 
@@ -50,6 +58,11 @@ public class ApagarServico extends javax.swing.JFrame {
         btApagar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         btApagar.setForeground(new java.awt.Color(255, 255, 255));
         btApagar.setText("APAGAR");
+        btApagar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btApagarActionPerformed(evt);
+            }
+        });
 
         btVoltar.setBackground(new java.awt.Color(93, 40, 221));
         btVoltar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
@@ -126,6 +139,48 @@ public class ApagarServico extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btVoltarActionPerformed
 
+    private void btApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApagarActionPerformed
+        listarTabDel();
+        listarTab();
+    }//GEN-LAST:event_btApagarActionPerformed
+    
+    public void listarTabDel() {
+        DefaultTableModel tabModel = (DefaultTableModel) tabApagarServico.getModel();
+        tabModel.setRowCount(0);
+
+        Conexao conexao = new Conexao();
+        try (Connection connection = conexao.getConnection()) {
+            String query = "DELETE FROM servico WHERE id_servico = ?";
+            String id_cliente = cxApagar.getText();
+            PreparedStatement statement2 = connection.prepareStatement(query);
+            statement2.setInt(1, Integer.parseInt(id_cliente));
+            statement2.executeUpdate();
+
+        } catch (SQLException e) {
+        }
+    }
+    
+    public void listarTab() {
+    DefaultTableModel tabModel = (DefaultTableModel) tabApagarServico.getModel();
+    tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
+
+    Conexao conexao = new Conexao();
+    try (Connection connection = conexao.getConnection()) {
+        String query = "SELECT * FROM servico";
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(query);
+
+        while (resultSet.next()) {
+            int id = resultSet.getInt("id_servico");
+            String tipo = resultSet.getString("tipo");
+            float valor = resultSet.getFloat("valor");
+            tabModel.addRow(new Object[]{id, tipo, valor});
+        }
+
+    } catch (SQLException e) {
+    }
+}
+    
     /**
      * @param args the command line arguments
      */

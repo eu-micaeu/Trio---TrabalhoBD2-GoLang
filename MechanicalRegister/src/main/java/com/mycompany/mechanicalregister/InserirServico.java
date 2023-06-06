@@ -4,6 +4,10 @@
  */
 package com.mycompany.mechanicalregister;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 /**
  *
  * @author brena
@@ -137,7 +141,14 @@ public class InserirServico extends javax.swing.JFrame {
     }//GEN-LAST:event_cxValorActionPerformed
 
     private void btInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInserirActionPerformed
-        // TODO add your handling code here:
+        try (Connection conexao = new Conexao().getConnection()) {
+            String sql = String.format("insert into servico (tipo, valor) values ('%s', %s);", cxTipo.getText(), cxValor.getText());
+            PreparedStatement statement = conexao.prepareStatement(sql);
+            statement.execute();         
+            conexao.close();
+        } catch (SQLException ex) {
+
+        }
     }//GEN-LAST:event_btInserirActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated

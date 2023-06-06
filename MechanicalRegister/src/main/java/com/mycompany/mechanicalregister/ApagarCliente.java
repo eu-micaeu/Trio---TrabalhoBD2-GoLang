@@ -4,6 +4,9 @@
  */
 package com.mycompany.mechanicalregister;
 
+import java.sql.*;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author micae
@@ -16,6 +19,7 @@ public class ApagarCliente extends javax.swing.JFrame {
     public ApagarCliente() {
         initComponents();
         getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
+        listarTab();
     }
 
     /**
@@ -49,6 +53,11 @@ public class ApagarCliente extends javax.swing.JFrame {
         btApagar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         btApagar.setForeground(new java.awt.Color(255, 255, 255));
         btApagar.setText("APAGAR");
+        btApagar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btApagarActionPerformed(evt);
+            }
+        });
 
         btVoltar.setBackground(new java.awt.Color(93, 40, 221));
         btVoltar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
@@ -122,6 +131,58 @@ public class ApagarCliente extends javax.swing.JFrame {
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
         dispose();
     }//GEN-LAST:event_btVoltarActionPerformed
+
+    private void btApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApagarActionPerformed
+        listarTabDel();
+        listarTab();
+    }//GEN-LAST:event_btApagarActionPerformed
+
+    public void listarTabDel() {
+        DefaultTableModel tabModel = (DefaultTableModel) tabApagarCliente.getModel();
+        tabModel.setRowCount(0);
+
+        Conexao conexao = new Conexao();
+        try (Connection connection = conexao.getConnection()) {
+            String query_veic = "DELETE FROM veiculo WHERE id_cliente = ?";
+            String query = "DELETE FROM cliente WHERE id_cliente = ?";
+            String id_cliente = cxApagar.getText();
+
+            PreparedStatement statement1 = connection.prepareStatement(query_veic);
+            statement1.setInt(1, Integer.parseInt(id_cliente));
+            statement1.executeUpdate();
+
+            PreparedStatement statement2 = connection.prepareStatement(query);
+            statement2.setInt(1, Integer.parseInt(id_cliente));
+            statement2.executeUpdate();
+
+        } catch (SQLException e) {
+        }
+    }
+
+    public void listarTab() {
+        DefaultTableModel tabModel = (DefaultTableModel) tabApagarCliente.getModel();
+        tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
+
+        Conexao conexao = new Conexao();
+        try (Connection connection = conexao.getConnection()) {
+            String query = "SELECT id_cliente, nome_cliente, idade, rg, cpf, telefone, data_de_registro FROM cliente";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id_cliente");
+                String nome = resultSet.getString("nome_cliente");
+                int idade = resultSet.getInt("idade");
+                int rg = resultSet.getInt("rg");
+                int cpf = resultSet.getInt("cpf");
+                String telefone = resultSet.getString("telefone");
+                Timestamp timestamp = resultSet.getTimestamp("data_de_registro");
+                tabModel.addRow(new Object[]{id, nome, idade, rg, cpf, telefone, timestamp});
+            }
+
+        } catch (SQLException e) {
+        }
+    }
 
     /**
      * @param args the command line arguments
