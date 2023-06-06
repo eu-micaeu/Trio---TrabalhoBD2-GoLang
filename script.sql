@@ -187,6 +187,7 @@ select * from funcionario;
 select * from backup_cliente;
 select * from carro_cliente;
 
+insert into veiculo (ano, placa, marca, modelo, cor, motor, id_motor) values (2004, '123ABC', 'asss', 'dddd', 'azul', 'E')
 
 
 
