@@ -15,6 +15,8 @@ public class ApagarCliente extends javax.swing.JFrame {
      */
     public ApagarCliente() {
         initComponents();
+        getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
+
     }
 
     /**
@@ -31,7 +33,7 @@ public class ApagarCliente extends javax.swing.JFrame {
         cxApagar = new javax.swing.JTextField();
         btVoltar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabCliente2 = new javax.swing.JTable();
+        tabApagarCliente = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -40,22 +42,22 @@ public class ApagarCliente extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("APAGAR CLIENTE:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
 
         btApagar.setBackground(new java.awt.Color(93, 40, 221));
         btApagar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         btApagar.setForeground(new java.awt.Color(255, 255, 255));
         btApagar.setText("APAGAR");
-        getContentPane().add(btApagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 190, -1, -1));
-        getContentPane().add(cxApagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 200, 420, 30));
+        getContentPane().add(btApagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 40, 180, -1));
+        getContentPane().add(cxApagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, 420, 30));
 
         btVoltar.setBackground(new java.awt.Color(93, 40, 221));
         btVoltar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         btVoltar.setForeground(new java.awt.Color(255, 255, 255));
         btVoltar.setText("VOLTAR");
-        getContentPane().add(btVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 190, -1, -1));
+        getContentPane().add(btVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 100, 180, 40));
 
-        tabCliente2.setModel(new javax.swing.table.DefaultTableModel(
+        tabApagarCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -66,10 +68,11 @@ public class ApagarCliente extends javax.swing.JFrame {
                 "ID", "NOME", "IDADE", "RG", "CPF", "TELEFONE"
             }
         ));
-        jScrollPane1.setViewportView(tabCliente2);
+        jScrollPane1.setViewportView(tabApagarCliente);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 1120, -1));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 990, 370));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundo .png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, -1));
 
         pack();
@@ -117,6 +120,6 @@ public class ApagarCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tabCliente2;
+    private javax.swing.JTable tabApagarCliente;
     // End of variables declaration//GEN-END:variables
 }

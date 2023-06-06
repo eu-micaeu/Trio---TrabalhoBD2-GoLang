@@ -15,6 +15,8 @@ public class ConsultarCliente extends javax.swing.JFrame {
      */
     public ConsultarCliente() {
         initComponents();
+                getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
+
     }
 
     /**
@@ -36,7 +38,7 @@ public class ConsultarCliente extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(cxConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, 410, 30));
+        getContentPane().add(cxConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 320, 30));
 
         tabCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -51,7 +53,7 @@ public class ConsultarCliente extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tabCliente);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 1150, 380));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 920, 330));
 
         btConsultar.setBackground(new java.awt.Color(93, 40, 221));
         btConsultar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
@@ -62,7 +64,7 @@ public class ConsultarCliente extends javax.swing.JFrame {
                 btConsultarActionPerformed(evt);
             }
         });
-        getContentPane().add(btConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 210, 170, 40));
+        getContentPane().add(btConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 40, 170, 40));
 
         btVoltar.setBackground(new java.awt.Color(93, 40, 221));
         btVoltar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
@@ -73,13 +75,14 @@ public class ConsultarCliente extends javax.swing.JFrame {
                 btVoltarActionPerformed(evt);
             }
         });
-        getContentPane().add(btVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 210, 170, 40));
+        getContentPane().add(btVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 100, 170, 40));
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("CONSULTAR CLIENTE:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, -1, -1));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundo .png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
