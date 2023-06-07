@@ -48,7 +48,7 @@
                                   <Component id="btConsultarProduto" alignment="0" min="-2" pref="149" max="-2" attributes="0"/>
                                   <Component id="btConsultarServico" alignment="0" min="-2" pref="149" max="-2" attributes="0"/>
                                   <Component id="rotConsultar" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btConsultarServico1" alignment="0" min="-2" pref="149" max="-2" attributes="0"/>
+                                  <Component id="btConsultarVeiculo" alignment="0" min="-2" pref="149" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -67,14 +67,14 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="157" max="-2" attributes="0"/>
-                              <Component id="btConsultarServico2" min="-2" pref="283" max="-2" attributes="0"/>
+                              <Component id="btClienteCarro" min="-2" pref="283" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btConsultarServico3" max="32767" attributes="0"/>
+                      <Component id="btClienteProduto" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -115,11 +115,11 @@
                   <Component id="btConsultarServico" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-              <Component id="btConsultarServico1" min="-2" max="-2" attributes="0"/>
+              <Component id="btConsultarVeiculo" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-              <Component id="btConsultarServico2" min="-2" max="-2" attributes="0"/>
+              <Component id="btClienteCarro" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-              <Component id="btConsultarServico3" min="-2" max="-2" attributes="0"/>
+              <Component id="btClienteProduto" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="53" max="32767" attributes="0"/>
               <Component id="btSair" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
@@ -361,7 +361,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btSairActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btConsultarServico1">
+    <Component class="javax.swing.JButton" name="btConsultarVeiculo">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="dd" green="28" red="5d" type="rgb"/>
@@ -378,10 +378,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btConsultarServico1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btConsultarVeiculoActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btConsultarServico2">
+    <Component class="javax.swing.JButton" name="btClienteCarro">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="dd" green="28" red="5d" type="rgb"/>
@@ -398,10 +398,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btConsultarServico2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btClienteCarroActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btConsultarServico3">
+    <Component class="javax.swing.JButton" name="btClienteProduto">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="dd" green="28" red="5d" type="rgb"/>
@@ -418,7 +418,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btConsultarServico3ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btClienteProdutoActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

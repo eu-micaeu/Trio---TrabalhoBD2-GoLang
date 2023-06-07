@@ -44,9 +44,9 @@ public class Menu extends javax.swing.JFrame {
         btApagarVeiculo = new javax.swing.JButton();
         btApagarServico = new javax.swing.JButton();
         btSair = new javax.swing.JButton();
-        btConsultarServico1 = new javax.swing.JButton();
-        btConsultarServico2 = new javax.swing.JButton();
-        btConsultarServico3 = new javax.swing.JButton();
+        btConsultarVeiculo = new javax.swing.JButton();
+        btClienteCarro = new javax.swing.JButton();
+        btClienteProduto = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -178,36 +178,36 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        btConsultarServico1.setBackground(new java.awt.Color(93, 40, 221));
-        btConsultarServico1.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        btConsultarServico1.setForeground(new java.awt.Color(255, 255, 255));
-        btConsultarServico1.setText("VEICULO");
-        btConsultarServico1.setPreferredSize(new java.awt.Dimension(100, 50));
-        btConsultarServico1.addActionListener(new java.awt.event.ActionListener() {
+        btConsultarVeiculo.setBackground(new java.awt.Color(93, 40, 221));
+        btConsultarVeiculo.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        btConsultarVeiculo.setForeground(new java.awt.Color(255, 255, 255));
+        btConsultarVeiculo.setText("VEICULO");
+        btConsultarVeiculo.setPreferredSize(new java.awt.Dimension(100, 50));
+        btConsultarVeiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btConsultarServico1ActionPerformed(evt);
+                btConsultarVeiculoActionPerformed(evt);
             }
         });
 
-        btConsultarServico2.setBackground(new java.awt.Color(93, 40, 221));
-        btConsultarServico2.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        btConsultarServico2.setForeground(new java.awt.Color(255, 255, 255));
-        btConsultarServico2.setText("CLIENTES COM CARRO");
-        btConsultarServico2.setPreferredSize(new java.awt.Dimension(100, 50));
-        btConsultarServico2.addActionListener(new java.awt.event.ActionListener() {
+        btClienteCarro.setBackground(new java.awt.Color(93, 40, 221));
+        btClienteCarro.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        btClienteCarro.setForeground(new java.awt.Color(255, 255, 255));
+        btClienteCarro.setText("CLIENTES COM CARRO");
+        btClienteCarro.setPreferredSize(new java.awt.Dimension(100, 50));
+        btClienteCarro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btConsultarServico2ActionPerformed(evt);
+                btClienteCarroActionPerformed(evt);
             }
         });
 
-        btConsultarServico3.setBackground(new java.awt.Color(93, 40, 221));
-        btConsultarServico3.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        btConsultarServico3.setForeground(new java.awt.Color(255, 255, 255));
-        btConsultarServico3.setText("CLIENTES QUE COMPRARAM ALGUM PRODUTO");
-        btConsultarServico3.setPreferredSize(new java.awt.Dimension(100, 50));
-        btConsultarServico3.addActionListener(new java.awt.event.ActionListener() {
+        btClienteProduto.setBackground(new java.awt.Color(93, 40, 221));
+        btClienteProduto.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        btClienteProduto.setForeground(new java.awt.Color(255, 255, 255));
+        btClienteProduto.setText("CLIENTES QUE COMPRARAM ALGUM PRODUTO");
+        btClienteProduto.setPreferredSize(new java.awt.Dimension(100, 50));
+        btClienteProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btConsultarServico3ActionPerformed(evt);
+                btClienteProdutoActionPerformed(evt);
             }
         });
 
@@ -234,7 +234,7 @@ public class Menu extends javax.swing.JFrame {
                                     .addComponent(btConsultarProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btConsultarServico, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(rotConsultar)
-                                    .addComponent(btConsultarServico1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(btConsultarVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(75, 75, 75)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
@@ -248,11 +248,11 @@ public class Menu extends javax.swing.JFrame {
                                 .addComponent(btSair, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(157, 157, 157)
-                                .addComponent(btConsultarServico2, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(btClienteCarro, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(btConsultarServico3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(btClienteProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -284,11 +284,11 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(btInserirServico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btConsultarServico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
-                .addComponent(btConsultarServico1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btConsultarVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addComponent(btConsultarServico2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btClienteCarro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addComponent(btConsultarServico3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btClienteProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                 .addComponent(btSair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
@@ -352,17 +352,20 @@ public class Menu extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btSairActionPerformed
 
-    private void btConsultarServico1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarServico1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btConsultarServico1ActionPerformed
+    private void btConsultarVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarVeiculoActionPerformed
+        ConsultarVeiculo consultarVeiculo = new ConsultarVeiculo();
+        consultarVeiculo.setVisible(true);
+    }//GEN-LAST:event_btConsultarVeiculoActionPerformed
 
-    private void btConsultarServico2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarServico2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btConsultarServico2ActionPerformed
+    private void btClienteCarroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btClienteCarroActionPerformed
+        ViewClienteCarro clienteCarro = new ViewClienteCarro();
+        clienteCarro.setVisible(true);
+    }//GEN-LAST:event_btClienteCarroActionPerformed
 
-    private void btConsultarServico3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarServico3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btConsultarServico3ActionPerformed
+    private void btClienteProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btClienteProdutoActionPerformed
+        ViewClienteProduto clienteProduto = new ViewClienteProduto();
+        clienteProduto.setVisible(true);
+    }//GEN-LAST:event_btClienteProdutoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -403,12 +406,12 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton btApagarCliente;
     private javax.swing.JButton btApagarServico;
     private javax.swing.JButton btApagarVeiculo;
+    private javax.swing.JButton btClienteCarro;
+    private javax.swing.JButton btClienteProduto;
     private javax.swing.JButton btConsultarCliente;
     private javax.swing.JButton btConsultarProduto;
     private javax.swing.JButton btConsultarServico;
-    private javax.swing.JButton btConsultarServico1;
-    private javax.swing.JButton btConsultarServico2;
-    private javax.swing.JButton btConsultarServico3;
+    private javax.swing.JButton btConsultarVeiculo;
     private javax.swing.JButton btInserirCliente;
     private javax.swing.JButton btInserirServico;
     private javax.swing.JButton btInserirVeiculo;
