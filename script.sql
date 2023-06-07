@@ -149,8 +149,10 @@ PASSWORD 'usuario';
 
 -- Criação de no mínimo uma visão (view) a partir de duas ou mais tabelas (0,5):
 CREATE VIEW carro_cliente as 
-SELECT nome_cliente, marca, modelo FROM cliente cli, veiculo veic
+SELECT nome_cliente,placa, marca, modelo FROM cliente cli, veiculo veic
 WHERE cli.id_cliente = veic.id_cliente;
+
+
 
 -- Criação de trigger que permita inserção de dados na view, e atribuição de privilégio ao usuário criado anteriormente para ver e inserir usando a view (1,0):
 CREATE OR REPLACE FUNCTION carro_cliente() RETURNS TRIGGER
@@ -162,8 +164,8 @@ BEGIN
 	insert into cliente (nome_cliente, data_de_registro)
 	values (NEW.nome_cliente, CURRENT_TIMESTAMP);
 	id_cli := (SELECT MAX(id_cliente) FROM cliente);
-	insert into veiculo (marca, modelo, id_cliente) 
-	values (NEW.marca, NEW.modelo, id_cli);			
+	insert into veiculo (placa,marca, modelo, id_cliente) 
+	values (NEW.placa,NEW.marca, NEW.modelo, id_cli);			
 	RETURN NEW;							
 END;
 $$ LANGUAGE plpgsql;
