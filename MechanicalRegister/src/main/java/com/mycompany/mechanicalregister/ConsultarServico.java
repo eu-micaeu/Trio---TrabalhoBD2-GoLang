@@ -4,6 +4,8 @@
  */
 package com.mycompany.mechanicalregister;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -23,6 +25,11 @@ public class ConsultarServico extends javax.swing.JFrame {
     public ConsultarServico() {
         initComponents();
         getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
+        tabConsultarServico.getTableHeader().setFont(new Font("Segoe UI",Font.BOLD,12));
+        tabConsultarServico.getTableHeader().setOpaque(false);
+        tabConsultarServico.getTableHeader().setBackground(new Color(93,40,221));
+        tabConsultarServico.getTableHeader().setForeground(new Color(255,255,255));
+        tabConsultarServico.setRowHeight(25);
         listarTab();
 
     }
@@ -61,6 +68,8 @@ public class ConsultarServico extends javax.swing.JFrame {
             }
         });
 
+        tabConsultarServico.setBackground(new java.awt.Color(0, 0, 0));
+        tabConsultarServico.setForeground(new java.awt.Color(255, 255, 255));
         tabConsultarServico.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -72,6 +81,11 @@ public class ConsultarServico extends javax.swing.JFrame {
                 "ID", "Tipo", "Valor"
             }
         ));
+        tabConsultarServico.setFocusable(false);
+        tabConsultarServico.setGridColor(new java.awt.Color(255, 255, 255));
+        tabConsultarServico.setRowHeight(25);
+        tabConsultarServico.setSelectionBackground(new java.awt.Color(232, 57, 95));
+        tabConsultarServico.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(tabConsultarServico);
         if (tabConsultarServico.getColumnModel().getColumnCount() > 0) {
             tabConsultarServico.getColumnModel().getColumn(1).setResizable(false);

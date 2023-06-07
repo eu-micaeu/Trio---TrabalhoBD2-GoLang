@@ -4,6 +4,8 @@
  */
 package com.mycompany.mechanicalregister;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -23,6 +25,11 @@ public class ConsultarProduto extends javax.swing.JFrame {
     public ConsultarProduto() {
         initComponents();
         getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
+        tabConsultarProduto.getTableHeader().setFont(new Font("Segoe UI",Font.BOLD,12));
+        tabConsultarProduto.getTableHeader().setOpaque(false);
+        tabConsultarProduto.getTableHeader().setBackground(new Color(93,40,221));
+        tabConsultarProduto.getTableHeader().setForeground(new Color(255,255,255));
+        tabConsultarProduto.setRowHeight(25);
         listarTab();
 
     }
@@ -51,6 +58,8 @@ public class ConsultarProduto extends javax.swing.JFrame {
             }
         });
 
+        tabConsultarProduto.setBackground(new java.awt.Color(0, 0, 0));
+        tabConsultarProduto.setForeground(new java.awt.Color(255, 255, 255));
         tabConsultarProduto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -62,6 +71,11 @@ public class ConsultarProduto extends javax.swing.JFrame {
                 "ID", "NOME", "VALOR", "QUANTIDADE"
             }
         ));
+        tabConsultarProduto.setFocusable(false);
+        tabConsultarProduto.setGridColor(new java.awt.Color(255, 255, 255));
+        tabConsultarProduto.setRowHeight(25);
+        tabConsultarProduto.setSelectionBackground(new java.awt.Color(232, 57, 95));
+        tabConsultarProduto.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tabConsultarProduto);
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N

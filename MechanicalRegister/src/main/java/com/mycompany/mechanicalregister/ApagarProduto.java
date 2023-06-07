@@ -4,6 +4,8 @@
  */
 package com.mycompany.mechanicalregister;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -23,6 +25,11 @@ public class ApagarProduto extends javax.swing.JFrame {
     public ApagarProduto() {
         initComponents();
         getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
+        tabApagarProduto.getTableHeader().setFont(new Font("Segoe UI",Font.BOLD,12));
+        tabApagarProduto.getTableHeader().setOpaque(false);
+        tabApagarProduto.getTableHeader().setBackground(new Color(93,40,221));
+        tabApagarProduto.getTableHeader().setForeground(new Color(255,255,255));
+        tabApagarProduto.setRowHeight(25);
         listarTab();
 
     }
@@ -75,6 +82,8 @@ public class ApagarProduto extends javax.swing.JFrame {
             }
         });
 
+        tabApagarProduto.setBackground(new java.awt.Color(0, 0, 0));
+        tabApagarProduto.setForeground(new java.awt.Color(255, 255, 255));
         tabApagarProduto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -86,6 +95,10 @@ public class ApagarProduto extends javax.swing.JFrame {
                 "ID", "PLACA", "ANO", "MARCA", "MODELO", "COR"
             }
         ));
+        tabApagarProduto.setFocusable(false);
+        tabApagarProduto.setGridColor(new java.awt.Color(255, 255, 255));
+        tabApagarProduto.setSelectionBackground(new java.awt.Color(232, 57, 95));
+        tabApagarProduto.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tabApagarProduto);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

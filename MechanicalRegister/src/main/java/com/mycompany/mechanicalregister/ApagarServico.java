@@ -4,6 +4,8 @@
  */
 package com.mycompany.mechanicalregister;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -23,6 +25,11 @@ public class ApagarServico extends javax.swing.JFrame {
     public ApagarServico() {
         initComponents();
         getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
+        tabApagarServico.getTableHeader().setFont(new Font("Segoe UI",Font.BOLD,12));
+        tabApagarServico.getTableHeader().setOpaque(false);
+        tabApagarServico.getTableHeader().setBackground(new Color(93,40,221));
+        tabApagarServico.getTableHeader().setForeground(new Color(255,255,255));
+        tabApagarServico.setRowHeight(25);
         listarTab();
 
     }
@@ -75,6 +82,8 @@ public class ApagarServico extends javax.swing.JFrame {
             }
         });
 
+        tabApagarServico.setBackground(new java.awt.Color(0, 0, 0));
+        tabApagarServico.setForeground(new java.awt.Color(255, 255, 255));
         tabApagarServico.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -86,6 +95,11 @@ public class ApagarServico extends javax.swing.JFrame {
                 "ID", "TIPO", "VALOR"
             }
         ));
+        tabApagarServico.setFocusable(false);
+        tabApagarServico.setGridColor(new java.awt.Color(255, 255, 255));
+        tabApagarServico.setRowHeight(25);
+        tabApagarServico.setSelectionBackground(new java.awt.Color(232, 57, 95));
+        tabApagarServico.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tabApagarServico);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

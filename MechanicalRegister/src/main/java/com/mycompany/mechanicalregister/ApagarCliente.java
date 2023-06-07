@@ -4,6 +4,8 @@
  */
 package com.mycompany.mechanicalregister;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.sql.*;
 import javax.swing.table.DefaultTableModel;
 
@@ -18,7 +20,12 @@ public class ApagarCliente extends javax.swing.JFrame {
      */
     public ApagarCliente() {
         initComponents();
-        getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
+        getContentPane().setBackground(new java.awt.Color(0, 0, 0)); 
+        tabApagarCliente.getTableHeader().setFont(new Font("Segoe UI",Font.BOLD,12));
+        tabApagarCliente.getTableHeader().setOpaque(false);
+        tabApagarCliente.getTableHeader().setBackground(new Color(93,40,221));
+        tabApagarCliente.getTableHeader().setForeground(new Color(255,255,255));
+        tabApagarCliente.setRowHeight(25);
         listarTab();
     }
 
@@ -70,6 +77,8 @@ public class ApagarCliente extends javax.swing.JFrame {
             }
         });
 
+        tabApagarCliente.setBackground(new java.awt.Color(0, 0, 0));
+        tabApagarCliente.setForeground(new java.awt.Color(255, 255, 255));
         tabApagarCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -81,6 +90,11 @@ public class ApagarCliente extends javax.swing.JFrame {
                 "ID", "NOME", "IDADE", "RG", "CPF", "TELEFONE"
             }
         ));
+        tabApagarCliente.setFocusable(false);
+        tabApagarCliente.setGridColor(new java.awt.Color(255, 255, 255));
+        tabApagarCliente.setRowHeight(25);
+        tabApagarCliente.setSelectionBackground(new java.awt.Color(232, 57, 95));
+        tabApagarCliente.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tabApagarCliente);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
