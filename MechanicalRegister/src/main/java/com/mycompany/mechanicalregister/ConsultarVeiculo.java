@@ -25,10 +25,10 @@ public class ConsultarVeiculo extends javax.swing.JFrame {
     public ConsultarVeiculo() {
         initComponents();
         getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
-        tabVeiculo.getTableHeader().setFont(new Font("Segoe UI",Font.BOLD,12));
+        tabVeiculo.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
         tabVeiculo.getTableHeader().setOpaque(false);
-        tabVeiculo.getTableHeader().setBackground(new Color(93,40,221));
-        tabVeiculo.getTableHeader().setForeground(new Color(255,255,255));
+        tabVeiculo.getTableHeader().setBackground(new Color(93, 40, 221));
+        tabVeiculo.getTableHeader().setForeground(new Color(255, 255, 255));
         tabVeiculo.setRowHeight(25);
         listarTab();
     }
@@ -144,15 +144,14 @@ public class ConsultarVeiculo extends javax.swing.JFrame {
     }//GEN-LAST:event_btVoltarActionPerformed
 
     private void btConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarActionPerformed
-
+        listarTabUnic();
     }//GEN-LAST:event_btConsultarActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         setLocationRelativeTo(null);
     }//GEN-LAST:event_formWindowActivated
 
-    
-     public void listarTab() {
+    public void listarTab() {
         DefaultTableModel tabModel = (DefaultTableModel) tabVeiculo.getModel();
         tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
 
@@ -170,12 +169,41 @@ public class ConsultarVeiculo extends javax.swing.JFrame {
                 String cor = resultSet.getString("cor");
                 String motor = resultSet.getString("motor");
                 int id_cliente = resultSet.getInt("id_cliente");
-                tabModel.addRow(new Object[]{ id_veiculo, ano,marca, modelo,cor,motor,id_cliente });
+                tabModel.addRow(new Object[]{id_veiculo, ano, marca, modelo, cor, motor, id_cliente});
             }
 
         } catch (SQLException e) {
         }
-}
+    }
+    
+    public void listarTabUnic() {
+        DefaultTableModel tabModel = (DefaultTableModel) tabVeiculo.getModel();
+        tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
+
+        Conexao conexao = new Conexao();
+        try (Connection connection = conexao.getConnection()) {
+            String query = "select id_veiculo, ano, marca, modelo,cor,motor,id_cliente from veiculo";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+
+            while (resultSet.next()) {
+                int id_veiculo = resultSet.getInt("id_veiculo");
+                int ano = resultSet.getInt("ano");
+                String marca = resultSet.getString("marca");
+                String modelo = resultSet.getString("modelo");
+                String cor = resultSet.getString("cor");
+                String motor = resultSet.getString("motor");
+                int id_cliente = resultSet.getInt("id_cliente");
+                if(Integer.parseInt(cxConsultar.getText()) == id_veiculo){
+                    tabModel.addRow(new Object[]{id_veiculo, ano, marca, modelo, cor, motor, id_cliente});
+                }
+                
+            }
+
+        } catch (SQLException e) {
+        }
+    }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

@@ -24,10 +24,10 @@ public class ConsultarServico extends javax.swing.JFrame {
     public ConsultarServico() {
         initComponents();
         getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
-        tabConsultarServico.getTableHeader().setFont(new Font("Segoe UI",Font.BOLD,12));
+        tabConsultarServico.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
         tabConsultarServico.getTableHeader().setOpaque(false);
-        tabConsultarServico.getTableHeader().setBackground(new Color(93,40,221));
-        tabConsultarServico.getTableHeader().setForeground(new Color(255,255,255));
+        tabConsultarServico.getTableHeader().setBackground(new Color(93, 40, 221));
+        tabConsultarServico.getTableHeader().setForeground(new Color(255, 255, 255));
         tabConsultarServico.setRowHeight(25);
         listarTab();
 
@@ -146,7 +146,7 @@ public class ConsultarServico extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarActionPerformed
-        // TODO add your handling code here:
+        listarTabUnic();
     }//GEN-LAST:event_btConsultarActionPerformed
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
@@ -159,28 +159,51 @@ public class ConsultarServico extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }//GEN-LAST:event_formWindowActivated
 
-    
     public void listarTab() {
-    DefaultTableModel tabModel = (DefaultTableModel) tabConsultarServico.getModel();
-    tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
+        DefaultTableModel tabModel = (DefaultTableModel) tabConsultarServico.getModel();
+        tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
 
-    Conexao conexao = new Conexao();
-    try (Connection connection = conexao.getConnection()) {
-        String query = "SELECT * FROM servico";
-        Statement statement = connection.createStatement();
-        ResultSet resultSet = statement.executeQuery(query);
+        Conexao conexao = new Conexao();
+        try (Connection connection = conexao.getConnection()) {
+            String query = "SELECT * FROM servico";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
 
-        while (resultSet.next()) {
-            int id = resultSet.getInt("id_servico");
-            String tipo = resultSet.getString("tipo");
-            float valor = resultSet.getFloat("valor");
-            tabModel.addRow(new Object[]{id, tipo, valor});
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id_servico");
+                String tipo = resultSet.getString("tipo");
+                float valor = resultSet.getFloat("valor");
+                tabModel.addRow(new Object[]{id, tipo, valor});
+            }
+
+        } catch (SQLException e) {
         }
-
-    } catch (SQLException e) {
     }
-}
     
+    public void listarTabUnic() {
+        DefaultTableModel tabModel = (DefaultTableModel) tabConsultarServico.getModel();
+        tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
+
+        Conexao conexao = new Conexao();
+        try (Connection connection = conexao.getConnection()) {
+            String query = "SELECT * FROM servico";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id_servico");
+                String tipo = resultSet.getString("tipo");
+                float valor = resultSet.getFloat("valor");
+                if(Integer.parseInt(cxConsultar.getText()) == id){
+                    tabModel.addRow(new Object[]{id, tipo, valor});
+                }
+                
+            }
+
+        } catch (SQLException e) {
+        }
+    }
+
     /**
      * @param args the command line arguments
      */

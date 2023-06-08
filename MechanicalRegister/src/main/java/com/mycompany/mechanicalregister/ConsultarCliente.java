@@ -25,10 +25,10 @@ public class ConsultarCliente extends javax.swing.JFrame {
     public ConsultarCliente() {
         initComponents();
         getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
-        tabCliente.getTableHeader().setFont(new Font("Segoe UI",Font.BOLD,12));
+        tabCliente.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
         tabCliente.getTableHeader().setOpaque(false);
-        tabCliente.getTableHeader().setBackground(new Color(93,40,221));
-        tabCliente.getTableHeader().setForeground(new Color(255,255,255));
+        tabCliente.getTableHeader().setBackground(new Color(93, 40, 221));
+        tabCliente.getTableHeader().setForeground(new Color(255, 255, 255));
         tabCliente.setRowHeight(25);
         listarTab();
 
@@ -55,6 +55,12 @@ public class ConsultarCliente extends javax.swing.JFrame {
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
+            }
+        });
+
+        cxConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cxConsultarActionPerformed(evt);
             }
         });
 
@@ -151,35 +157,66 @@ public class ConsultarCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowActivated
 
     private void btConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarActionPerformed
-
+        listarTabUnic();
     }//GEN-LAST:event_btConsultarActionPerformed
 
+    private void cxConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cxConsultarActionPerformed
+        
+    }//GEN-LAST:event_cxConsultarActionPerformed
+
     public void listarTab() {
-    DefaultTableModel tabModel = (DefaultTableModel) tabCliente.getModel();
-    tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
+        DefaultTableModel tabModel = (DefaultTableModel) tabCliente.getModel();
+        tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
 
-    Conexao conexao = new Conexao();
-    try (Connection connection = conexao.getConnection()) {
-        String query = "SELECT id_cliente, nome_cliente, idade, rg, cpf, telefone, data_de_registro FROM cliente";
-        Statement statement = connection.createStatement();
-        ResultSet resultSet = statement.executeQuery(query);
+        Conexao conexao = new Conexao();
+        try (Connection connection = conexao.getConnection()) {
+            String query = "SELECT id_cliente, nome_cliente, idade, rg, cpf, telefone, data_de_registro FROM cliente";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
 
-        while (resultSet.next()) {
-            int id = resultSet.getInt("id_cliente");
-            String nome = resultSet.getString("nome_cliente");
-            int idade = resultSet.getInt("idade");
-            int rg = resultSet.getInt("rg");
-            int cpf = resultSet.getInt("cpf");
-            String telefone = resultSet.getString("telefone");
-            Timestamp timestamp = resultSet.getTimestamp("data_de_registro");
-            tabModel.addRow(new Object[]{id, nome, idade, rg, cpf, telefone, timestamp});
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id_cliente");
+                String nome = resultSet.getString("nome_cliente");
+                int idade = resultSet.getInt("idade");
+                int rg = resultSet.getInt("rg");
+                int cpf = resultSet.getInt("cpf");
+                String telefone = resultSet.getString("telefone");
+                Timestamp timestamp = resultSet.getTimestamp("data_de_registro");
+                tabModel.addRow(new Object[]{id, nome, idade, rg, cpf, telefone, timestamp});
+            }
+
+        } catch (SQLException e) {
         }
-
-    } catch (SQLException e) {
     }
-}
+    
+    public void listarTabUnic() {
+        DefaultTableModel tabModel = (DefaultTableModel) tabCliente.getModel();
+        tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
 
+        Conexao conexao = new Conexao();
+        try (Connection connection = conexao.getConnection()) {
+            
+            String query = "SELECT id_cliente, nome_cliente, idade, rg, cpf, telefone, data_de_registro FROM cliente";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
 
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id_cliente");
+                String nome = resultSet.getString("nome_cliente");
+                int idade = resultSet.getInt("idade");
+                int rg = resultSet.getInt("rg");
+                int cpf = resultSet.getInt("cpf");
+                String telefone = resultSet.getString("telefone");
+                Timestamp timestamp = resultSet.getTimestamp("data_de_registro");
+                if(Integer.parseInt(cxConsultar.getText()) == id){
+                    tabModel.addRow(new Object[]{id, nome, idade, rg, cpf, telefone, timestamp});
+                }
+                
+            }
+
+        } catch (SQLException e) {
+        }
+    }
 
     /**
      * @param args the command line arguments

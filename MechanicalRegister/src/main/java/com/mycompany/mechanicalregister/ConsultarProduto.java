@@ -140,7 +140,7 @@ public class ConsultarProduto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarActionPerformed
-
+        listarTabUnic();
     }//GEN-LAST:event_btConsultarActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
@@ -169,6 +169,31 @@ public class ConsultarProduto extends javax.swing.JFrame {
                 float valor = resultSet.getFloat("valor");
                 int quantidade = resultSet.getInt("quantidade");
                 tabModel.addRow(new Object[]{id, nome, valor, quantidade});
+            }
+
+        } catch (SQLException e) {
+        }
+    }
+    
+    public void listarTabUnic() {
+        DefaultTableModel tabModel = (DefaultTableModel) tabConsultarProduto.getModel();
+        tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
+
+        Conexao conexao = new Conexao();
+        try (Connection connection = conexao.getConnection()) {
+            String query = "SELECT * FROM produto";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id_produto");
+                String nome = resultSet.getString("nome_produto");
+                float valor = resultSet.getFloat("valor");
+                int quantidade = resultSet.getInt("quantidade");
+                if(Integer.parseInt(cxConsultar.getText()) == id){
+                    tabModel.addRow(new Object[]{id, nome, valor, quantidade});
+                }
+                
             }
 
         } catch (SQLException e) {
