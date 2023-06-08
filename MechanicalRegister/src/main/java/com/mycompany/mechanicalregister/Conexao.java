@@ -22,4 +22,13 @@ public class Conexao {
         Connection conexao = DriverManager.getConnection(url, username, password);
         return conexao;
     }
+    
+    public Connection getConnectionUsername() throws SQLException {
+        String url = "jdbc:postgresql://containers-us-west-84.railway.app:5884/railway";
+        String username = "usuario";
+        String password = "usuario";
+
+        Connection conexao = DriverManager.getConnection(url, username, password);
+        return conexao;
+    }
 }

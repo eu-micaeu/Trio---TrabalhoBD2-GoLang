@@ -20,11 +20,11 @@ public class ApagarCliente extends javax.swing.JFrame {
      */
     public ApagarCliente() {
         initComponents();
-        getContentPane().setBackground(new java.awt.Color(0, 0, 0)); 
-        tabApagarCliente.getTableHeader().setFont(new Font("Segoe UI",Font.BOLD,12));
+        getContentPane().setBackground(new java.awt.Color(0, 0, 0));
+        tabApagarCliente.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
         tabApagarCliente.getTableHeader().setOpaque(false);
-        tabApagarCliente.getTableHeader().setBackground(new Color(93,40,221));
-        tabApagarCliente.getTableHeader().setForeground(new Color(255,255,255));
+        tabApagarCliente.getTableHeader().setBackground(new Color(93, 40, 221));
+        tabApagarCliente.getTableHeader().setForeground(new Color(255, 255, 255));
         tabApagarCliente.setRowHeight(25);
         listarTab();
     }
@@ -141,6 +141,8 @@ public class ApagarCliente extends javax.swing.JFrame {
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
         dispose();
+        MenuPostgres menu = new MenuPostgres();
+        menu.setVisible(true);
     }//GEN-LAST:event_btVoltarActionPerformed
 
     private void btApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApagarActionPerformed

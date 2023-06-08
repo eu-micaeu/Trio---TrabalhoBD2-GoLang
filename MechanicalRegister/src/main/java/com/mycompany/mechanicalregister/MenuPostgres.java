@@ -4,20 +4,16 @@
  */
 package com.mycompany.mechanicalregister;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-
 /**
  *
  * @author micae
  */
-public class Menu extends javax.swing.JFrame {
+public class MenuPostgres extends javax.swing.JFrame {
 
     /**
      * Creates new form Menu
      */
-    public Menu() {
+    public MenuPostgres() {
         initComponents();
         getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
     }
@@ -317,16 +313,19 @@ public class Menu extends javax.swing.JFrame {
     private void btInserirClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInserirClienteActionPerformed
         InserirCliente inserirCliente = new InserirCliente();
         inserirCliente.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btInserirClienteActionPerformed
 
     private void btInserirVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInserirVeiculoActionPerformed
         InserirProduto inserirVeiculo = new InserirProduto();
         inserirVeiculo.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btInserirVeiculoActionPerformed
 
     private void btInserirServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInserirServicoActionPerformed
         InserirServico inserirServico = new InserirServico();
         inserirServico.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btInserirServicoActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
@@ -336,31 +335,37 @@ public class Menu extends javax.swing.JFrame {
     private void btConsultarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarClienteActionPerformed
         ConsultarCliente consultarCliente = new ConsultarCliente();
         consultarCliente.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btConsultarClienteActionPerformed
 
     private void btConsultarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarProdutoActionPerformed
         ConsultarProduto consultarProduto = new ConsultarProduto();
         consultarProduto.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btConsultarProdutoActionPerformed
 
     private void btConsultarServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarServicoActionPerformed
         ConsultarServico consultarServico = new ConsultarServico();
         consultarServico.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btConsultarServicoActionPerformed
 
     private void btApagarServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApagarServicoActionPerformed
         ApagarServico apagarServico = new ApagarServico();
         apagarServico.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btApagarServicoActionPerformed
 
     private void btApagarVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApagarVeiculoActionPerformed
         ApagarProduto apagarVeiculo = new ApagarProduto();
         apagarVeiculo.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btApagarVeiculoActionPerformed
 
     private void btApagarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApagarClienteActionPerformed
         ApagarCliente apagarCliente = new ApagarCliente();
         apagarCliente.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btApagarClienteActionPerformed
 
     private void btSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairActionPerformed
@@ -372,21 +377,26 @@ public class Menu extends javax.swing.JFrame {
     private void btConsultarVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarVeiculoActionPerformed
         ConsultarVeiculo consultarVeiculo = new ConsultarVeiculo();
         consultarVeiculo.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btConsultarVeiculoActionPerformed
 
     private void btClienteCarroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btClienteCarroActionPerformed
         ViewClienteCarro clienteCarro = new ViewClienteCarro();
         clienteCarro.setVisible(true);
+        dispose();
+        
     }//GEN-LAST:event_btClienteCarroActionPerformed
 
     private void btClienteProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btClienteProdutoActionPerformed
         ViewClienteProduto clienteProduto = new ViewClienteProduto();
         clienteProduto.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btClienteProdutoActionPerformed
 
     private void btBackupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBackupActionPerformed
         BackupCliente backup = new BackupCliente();
         backup.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btBackupActionPerformed
 
     /**
@@ -406,20 +416,21 @@ public class Menu extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuPostgres.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuPostgres.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuPostgres.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuPostgres.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Menu().setVisible(true);
+                new MenuPostgres().setVisible(true);
             }
         });
     }

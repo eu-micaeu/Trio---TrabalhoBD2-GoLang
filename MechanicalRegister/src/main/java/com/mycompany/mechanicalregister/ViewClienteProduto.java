@@ -29,7 +29,7 @@ public class ViewClienteProduto extends javax.swing.JFrame {
         tabClienteProduto.getTableHeader().setBackground(new Color(93,40,221));
         tabClienteProduto.getTableHeader().setForeground(new Color(255,255,255));
         tabClienteProduto.setRowHeight(25);
-        //listarTab();
+        listarTab();
     }
 
     /**
@@ -137,6 +137,8 @@ public class ViewClienteProduto extends javax.swing.JFrame {
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
         dispose();
+        MenuPostgres menu = new MenuPostgres();
+        menu.setVisible(true);
     }//GEN-LAST:event_btVoltarActionPerformed
 
     private void btConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarActionPerformed
@@ -147,7 +149,27 @@ public class ViewClienteProduto extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }//GEN-LAST:event_formWindowActivated
 
-    
+    public void listarTab() {
+        DefaultTableModel tabModel = (DefaultTableModel) tabClienteProduto.getModel();
+        tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
+
+        Conexao conexao = new Conexao();
+        try (Connection connection = conexao.getConnection()) {
+            String query = "SELECT id_cliente, nome_cliente, id_produto FROM cliente NATURAL JOIN produto WHERE id_produto != 1;";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+
+            while (resultSet.next()) {
+                String id = resultSet.getString("id_cliente");
+                String nome = resultSet.getString("nome_cliente");
+                String idp = resultSet.getString("id_produto");
+
+                tabModel.addRow(new Object[]{id, nome, idp});
+            }
+
+        } catch (SQLException e) {
+        }
+    }
  
     
     

@@ -152,6 +152,8 @@ public class ApagarServico extends javax.swing.JFrame {
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
         dispose();
+        MenuPostgres menu = new MenuPostgres();
+        menu.setVisible(true);
     }//GEN-LAST:event_btVoltarActionPerformed
 
     private void btApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApagarActionPerformed
