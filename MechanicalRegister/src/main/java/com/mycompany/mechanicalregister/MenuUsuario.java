@@ -95,14 +95,14 @@ public class MenuUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowActivated
 
     private void btClienteCarroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btClienteCarroActionPerformed
-        ViewClienteCarro clienteCarro = new ViewClienteCarro();
+        ViewClienteCarroUsuario clienteCarro = new ViewClienteCarroUsuario();
         clienteCarro.setVisible(true);
     }//GEN-LAST:event_btClienteCarroActionPerformed
 
     private void btSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairActionPerformed
         Identificacao identificacao = new Identificacao();
         identificacao.setVisible(true);
-        dispose();
+        this.dispose();
     }//GEN-LAST:event_btSairActionPerformed
 
     /**

@@ -154,7 +154,7 @@ public class Identificacao extends javax.swing.JFrame {
             MenuPostgres menu = new MenuPostgres();
             menu.setVisible(true);
             dispose();
-        }else if("username".equals(cxUsuario.getText()) && "username".equals(cxSenha.getText())){
+        }else if("usuario".equals(cxUsuario.getText()) && "usuario".equals(cxSenha.getText())){
             MenuUsuario menu = new MenuUsuario();
             menu.setVisible(true);
             dispose();

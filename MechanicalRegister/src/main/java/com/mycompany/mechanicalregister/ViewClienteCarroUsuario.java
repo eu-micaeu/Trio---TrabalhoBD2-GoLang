@@ -4,11 +4,9 @@
  */
 package com.mycompany.mechanicalregister;
 
-
 import java.awt.Color;
 import java.awt.Font;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -16,14 +14,14 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author brena
+ * @author micae
  */
-public class ViewClienteCarro extends javax.swing.JFrame {
+public class ViewClienteCarroUsuario extends javax.swing.JFrame {
 
     /**
-     * Creates new form ViewClienteCarro
+     * Creates new form ViewClienteCarroUsuario
      */
-    public ViewClienteCarro() {
+    public ViewClienteCarroUsuario() {
         initComponents();
         getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
         tabClienteCarro.getTableHeader().setFont(new Font("Segoe UI",Font.BOLD,12));
@@ -43,40 +41,19 @@ public class ViewClienteCarro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tabClienteCarro = new javax.swing.JTable();
         btVoltar = new javax.swing.JButton();
         btConsultar = new javax.swing.JButton();
         cxConsultar = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabClienteCarro = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
             }
         });
-
-        tabClienteCarro.setBackground(new java.awt.Color(0, 0, 0));
-        tabClienteCarro.setForeground(new java.awt.Color(255, 255, 255));
-        tabClienteCarro.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "ID", "NOME", "PLACA", "MARCA", "MODELO"
-            }
-        ));
-        tabClienteCarro.setFocusable(false);
-        tabClienteCarro.setGridColor(new java.awt.Color(255, 255, 255));
-        tabClienteCarro.setRowHeight(25);
-        tabClienteCarro.setSelectionBackground(new java.awt.Color(232, 57, 95));
-        tabClienteCarro.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(tabClienteCarro);
 
         btVoltar.setBackground(new java.awt.Color(93, 40, 221));
         btVoltar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
@@ -101,6 +78,26 @@ public class ViewClienteCarro extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("CLIENTE - CARRO");
+
+        tabClienteCarro.setBackground(new java.awt.Color(0, 0, 0));
+        tabClienteCarro.setForeground(new java.awt.Color(255, 255, 255));
+        tabClienteCarro.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "NOME", "PLACA", "MARCA", "MODELO"
+            }
+        ));
+        tabClienteCarro.setFocusable(false);
+        tabClienteCarro.setGridColor(new java.awt.Color(255, 255, 255));
+        tabClienteCarro.setRowHeight(25);
+        tabClienteCarro.setSelectionBackground(new java.awt.Color(232, 57, 95));
+        tabClienteCarro.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tabClienteCarro);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -141,7 +138,7 @@ public class ViewClienteCarro extends javax.swing.JFrame {
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
         dispose();
-        MenuPostgres menu = new MenuPostgres();
+        MenuUsuario menu = new MenuUsuario();
         menu.setVisible(true);
     }//GEN-LAST:event_btVoltarActionPerformed
 
@@ -152,8 +149,6 @@ public class ViewClienteCarro extends javax.swing.JFrame {
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         setLocationRelativeTo(null);
     }//GEN-LAST:event_formWindowActivated
-
-    
     
     public void listarTab() {
         DefaultTableModel tabModel = (DefaultTableModel) tabClienteCarro.getModel();
@@ -193,20 +188,20 @@ public class ViewClienteCarro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewClienteCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewClienteCarroUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewClienteCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewClienteCarroUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewClienteCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewClienteCarroUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewClienteCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewClienteCarroUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewClienteCarro().setVisible(true);
+                new ViewClienteCarroUsuario().setVisible(true);
             }
         });
     }

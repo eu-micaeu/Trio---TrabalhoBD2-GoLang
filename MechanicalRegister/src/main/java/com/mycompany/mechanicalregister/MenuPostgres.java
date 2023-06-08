@@ -381,7 +381,7 @@ public class MenuPostgres extends javax.swing.JFrame {
     }//GEN-LAST:event_btConsultarVeiculoActionPerformed
 
     private void btClienteCarroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btClienteCarroActionPerformed
-        ViewClienteCarro clienteCarro = new ViewClienteCarro();
+        ViewClienteCarroPostgres clienteCarro = new ViewClienteCarroPostgres();
         clienteCarro.setVisible(true);
         dispose();
         
