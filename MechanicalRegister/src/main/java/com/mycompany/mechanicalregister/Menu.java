@@ -47,6 +47,7 @@ public class Menu extends javax.swing.JFrame {
         btConsultarVeiculo = new javax.swing.JButton();
         btClienteCarro = new javax.swing.JButton();
         btClienteProduto = new javax.swing.JButton();
+        btBackup = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -211,6 +212,16 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        btBackup.setBackground(new java.awt.Color(93, 40, 221));
+        btBackup.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        btBackup.setForeground(new java.awt.Color(255, 255, 255));
+        btBackup.setText("BACKUP DE CLIENTE");
+        btBackup.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btBackupActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -254,6 +265,10 @@ public class Menu extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(btClienteProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(175, 175, 175)
+                .addComponent(btBackup)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -289,7 +304,9 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(btClienteCarro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(btClienteProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(btBackup)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addComponent(btSair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
         );
@@ -367,6 +384,11 @@ public class Menu extends javax.swing.JFrame {
         clienteProduto.setVisible(true);
     }//GEN-LAST:event_btClienteProdutoActionPerformed
 
+    private void btBackupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBackupActionPerformed
+        BackupCliente backup = new BackupCliente();
+        backup.setVisible(true);
+    }//GEN-LAST:event_btBackupActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -406,6 +428,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton btApagarCliente;
     private javax.swing.JButton btApagarServico;
     private javax.swing.JButton btApagarVeiculo;
+    private javax.swing.JButton btBackup;
     private javax.swing.JButton btClienteCarro;
     private javax.swing.JButton btClienteProduto;
     private javax.swing.JButton btConsultarCliente;

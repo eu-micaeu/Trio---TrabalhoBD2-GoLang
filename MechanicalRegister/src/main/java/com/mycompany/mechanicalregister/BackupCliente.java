@@ -4,33 +4,32 @@
  */
 package com.mycompany.mechanicalregister;
 
-
 import java.awt.Color;
 import java.awt.Font;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Timestamp;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author brena
  */
-public class ViewClienteCarro extends javax.swing.JFrame {
+public class BackupCliente extends javax.swing.JFrame {
 
     /**
-     * Creates new form ViewClienteCarro
+     * Creates new form BackupCliente
      */
-    public ViewClienteCarro() {
+    public BackupCliente() {
         initComponents();
-        getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
-        tabClienteCarro.getTableHeader().setFont(new Font("Segoe UI",Font.BOLD,12));
-        tabClienteCarro.getTableHeader().setOpaque(false);
-        tabClienteCarro.getTableHeader().setBackground(new Color(93,40,221));
-        tabClienteCarro.getTableHeader().setForeground(new Color(255,255,255));
-        tabClienteCarro.setRowHeight(25);
+         getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
+        tabBackup.getTableHeader().setFont(new Font("Segoe UI",Font.BOLD,12));
+        tabBackup.getTableHeader().setOpaque(false);
+        tabBackup.getTableHeader().setBackground(new Color(93,40,221));
+        tabBackup.getTableHeader().setForeground(new Color(255,255,255));
+        tabBackup.setRowHeight(25);
         listarTab();
     }
 
@@ -44,7 +43,7 @@ public class ViewClienteCarro extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabClienteCarro = new javax.swing.JTable();
+        tabBackup = new javax.swing.JTable();
         btVoltar = new javax.swing.JButton();
         btConsultar = new javax.swing.JButton();
         cxConsultar = new javax.swing.JTextField();
@@ -57,25 +56,24 @@ public class ViewClienteCarro extends javax.swing.JFrame {
             }
         });
 
-        tabClienteCarro.setBackground(new java.awt.Color(0, 0, 0));
-        tabClienteCarro.setForeground(new java.awt.Color(255, 255, 255));
-        tabClienteCarro.setModel(new javax.swing.table.DefaultTableModel(
+        tabBackup.setBackground(new java.awt.Color(0, 0, 0));
+        tabBackup.setForeground(new java.awt.Color(255, 255, 255));
+        tabBackup.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "NOME", "PLACA", "MARCA", "MODELO"
+                "id_cliente", "nome_cliente", "idade", "id_servico", "id_produto", "cpf", "rg", "telefone", "data_de_registro"
             }
         ));
-        tabClienteCarro.setFocusable(false);
-        tabClienteCarro.setGridColor(new java.awt.Color(255, 255, 255));
-        tabClienteCarro.setRowHeight(25);
-        tabClienteCarro.setSelectionBackground(new java.awt.Color(232, 57, 95));
-        tabClienteCarro.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(tabClienteCarro);
+        tabBackup.setFocusable(false);
+        tabBackup.setRowHeight(25);
+        tabBackup.setSelectionBackground(new java.awt.Color(255, 255, 255));
+        tabBackup.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tabBackup);
 
         btVoltar.setBackground(new java.awt.Color(93, 40, 221));
         btVoltar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
@@ -99,40 +97,40 @@ public class ViewClienteCarro extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("CLIENTE - CARRO");
+        jLabel2.setText("BACKUP CLIENTE");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1)
             .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addGap(22, 22, 22)
                 .addComponent(jLabel2)
-                .addGap(30, 30, 30)
+                .addGap(18, 18, 18)
                 .addComponent(cxConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
-            .addComponent(jScrollPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(cxConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(btConsultar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(5, 5, 5)
+                        .addComponent(btVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2)
+                            .addComponent(cxConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -147,35 +145,36 @@ public class ViewClienteCarro extends javax.swing.JFrame {
     }//GEN-LAST:event_btConsultarActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-        setLocationRelativeTo(null);
+        setLocationRelativeTo(null);      
     }//GEN-LAST:event_formWindowActivated
 
-    
-    
-    public void listarTab() {
-        DefaultTableModel tabModel = (DefaultTableModel) tabClienteCarro.getModel();
+     public void listarTab() {
+        DefaultTableModel tabModel = (DefaultTableModel) tabBackup.getModel();
         tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
 
         Conexao conexao = new Conexao();
         try (Connection connection = conexao.getConnection()) {
-            String query = "SELECT nome_cliente,placa,marca,modelo FROM carro_cliente";
+            String query = "select id_cliente, nome_cliente, idade, id_servico, id_produto, cpf, rg, telefone, data_de_registro\n" +
+"from backup_cliente;";
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
 
             while (resultSet.next()) {
+                int id_cliente = resultSet.getInt("id_cliente");
                 String nome = resultSet.getString("nome_cliente");
-                String placa = resultSet.getString("placa");
-                String marca = resultSet.getString("marca");
-                String modelo = resultSet.getString("modelo");
-                tabModel.addRow(new Object[]{ nome, placa, marca, modelo});
+                int idade = resultSet.getInt("idade");
+                int id_servico = resultSet.getInt("id_servico");
+                int id_produto = resultSet.getInt("id_produto");
+                int rg = resultSet.getInt("rg");
+                int cpf = resultSet.getInt("cpf");
+                String telefone = resultSet.getString("telefone");
+                Timestamp timestamp = resultSet.getTimestamp("data_de_registro");
+                tabModel.addRow(new Object[]{ id_cliente,nome, idade, id_servico, id_produto, cpf, rg, telefone, timestamp});
             }
 
         } catch (SQLException e) {
         }
 }
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -190,20 +189,20 @@ public class ViewClienteCarro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewClienteCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BackupCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewClienteCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BackupCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewClienteCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BackupCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewClienteCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BackupCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewClienteCarro().setVisible(true);
+                new BackupCliente().setVisible(true);
             }
         });
     }
@@ -214,6 +213,6 @@ public class ViewClienteCarro extends javax.swing.JFrame {
     private javax.swing.JTextField cxConsultar;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tabClienteCarro;
+    private javax.swing.JTable tabBackup;
     // End of variables declaration//GEN-END:variables
 }

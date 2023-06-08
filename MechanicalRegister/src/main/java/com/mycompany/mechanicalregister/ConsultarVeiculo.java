@@ -6,6 +6,12 @@ package com.mycompany.mechanicalregister;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.Timestamp;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -24,7 +30,7 @@ public class ConsultarVeiculo extends javax.swing.JFrame {
         tabVeiculo.getTableHeader().setBackground(new Color(93,40,221));
         tabVeiculo.getTableHeader().setForeground(new Color(255,255,255));
         tabVeiculo.setRowHeight(25);
-        //listarTab();
+        listarTab();
     }
 
     /**
@@ -143,9 +149,31 @@ public class ConsultarVeiculo extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }//GEN-LAST:event_formWindowActivated
 
-    /**
-     * @param args the command line arguments
-     */
+    
+     public void listarTab() {
+        DefaultTableModel tabModel = (DefaultTableModel) tabVeiculo.getModel();
+        tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
+
+        Conexao conexao = new Conexao();
+        try (Connection connection = conexao.getConnection()) {
+            String query = "select id_veiculo, ano, marca, modelo,cor,motor,id_cliente from veiculo";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+
+            while (resultSet.next()) {
+                int id_veiculo = resultSet.getInt("id_veiculo");
+                int ano = resultSet.getInt("ano");
+                String marca = resultSet.getString("marca");
+                String modelo = resultSet.getString("modelo");
+                String cor = resultSet.getString("cor");
+                String motor = resultSet.getString("motor");
+                int id_cliente = resultSet.getInt("id_cliente");
+                tabModel.addRow(new Object[]{ id_veiculo, ano,marca, modelo,cor,motor,id_cliente });
+            }
+
+        } catch (SQLException e) {
+        }
+}
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

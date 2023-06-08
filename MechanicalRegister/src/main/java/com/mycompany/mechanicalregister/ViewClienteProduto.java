@@ -6,6 +6,11 @@ package com.mycompany.mechanicalregister;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -143,6 +148,10 @@ public class ViewClienteProduto extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }//GEN-LAST:event_formWindowActivated
 
+    
+ 
+    
+    
     /**
      * @param args the command line arguments
      */
