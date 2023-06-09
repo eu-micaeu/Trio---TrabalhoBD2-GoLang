@@ -5,18 +5,18 @@ Este é um projeto de um sistema de gerenciamento para uma oficina mecânica, de
 ##Objetivo
 O objetivo deste sistema é auxiliar na gestão das atividades de uma oficina mecânica, tem como funcionalidades o gerenciamento de clientes, veículos, produtos e serviços e vizualização de relatórios .
 
-##Funcionalidades
+## 🔨Funcionalidades
 O sistema possui as seguintes funcionalidades principais:
 
-Cadastro de clientes: permite registrar informações dos clientes, como nome, idade,cpf,rg, telefone, entre outros dados .
+- `Funcionalidade 1` `Cadastro de Clientes`: permite registrar informações dos clientes, como nome, idade,cpf,rg, telefone, entre outros dados .
 
-Serviços realizados:  incluindo detalhes sobre os serviços realizados,  custos.
+- `Funcionalidade 2` `Gerenciar Serviços`:  incluindo detalhes sobre os serviços realizados,  custos.
 
-Gerenciamento de peças: permite cadastrar as peças disponíveis na oficina, incluindo informações como nome,  preço, estoque.
+- `Funcionalidade 3` `Gereciar Peças`: permite cadastrar as peças disponíveis na oficina, incluindo informações como nome,  preço, estoque.
 
-Relatórios: relatório de clientes que compraram produtos, relatório de clientes e seus veículos.
+- `Funcionalidade 4` `Relatórios`: relatório de clientes que compraram produtos, relatório de clientes e seus veículos.
 
-##Tecnologias utilizadas
+## ✔️Tecnologias utilizadas
 O sistema foi desenvolvido utilizando as seguintes tecnologias:
 
 Linguagem de programação: Java
