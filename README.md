@@ -2,7 +2,7 @@
 Sistema de Oficina Mecânica
 Este é um projeto de um sistema de gerenciamento para uma oficina mecânica, desenvolvido utilizando a linguagem Java e o banco de dados PostgreSQL.
 
-##Objetivo
+## Objetivo
 O objetivo deste sistema é auxiliar na gestão das atividades de uma oficina mecânica, tem como funcionalidades o gerenciamento de clientes, veículos, produtos e serviços e vizualização de relatórios .
 
 ## 🔨Funcionalidades
