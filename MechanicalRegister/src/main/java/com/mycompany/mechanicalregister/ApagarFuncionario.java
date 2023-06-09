@@ -4,13 +4,12 @@
  */
 package com.mycompany.mechanicalregister;
 
-import java.awt.Color;
-import java.awt.Font;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Timestamp;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -25,12 +24,8 @@ public class ApagarFuncionario extends javax.swing.JFrame {
     public ApagarFuncionario() {
         initComponents();
         getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
-        tabApagarFuncionario.getTableHeader().setFont(new Font("Segoe UI",Font.BOLD,12));
-        tabApagarFuncionario.getTableHeader().setOpaque(false);
-        tabApagarFuncionario.getTableHeader().setBackground(new Color(93,40,221));
-        tabApagarFuncionario.getTableHeader().setForeground(new Color(255,255,255));
-        tabApagarFuncionario.setRowHeight(25);
         listarTab();
+
     }
 
     /**
@@ -91,11 +86,12 @@ public class ApagarFuncionario extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "ID_SERVICO", "IDADE", "NOME", "CPF", "RG", "FUNCAO"
+                "ID", "ID_SERVICO", "NOME", "IDADE", "RG", "CPF", "FUNCAO"
             }
         ));
         tabApagarFuncionario.setFocusable(false);
         tabApagarFuncionario.setGridColor(new java.awt.Color(255, 255, 255));
+        tabApagarFuncionario.setRowHeight(25);
         tabApagarFuncionario.setSelectionBackground(new java.awt.Color(232, 57, 95));
         tabApagarFuncionario.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tabApagarFuncionario);
@@ -104,31 +100,35 @@ public class ApagarFuncionario extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(30, 30, 30)
                 .addComponent(cxApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(71, 71, 71)
+                .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btApagar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btVoltar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
-            .addComponent(jScrollPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(btApagar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
-                    .addComponent(cxApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btApagar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(cxApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(34, 34, 34)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
 
         pack();
@@ -141,12 +141,13 @@ public class ApagarFuncionario extends javax.swing.JFrame {
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
         dispose();
-        MenuPostgres menu = new MenuPostgres();
+        MenuPostgre menu = new MenuPostgre();
         menu.setVisible(true);
     }//GEN-LAST:event_btVoltarActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-        setLocationRelativeTo(null);
+                        setLocationRelativeTo(null);
+
     }//GEN-LAST:event_formWindowActivated
 
       public void listarTabDel() {
@@ -156,22 +157,23 @@ public class ApagarFuncionario extends javax.swing.JFrame {
         Conexao conexao = new Conexao();
         try (Connection connection = conexao.getConnection()) {
             String query = "DELETE FROM funcionario WHERE id_funcionario = ?";
-            String id_cliente = cxApagar.getText();
+            String id_funcionario = cxApagar.getText();
+
             PreparedStatement statement2 = connection.prepareStatement(query);
-            statement2.setInt(1, Integer.parseInt(id_cliente));
+            statement2.setInt(1, Integer.parseInt(id_funcionario));
             statement2.executeUpdate();
 
         } catch (SQLException e) {
         }
     }
-    
+
     public void listarTab() {
         DefaultTableModel tabModel = (DefaultTableModel) tabApagarFuncionario.getModel();
         tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
 
         Conexao conexao = new Conexao();
         try (Connection connection = conexao.getConnection()) {
-            String query = "SELECT * FROM funcionario";
+            String query = "SELECT id_funcionario, id_servico,idade, nome,  rg, cpf, funcao FROM funcionario";
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
 
@@ -180,16 +182,15 @@ public class ApagarFuncionario extends javax.swing.JFrame {
                 int id_servico = resultSet.getInt("id_servico");
                 int idade = resultSet.getInt("idade");
                 String nome = resultSet.getString("nome");
-                int cpf = resultSet.getInt("cpf");
                 int rg = resultSet.getInt("rg");
+                int cpf = resultSet.getInt("cpf");
                 String funcao = resultSet.getString("funcao");
-                tabModel.addRow(new Object[]{id_funcionario,id_servico,idade,nome, cpf, rg, funcao});
+                tabModel.addRow(new Object[]{id_funcionario, id_servico,idade, nome,  rg, cpf, funcao});
             }
 
         } catch (SQLException e) {
         }
     }
-    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

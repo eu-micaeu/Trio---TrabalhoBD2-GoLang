@@ -151,7 +151,7 @@ public class Identificacao extends javax.swing.JFrame {
 
     private void btEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEntrarActionPerformed
         if ("postgres".equals(cxUsuario.getText()) && "postgres".equals(cxSenha.getText())) {
-            MenuPostgres menu = new MenuPostgres();
+            MenuPostgre menu = new MenuPostgre();
             menu.setVisible(true);
             this.dispose();
         }else if("usuario".equals(cxUsuario.getText()) && "usuario".equals(cxSenha.getText())){

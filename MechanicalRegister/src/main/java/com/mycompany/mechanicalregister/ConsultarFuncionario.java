@@ -4,12 +4,11 @@
  */
 package com.mycompany.mechanicalregister;
 
-import java.awt.Color;
-import java.awt.Font;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Timestamp;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -24,11 +23,6 @@ public class ConsultarFuncionario extends javax.swing.JFrame {
     public ConsultarFuncionario() {
         initComponents();
         getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
-        tabFuncionario.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
-        tabFuncionario.getTableHeader().setOpaque(false);
-        tabFuncionario.getTableHeader().setBackground(new Color(93, 40, 221));
-        tabFuncionario.getTableHeader().setForeground(new Color(255, 255, 255));
-        tabFuncionario.setRowHeight(25);
         listarTab();
     }
 
@@ -41,10 +35,10 @@ public class ConsultarFuncionario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btVoltar = new javax.swing.JButton();
         btConsultar = new javax.swing.JButton();
-        cxConsultar = new javax.swing.JTextField();
+        btVoltar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        cxConsultar = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabFuncionario = new javax.swing.JTable();
 
@@ -53,16 +47,6 @@ public class ConsultarFuncionario extends javax.swing.JFrame {
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
-            }
-        });
-
-        btVoltar.setBackground(new java.awt.Color(93, 40, 221));
-        btVoltar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        btVoltar.setForeground(new java.awt.Color(255, 255, 255));
-        btVoltar.setText("VOLTAR");
-        btVoltar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btVoltarActionPerformed(evt);
             }
         });
 
@@ -76,86 +60,113 @@ public class ConsultarFuncionario extends javax.swing.JFrame {
             }
         });
 
+        btVoltar.setBackground(new java.awt.Color(93, 40, 221));
+        btVoltar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        btVoltar.setForeground(new java.awt.Color(255, 255, 255));
+        btVoltar.setText("VOLTAR");
+        btVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btVoltarActionPerformed(evt);
+            }
+        });
+
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("CLIENTE - VEÍCULO");
+        jLabel2.setText("CONSULTAR FUNCIONARIO:");
+
+        cxConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cxConsultarActionPerformed(evt);
+            }
+        });
 
         tabFuncionario.setBackground(new java.awt.Color(0, 0, 0));
         tabFuncionario.setForeground(new java.awt.Color(255, 255, 255));
         tabFuncionario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "id_servico", "idade", "nome", "cpf", "rg", "funcao"
+                "ID", "ID_SERVICO", "NOME", "IDADE", "RG", "CPF", "FUNCAO"
             }
         ));
         tabFuncionario.setFocusable(false);
         tabFuncionario.setGridColor(new java.awt.Color(255, 255, 255));
+        tabFuncionario.setRowHeight(25);
+        tabFuncionario.setSelectionBackground(new java.awt.Color(232, 57, 95));
         tabFuncionario.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tabFuncionario);
+        if (tabFuncionario.getColumnModel().getColumnCount() > 0) {
+            tabFuncionario.getColumnModel().getColumn(6).setResizable(false);
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addGap(40, 40, 40)
                 .addComponent(jLabel2)
-                .addGap(30, 30, 30)
-                .addComponent(cxConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(cxConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btConsultar, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
+                    .addComponent(btVoltar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addComponent(jScrollPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(37, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGap(32, 32, 32)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(cxConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btConsultar)
+                        .addContainerGap()
+                        .addComponent(btConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(36, 36, 36)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
-        dispose();
-        MenuPostgres menu = new MenuPostgres();
-        menu.setVisible(true);
-    }//GEN-LAST:event_btVoltarActionPerformed
-
     private void btConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarActionPerformed
         listarTabUnic();
     }//GEN-LAST:event_btConsultarActionPerformed
 
+    private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
+        dispose();
+        MenuPostgre menu = new MenuPostgre();
+        menu.setVisible(true);
+    }//GEN-LAST:event_btVoltarActionPerformed
+
+    private void cxConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cxConsultarActionPerformed
+
+    }//GEN-LAST:event_cxConsultarActionPerformed
+
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-        setLocationRelativeTo(null);
+                setLocationRelativeTo(null);
+
     }//GEN-LAST:event_formWindowActivated
 
-     public void listarTab() {
+    
+    public void listarTab() {
         DefaultTableModel tabModel = (DefaultTableModel) tabFuncionario.getModel();
         tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
 
         Conexao conexao = new Conexao();
         try (Connection connection = conexao.getConnection()) {
-            String query = "select id_funcionario,id_servico,idade,nome, cpf, rg, funcao from funcionario ";
+            String query = "SELECT id_funcionario, id_servico,idade, nome,  rg, cpf, funcao FROM funcionario";
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
 
@@ -164,10 +175,10 @@ public class ConsultarFuncionario extends javax.swing.JFrame {
                 int id_servico = resultSet.getInt("id_servico");
                 int idade = resultSet.getInt("idade");
                 String nome = resultSet.getString("nome");
-                int cpf = resultSet.getInt("cpf");
                 int rg = resultSet.getInt("rg");
+                int cpf = resultSet.getInt("cpf");
                 String funcao = resultSet.getString("funcao");
-                tabModel.addRow(new Object[]{id_funcionario,id_servico,idade,nome, cpf, rg, funcao});
+                tabModel.addRow(new Object[]{id_funcionario, id_servico,idade, nome,  rg, cpf, funcao});
             }
 
         } catch (SQLException e) {
@@ -180,7 +191,8 @@ public class ConsultarFuncionario extends javax.swing.JFrame {
 
         Conexao conexao = new Conexao();
         try (Connection connection = conexao.getConnection()) {
-            String query = "select id_funcionario,id_servico,idade,nome, cpf, rg, funcao from funcionario ";
+            
+            String query = "SELECT id_funcionario, id_servico,idade, nome,  rg, cpf, funcao FROM funcionario";
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
 
@@ -189,11 +201,12 @@ public class ConsultarFuncionario extends javax.swing.JFrame {
                 int id_servico = resultSet.getInt("id_servico");
                 int idade = resultSet.getInt("idade");
                 String nome = resultSet.getString("nome");
-                int cpf = resultSet.getInt("cpf");
                 int rg = resultSet.getInt("rg");
+                int cpf = resultSet.getInt("cpf");
                 String funcao = resultSet.getString("funcao");
+                
                 if(Integer.parseInt(cxConsultar.getText()) == id_funcionario){
-                    tabModel.addRow(new Object[]{id_funcionario,id_servico,idade,nome, cpf, rg, funcao});
+                    tabModel.addRow(new Object[]{id_funcionario, id_servico,idade, nome,  rg, cpf, funcao});
                 }
                 
             }
@@ -201,8 +214,6 @@ public class ConsultarFuncionario extends javax.swing.JFrame {
         } catch (SQLException e) {
         }
     }
-
-    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
