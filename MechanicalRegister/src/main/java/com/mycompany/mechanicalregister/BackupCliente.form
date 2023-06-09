@@ -92,8 +92,8 @@
                 <Column editable="true" title="cpf" type="java.lang.Object"/>
                 <Column editable="true" title="rg" type="java.lang.Object"/>
                 <Column editable="true" title="telefone" type="java.lang.Object"/>
+                <Column editable="true" title="data_exclusao" type="java.lang.Object"/>
                 <Column editable="true" title="usuario" type="java.lang.Object"/>
-                <Column editable="true" title="data_de_registro" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
