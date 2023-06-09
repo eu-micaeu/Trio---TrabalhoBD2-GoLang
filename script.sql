@@ -107,31 +107,38 @@ values ('3', 26, 'Jessica Passos Braga', 234242423, 34555, 'Mecanico');
 -- Criação de trigger/função de backup de dados excluídos de uma tabela, registrando os dados da linha apagada (sem restrições de chave), com usuário e data (0,5):
 
 CREATE TABLE backup_cliente(
-	id_cliente SERIAL,
-	nome_cliente varchar(100),
-	idade INTEGER,
-	id_servico INTEGER,
-	id_produto integer,
-	cpf INTEGER,
-	rg INTEGER,
-	telefone varchar(100),
-	data_de_registro TIMESTAMP,
-	primary key(id_cliente));
+    id_backup SERIAL,
+    id_cliente SERIAL,
+    nome_cliente varchar(100),
+    idade INTEGER,
+    id_servico INTEGER,
+    id_produto integer,
+    cpf INTEGER,
+    rg INTEGER,
+    telefone varchar(100),
+    data_de_registro TIMESTAMP,
+    usuario_que_apagou varchar(100), -- Novo atributo para informar o usuário que apagou o cliente
+    primary key(id_backup)
+);
 
 CREATE OR REPLACE FUNCTION backup()
 RETURNS TRIGGER
 AS
 $$
 BEGIN
-	INSERT INTO backup_cliente(nome_cliente, idade, id_servico, id_produto, cpf, rg, telefone, data_de_registro)
-	VALUES(OLD.nome_cliente, OLD.idade, OLD.id_servico, OLD.id_produto,OLD.cpf, OLD.rg, OLD.telefone, OLD.data_de_registro);
-	RETURN OLD;
+    INSERT INTO backup_cliente(id_cliente, nome_cliente, idade, id_servico, id_produto, cpf, rg, telefone, data_de_registro, usuario_que_apagou)
+    VALUES(OLD.id_cliente, OLD.nome_cliente, OLD.idade, OLD.id_servico, OLD.id_produto, OLD.cpf, OLD.rg, OLD.telefone, OLD.data_de_registro, current_user); -- Utiliza a função current_user para obter o nome do usuário atual
+    RETURN OLD;
 END;
 $$
 LANGUAGE plpgsql;
 
 CREATE TRIGGER backup AFTER DELETE ON cliente
 FOR EACH ROW EXECUTE PROCEDURE backup();
+
+DELETE FROM veiculo WHERE id_cliente = 23;
+DELETE FROM cliente WHERE id_cliente = 23;
+
 
 -- Criação de pelo menos 4 índices (1 índice por tabela no máximo) (0,5):
 
