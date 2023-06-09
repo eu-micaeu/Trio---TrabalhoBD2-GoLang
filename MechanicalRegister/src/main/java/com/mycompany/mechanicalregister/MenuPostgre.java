@@ -438,7 +438,7 @@ public class MenuPostgre extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowActivated
 
     private void btSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairActionPerformed
-        Identificacao identificacao = new Identificacao();
+        MechanicalRegister identificacao = new MechanicalRegister();
         identificacao.setVisible(true);
         dispose();
     }//GEN-LAST:event_btSairActionPerformed

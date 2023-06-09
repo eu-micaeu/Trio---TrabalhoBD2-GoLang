@@ -102,7 +102,7 @@ public class MenuUsuario extends javax.swing.JFrame {
 
     private void btSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairActionPerformed
         dispose();
-        Identificacao identificacao = new Identificacao();
+        MechanicalRegister identificacao = new MechanicalRegister();
         identificacao.setVisible(true);
     }//GEN-LAST:event_btSairActionPerformed
 
