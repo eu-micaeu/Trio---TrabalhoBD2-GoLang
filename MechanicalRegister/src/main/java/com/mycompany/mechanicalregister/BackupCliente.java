@@ -61,13 +61,13 @@ public class BackupCliente extends javax.swing.JFrame {
         tabBackup.setForeground(new java.awt.Color(255, 255, 255));
         tabBackup.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "id_cliente", "nome_cliente", "idade", "id_servico", "id_produto", "cpf", "rg", "telefone", "data_de_registro"
+                "id_cliente", "nome_cliente", "idade", "id_servico", "id_produto", "cpf", "rg", "telefone", "usuario", "data_de_registro"
             }
         ));
         tabBackup.setFocusable(false);
@@ -104,17 +104,17 @@ public class BackupCliente extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
             .addGroup(layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
                 .addComponent(cxConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
+            .addComponent(jScrollPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,7 +157,7 @@ public class BackupCliente extends javax.swing.JFrame {
 
         Conexao conexao = new Conexao();
         try (Connection connection = conexao.getConnection()) {
-            String query = "select id_cliente, nome_cliente, idade, id_servico, id_produto, cpf, rg, telefone, data_de_registro\n" +
+            String query = "select id_cliente, nome_cliente, idade, id_servico, id_produto, cpf, rg, telefone, data_de_registro,usuario\n" +
 "from backup_cliente;";
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
@@ -172,7 +172,8 @@ public class BackupCliente extends javax.swing.JFrame {
                 int cpf = resultSet.getInt("cpf");
                 String telefone = resultSet.getString("telefone");
                 Timestamp timestamp = resultSet.getTimestamp("data_de_registro");
-                tabModel.addRow(new Object[]{ id_cliente,nome, idade, id_servico, id_produto, cpf, rg, telefone, timestamp});
+                String usuario = resultSet.getString("usuario");
+                tabModel.addRow(new Object[]{ id_cliente,nome, idade, id_servico, id_produto, cpf, rg, telefone, timestamp,usuario});
             }
 
         } catch (SQLException e) {
