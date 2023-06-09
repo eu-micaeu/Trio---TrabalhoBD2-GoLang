@@ -147,6 +147,10 @@ CREATE ROLE usuario WITH
 LOGIN
 PASSWORD 'usuario';
 
+GRANT SELECT, INSERT ON carro_cliente TO
+usuario;
+
+
 -- Criação de no mínimo uma visão (view) a partir de duas ou mais tabelas (0,5):
 CREATE VIEW carro_cliente as 
 SELECT nome_cliente,placa, marca, modelo FROM cliente cli, veiculo veic
@@ -174,8 +178,11 @@ CREATE TRIGGER carro_cliente INSTEAD OF
 INSERT ON carro_cliente FOR EACH ROW EXECUTE
 PROCEDURE carro_cliente();
 
-GRANT SELECT, INSERT ON carro_cliente TO
-usuario;
+
+--  consulta  SQL  que  envolva no mínimo uma operação JOIN  (0,5)
+select id_cliente, nome_cliente from cliente cli NATURAL JOIN servico ser
+where cli.id_servico = ser.id_servico and ser.id_servico != 1; -- Clientes que compraram algum produto
+
 
 insert into carro_cliente(nome_cliente, marca, modelo)
 values('Sergio Ramos', 'Fiat', 'Uno');	
@@ -188,7 +195,6 @@ select * from funcionario;
 select * from backup_cliente;
 select * from carro_cliente;
 
-select id_cliente, nome_cliente from cliente cli NATURAL JOIN servico ser where cli.id_servico = ser.id_servico and ser.id_servico != 1; -- Clientes que compraram algum produto
 
 
 
