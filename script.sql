@@ -188,7 +188,7 @@ select * from funcionario;
 select * from backup_cliente;
 select * from carro_cliente;
 
-select id_cliente, nome_cliente from cliente cli, servico ser where cli.id_servico = ser.id_servico and ser.id_servico != 1; -- Clientes que compraram algum produto
+select id_cliente, nome_cliente from cliente cli NATURAL JOIN servico ser where cli.id_servico = ser.id_servico and ser.id_servico != 1; -- Clientes que compraram algum produto
 
 
 
