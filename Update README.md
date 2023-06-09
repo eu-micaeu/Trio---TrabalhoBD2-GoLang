@@ -20,4 +20,5 @@ O sistema possui as seguintes funcionalidades principais:
 O sistema foi desenvolvido utilizando as seguintes tecnologias:
 
 Linguagem de programação: Java
+
 Banco de dados: PostgreSQL
