@@ -4,6 +4,8 @@
  */
 package com.mycompany.mechanicalregister;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -22,7 +24,12 @@ public class ConsultarFuncionario extends javax.swing.JFrame {
      */
     public ConsultarFuncionario() {
         initComponents();
-        getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
+        getContentPane().setBackground(new java.awt.Color(0, 0, 0));
+        tabFuncionario.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
+        tabFuncionario.getTableHeader().setOpaque(false);
+        tabFuncionario.getTableHeader().setBackground(new Color(93, 40, 221));
+        tabFuncionario.getTableHeader().setForeground(new Color(255, 255, 255));
+        tabFuncionario.setRowHeight(25);
         listarTab();
     }
 

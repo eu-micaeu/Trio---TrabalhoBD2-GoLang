@@ -4,6 +4,8 @@
  */
 package com.mycompany.mechanicalregister;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -23,7 +25,12 @@ public class ApagarFuncionario extends javax.swing.JFrame {
      */
     public ApagarFuncionario() {
         initComponents();
-        getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
+        getContentPane().setBackground(new java.awt.Color(0, 0, 0));
+        tabApagarFuncionario.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
+        tabApagarFuncionario.getTableHeader().setOpaque(false);
+        tabApagarFuncionario.getTableHeader().setBackground(new Color(93, 40, 221));
+        tabApagarFuncionario.getTableHeader().setForeground(new Color(255, 255, 255));
+        tabApagarFuncionario.setRowHeight(25);
         listarTab();
 
     }
