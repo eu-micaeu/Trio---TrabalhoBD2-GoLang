@@ -138,7 +138,7 @@ public class ViewClienteCarroUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
-        dispose();
+        this.dispose();
         MenuUsuario menu = new MenuUsuario();
         menu.setVisible(true);
     }//GEN-LAST:event_btVoltarActionPerformed
