@@ -2,9 +2,10 @@
 -- Maria Gabriella Victor Gomes da Silva / RA: 2143364
 -- Micael Ribeiro Rocha / RA: 2454424
 
-
 -- 2.Implementação no PostGreSQL (3,5 pontos):
+
 -- Geração e execução do código SQL para criação das tabelas e inserção de pelo menos 5 linhas de dados por tabela (0,5):
+
 CREATE TABLE servico(
 	id_servico SERIAL,
 	tipo varchar(100),
@@ -32,7 +33,6 @@ CREATE TABLE funcionario(
 	FOREIGN KEY (id_servico) REFERENCES servico (id_servico)
 );
 
-
 CREATE TYPE tipo_motor AS ENUM('E', 'C', 'H');
 CREATE TABLE veiculo (
 	 id_veiculo SERIAL,
@@ -46,6 +46,7 @@ CREATE TABLE veiculo (
 	primary key (id_veiculo),
 	FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente)
 );
+
 CREATE TABLE cliente(
 	id_cliente SERIAL,
 	nome_cliente varchar(100),
@@ -132,9 +133,8 @@ LANGUAGE plpgsql;
 CREATE TRIGGER backup AFTER DELETE ON cliente
 FOR EACH ROW EXECUTE PROCEDURE backup();
 
-DELETE FROM cliente WHERE id_cliente = 15;
-
 -- Criação de pelo menos 4 índices (1 índice por tabela no máximo) (0,5):
+
 CREATE INDEX indice_veiculo ON veiculo(id_veiculo);
 CREATE INDEX indice_produto ON produto(id_produto);
 CREATE INDEX indice_servico ON servico(id_servico);
@@ -150,15 +150,14 @@ PASSWORD 'usuario';
 GRANT SELECT, INSERT ON carro_cliente TO
 usuario;
 
-
 -- Criação de no mínimo uma visão (view) a partir de duas ou mais tabelas (0,5):
+
 CREATE VIEW carro_cliente as 
 SELECT nome_cliente,placa, marca, modelo FROM cliente cli, veiculo veic
 WHERE cli.id_cliente = veic.id_cliente;
 
-
-
 -- Criação de trigger que permita inserção de dados na view, e atribuição de privilégio ao usuário criado anteriormente para ver e inserir usando a view (1,0):
+
 CREATE OR REPLACE FUNCTION carro_cliente() RETURNS TRIGGER
 AS $$
 DECLARE
@@ -178,22 +177,9 @@ CREATE TRIGGER carro_cliente INSTEAD OF
 INSERT ON carro_cliente FOR EACH ROW EXECUTE
 PROCEDURE carro_cliente();
 
+--  Consulta  SQL  que  envolva no mínimo uma operação JOIN  (0,5):
 
---  consulta  SQL  que  envolva no mínimo uma operação JOIN  (0,5)
-select id_cliente, nome_cliente from cliente cli NATURAL JOIN servico ser
-where cli.id_servico = ser.id_servico and ser.id_servico != 1; -- Clientes que compraram algum produto
-
-
-insert into carro_cliente(nome_cliente, marca, modelo)
-values('Sergio Ramos', 'Fiat', 'Uno');	
-
-select * from servico;
-select * from veiculo; 
-select * from produto;
-select * from cliente;
-select * from funcionario;
-select * from backup_cliente;
-select * from carro_cliente;
+select id_cliente, nome_cliente from cliente cli NATURAL JOIN servico ser where ser.id_servico != 1; -- Clientes que compraram algum produto
 
 
 
