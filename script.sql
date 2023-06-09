@@ -116,8 +116,8 @@ CREATE TABLE backup_cliente(
     cpf INTEGER,
     rg INTEGER,
     telefone varchar(100),
-    data_de_registro TIMESTAMP,
-    usuario_que_apagou varchar(100), -- Novo atributo para informar o usuário que apagou o cliente
+    data_exclusao TIMESTAMP,
+    usuario varchar(100), -- Novo atributo para informar o usuário que apagou o cliente
     primary key(id_backup)
 );
 
@@ -126,8 +126,8 @@ RETURNS TRIGGER
 AS
 $$
 BEGIN
-    INSERT INTO backup_cliente(id_cliente, nome_cliente, idade, id_servico, id_produto, cpf, rg, telefone, data_de_registro, usuario_que_apagou)
-    VALUES(OLD.id_cliente, OLD.nome_cliente, OLD.idade, OLD.id_servico, OLD.id_produto, OLD.cpf, OLD.rg, OLD.telefone, OLD.data_de_registro, current_user); -- Utiliza a função current_user para obter o nome do usuário atual
+    INSERT INTO backup_cliente(id_cliente, nome_cliente, idade, id_servico, id_produto, cpf, rg, telefone, data_exclusao, usuario)
+    VALUES(OLD.id_cliente, OLD.nome_cliente, OLD.idade, OLD.id_servico, OLD.id_produto, OLD.cpf, OLD.rg, OLD.telefone, current_TIMESTAMP , current_user); -- Utiliza a função current_user para obter o nome do usuário atual
     RETURN OLD;
 END;
 $$
@@ -136,8 +136,8 @@ LANGUAGE plpgsql;
 CREATE TRIGGER backup AFTER DELETE ON cliente
 FOR EACH ROW EXECUTE PROCEDURE backup();
 
-DELETE FROM veiculo WHERE id_cliente = 23;
-DELETE FROM cliente WHERE id_cliente = 23;
+DELETE FROM veiculo WHERE id_cliente = 24;
+DELETE FROM cliente WHERE id_cliente = 24;
 
 
 -- Criação de pelo menos 4 índices (1 índice por tabela no máximo) (0,5):
