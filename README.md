@@ -12,7 +12,7 @@ O sistema possui as seguintes funcionalidades principais:
 
 - `Funcionalidade 2` `Gerenciar Serviços`:  incluindo detalhes sobre os serviços realizados,  custos.
 
-- `Funcionalidade 3` `Gereciar Peças`: permite cadastrar as peças disponíveis na oficina, incluindo informações como nome,  preço, estoque.
+- `Funcionalidade 3` `Gerenciar Peças`: permite cadastrar as peças disponíveis na oficina, incluindo informações como nome,  preço, estoque.
 
 - `Funcionalidade 4` `Relatórios`: relatório de clientes que compraram produtos, relatório de clientes e seus veículos.
 
