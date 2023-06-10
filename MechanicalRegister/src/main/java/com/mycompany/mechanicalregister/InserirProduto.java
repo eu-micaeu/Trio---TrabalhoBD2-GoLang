@@ -21,7 +21,7 @@ public class InserirProduto extends javax.swing.JFrame {
      */
     public InserirProduto() {
         initComponents();
-                getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
+        getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
 
     }
 
@@ -150,7 +150,7 @@ public class InserirProduto extends javax.swing.JFrame {
         try (Connection conexao = new Conexao().getConnection()) {
             String sql = String.format("insert into produto (nome_produto, valor, quantidade) values ('%s', %s, %s);", cxNome.getText(), cxValor.getText(), cxQuantidade.getText());
             PreparedStatement statement = conexao.prepareStatement(sql);
-            statement.execute();         
+            statement.execute();
             conexao.close();
         } catch (SQLException ex) {
 
@@ -159,27 +159,28 @@ public class InserirProduto extends javax.swing.JFrame {
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
         voltar();
-        MenuPostgre menu = new MenuPostgre();
-        menu.setVisible(true);
+
     }//GEN-LAST:event_btVoltarActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         setLocationRelativeTo(null);
     }//GEN-LAST:event_formWindowActivated
 
-    public void voltar(){
-		
-		int resp = JOptionPane.showConfirmDialog(
-				null,
-				"Deseja realmente voltar?",
-				"VOLTAR",
-				JOptionPane.YES_NO_OPTION
-			);
-		if(resp == 0){
-			//System.exit(0);
-			dispose();
-		}
+    public void voltar() {
+
+        int resp = JOptionPane.showConfirmDialog(
+                null,
+                "Deseja realmente voltar?",
+                "VOLTAR",
+                JOptionPane.YES_NO_OPTION
+        );
+        if (resp == 0) {
+            MenuPostgre menu = new MenuPostgre();
+            menu.setVisible(true);
+            dispose();
+        }
     }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

@@ -4,6 +4,8 @@
  */
 package com.mycompany.mechanicalregister;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author micae
@@ -101,10 +103,23 @@ public class MenuUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_btClienteCarroActionPerformed
 
     private void btSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairActionPerformed
-        dispose();
-        MechanicalRegister identificacao = new MechanicalRegister();
-        identificacao.setVisible(true);
+        voltar();
     }//GEN-LAST:event_btSairActionPerformed
+
+    public void voltar() {
+
+        int resp = JOptionPane.showConfirmDialog(
+                null,
+                "Deseja realmente voltar?",
+                "Voltar",
+                JOptionPane.YES_NO_OPTION
+        );
+        if (resp == 0) {
+            MechanicalRegister identificacao = new MechanicalRegister();
+            identificacao.setVisible(true);
+            dispose();
+        }
+    }
 
     /**
      * @param args the command line arguments

@@ -148,8 +148,7 @@ public class ConsultarCliente extends javax.swing.JFrame {
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
         voltar();
-        MenuPostgre menu = new MenuPostgre();
-        menu.setVisible(true);
+        
     }//GEN-LAST:event_btVoltarActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
@@ -173,7 +172,8 @@ public class ConsultarCliente extends javax.swing.JFrame {
 				JOptionPane.YES_NO_OPTION
 			);
 		if(resp == 0){
-			//System.exit(0);
+			MenuPostgre menu = new MenuPostgre();
+        menu.setVisible(true);
 			dispose();
 		}
     }

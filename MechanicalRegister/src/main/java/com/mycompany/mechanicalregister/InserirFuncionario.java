@@ -21,7 +21,7 @@ public class InserirFuncionario extends javax.swing.JFrame {
      */
     public InserirFuncionario() {
         initComponents();
-                getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
+        getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
 
     }
 
@@ -193,13 +193,12 @@ public class InserirFuncionario extends javax.swing.JFrame {
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
         voltar();
-        MenuPostgre menu = new MenuPostgre();
-        menu.setVisible(true);
+
     }//GEN-LAST:event_btVoltarActionPerformed
 
     private void btInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInserirActionPerformed
         try (Connection conexao = new Conexao().getConnection()) {
-            String sql = String.format("insert into funcionario (id_servico, idade, nome,  rg, cpf, funcao) values (%s, %s, '%s', %s, %s, '%s');", cxIdServico.getText(),cxIdade.getText(),cxNome.getText(),  cxRG.getText(), cxCPF.getText(),   cxFuncao.getText());
+            String sql = String.format("insert into funcionario (id_servico, idade, nome,  rg, cpf, funcao) values (%s, %s, '%s', %s, %s, '%s');", cxIdServico.getText(), cxIdade.getText(), cxNome.getText(), cxRG.getText(), cxCPF.getText(), cxFuncao.getText());
             PreparedStatement statement = conexao.prepareStatement(sql);
             statement.execute();
             String resp;
@@ -221,23 +220,25 @@ public class InserirFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_btInserirActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-                        setLocationRelativeTo(null);
+        setLocationRelativeTo(null);
 
     }//GEN-LAST:event_formWindowActivated
 
-    public void voltar(){
-		
-		int resp = JOptionPane.showConfirmDialog(
-				null,
-				"Deseja realmente voltar?",
-				"VOLTAR",
-				JOptionPane.YES_NO_OPTION
-			);
-		if(resp == 0){
-			//System.exit(0);
-			dispose();
-		}
+    public void voltar() {
+
+        int resp = JOptionPane.showConfirmDialog(
+                null,
+                "Deseja realmente voltar?",
+                "VOLTAR",
+                JOptionPane.YES_NO_OPTION
+        );
+        if (resp == 0) {
+            MenuPostgre menu = new MenuPostgre();
+            menu.setVisible(true);
+            dispose();
+        }
     }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

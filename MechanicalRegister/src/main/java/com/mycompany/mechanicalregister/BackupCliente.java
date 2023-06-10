@@ -25,10 +25,10 @@ public class BackupCliente extends javax.swing.JFrame {
      */
     public BackupCliente() {
         initComponents();
-         getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
-        tabBackup.getTableHeader().setFont(new Font("Segoe UI",Font.BOLD,12));
+        getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
+        tabBackup.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
         tabBackup.getTableHeader().setOpaque(false);
-        tabBackup.getTableHeader().setBackground(new Color(93,40,221));
+        tabBackup.getTableHeader().setBackground(new Color(93, 40, 221));
         tabBackup.getTableHeader().setForeground(new Color(0, 0, 0));
         tabBackup.setRowHeight(25);
         listarTab();
@@ -140,8 +140,7 @@ public class BackupCliente extends javax.swing.JFrame {
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
         voltar();
-        MenuPostgre menu = new MenuPostgre();
-        menu.setVisible(true);
+
     }//GEN-LAST:event_btVoltarActionPerformed
 
     private void btConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarActionPerformed
@@ -149,29 +148,31 @@ public class BackupCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_btConsultarActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-        setLocationRelativeTo(null);      
+        setLocationRelativeTo(null);
     }//GEN-LAST:event_formWindowActivated
-    public void voltar(){
+    public void voltar() {
 
-                int resp = JOptionPane.showConfirmDialog(
-                                null,
-                                "Deseja realmente voltar?",
-                                "VOLTAR",
-                                JOptionPane.YES_NO_OPTION
-                        );
-                if(resp == 0){
-                        //System.exit(0);
-                        dispose();
-                }
+        int resp = JOptionPane.showConfirmDialog(
+                null,
+                "Deseja realmente voltar?",
+                "VOLTAR",
+                JOptionPane.YES_NO_OPTION
+        );
+        if (resp == 0) {
+            MenuPostgre menu = new MenuPostgre();
+            menu.setVisible(true);
+            dispose();
+        }
     }
-     public void listarTab() {
+
+    public void listarTab() {
         DefaultTableModel tabModel = (DefaultTableModel) tabBackup.getModel();
         tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
 
         Conexao conexao = new Conexao();
         try (Connection connection = conexao.getConnection()) {
-            String query = "select id_cliente, nome_cliente, idade, id_servico, id_produto, cpf, rg, telefone, data_exclusao,usuario\n" +
-"from backup_cliente;";
+            String query = "select id_cliente, nome_cliente, idade, id_servico, id_produto, cpf, rg, telefone, data_exclusao,usuario\n"
+                    + "from backup_cliente;";
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
 
@@ -186,12 +187,13 @@ public class BackupCliente extends javax.swing.JFrame {
                 String telefone = resultSet.getString("telefone");
                 Timestamp timestamp = resultSet.getTimestamp("data_exclusao");
                 String usuario = resultSet.getString("usuario");
-                tabModel.addRow(new Object[]{ id_cliente,nome, idade, id_servico, id_produto, cpf, rg, telefone, timestamp,usuario});
+                tabModel.addRow(new Object[]{id_cliente, nome, idade, id_servico, id_produto, cpf, rg, telefone, timestamp, usuario});
             }
 
         } catch (SQLException e) {
         }
-}
+    }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

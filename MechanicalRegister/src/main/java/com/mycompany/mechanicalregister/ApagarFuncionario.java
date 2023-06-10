@@ -149,28 +149,29 @@ public class ApagarFuncionario extends javax.swing.JFrame {
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
         voltar();
-        MenuPostgre menu = new MenuPostgre();
-        menu.setVisible(true);
+
     }//GEN-LAST:event_btVoltarActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-                        setLocationRelativeTo(null);
+        setLocationRelativeTo(null);
 
     }//GEN-LAST:event_formWindowActivated
-        public void voltar(){
+    public void voltar() {
 
-                int resp = JOptionPane.showConfirmDialog(
-                                null,
-                                "Deseja realmente voltar?",
-                                "VOLTAR",
-                                JOptionPane.YES_NO_OPTION
-                        );
-                if(resp == 0){
-                        //System.exit(0);
-                        dispose();
-                }
-         }
-      public void listarTabDel() {
+        int resp = JOptionPane.showConfirmDialog(
+                null,
+                "Deseja realmente voltar?",
+                "VOLTAR",
+                JOptionPane.YES_NO_OPTION
+        );
+        if (resp == 0) {
+            MenuPostgre menu = new MenuPostgre();
+            menu.setVisible(true);
+            dispose();
+        }
+    }
+
+    public void listarTabDel() {
         DefaultTableModel tabModel = (DefaultTableModel) tabApagarFuncionario.getModel();
         tabModel.setRowCount(0);
 
@@ -205,12 +206,13 @@ public class ApagarFuncionario extends javax.swing.JFrame {
                 int rg = resultSet.getInt("rg");
                 int cpf = resultSet.getInt("cpf");
                 String funcao = resultSet.getString("funcao");
-                tabModel.addRow(new Object[]{id_funcionario, id_servico,idade, nome,  rg, cpf, funcao});
+                tabModel.addRow(new Object[]{id_funcionario, id_servico, idade, nome, rg, cpf, funcao});
             }
 
         } catch (SQLException e) {
         }
     }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

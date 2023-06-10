@@ -26,9 +26,9 @@ public class ApagarServico extends javax.swing.JFrame {
     public ApagarServico() {
         initComponents();
         getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
-        tabApagarServico.getTableHeader().setFont(new Font("Segoe UI",Font.BOLD,12));
+        tabApagarServico.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
         tabApagarServico.getTableHeader().setOpaque(false);
-        tabApagarServico.getTableHeader().setBackground(new Color(93,40,221));
+        tabApagarServico.getTableHeader().setBackground(new Color(93, 40, 221));
         tabApagarServico.getTableHeader().setForeground(new Color(0, 0, 0));
         tabApagarServico.setRowHeight(25);
         listarTab();
@@ -153,27 +153,28 @@ public class ApagarServico extends javax.swing.JFrame {
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
         voltar();
-        MenuPostgre menu = new MenuPostgre();
-        menu.setVisible(true);
+
     }//GEN-LAST:event_btVoltarActionPerformed
 
     private void btApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApagarActionPerformed
         listarTabDel();
         listarTab();
     }//GEN-LAST:event_btApagarActionPerformed
-    public void voltar(){
+    public void voltar() {
 
-                int resp = JOptionPane.showConfirmDialog(
-                                null,
-                                "Deseja realmente voltar?",
-                                "VOLTAR",
-                                JOptionPane.YES_NO_OPTION
-                        );
-                if(resp == 0){
-                        //System.exit(0);
-                        dispose();
-                }
+        int resp = JOptionPane.showConfirmDialog(
+                null,
+                "Deseja realmente voltar?",
+                "VOLTAR",
+                JOptionPane.YES_NO_OPTION
+        );
+        if (resp == 0) {
+            MenuPostgre menu = new MenuPostgre();
+            menu.setVisible(true);
+            dispose();
+        }
     }
+
     public void listarTabDel() {
         DefaultTableModel tabModel = (DefaultTableModel) tabApagarServico.getModel();
         tabModel.setRowCount(0);
@@ -189,28 +190,28 @@ public class ApagarServico extends javax.swing.JFrame {
         } catch (SQLException e) {
         }
     }
-    
+
     public void listarTab() {
-    DefaultTableModel tabModel = (DefaultTableModel) tabApagarServico.getModel();
-    tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
+        DefaultTableModel tabModel = (DefaultTableModel) tabApagarServico.getModel();
+        tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
 
-    Conexao conexao = new Conexao();
-    try (Connection connection = conexao.getConnection()) {
-        String query = "SELECT * FROM servico";
-        Statement statement = connection.createStatement();
-        ResultSet resultSet = statement.executeQuery(query);
+        Conexao conexao = new Conexao();
+        try (Connection connection = conexao.getConnection()) {
+            String query = "SELECT * FROM servico";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
 
-        while (resultSet.next()) {
-            int id = resultSet.getInt("id_servico");
-            String tipo = resultSet.getString("tipo");
-            float valor = resultSet.getFloat("valor");
-            tabModel.addRow(new Object[]{id, tipo, valor});
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id_servico");
+                String tipo = resultSet.getString("tipo");
+                float valor = resultSet.getFloat("valor");
+                tabModel.addRow(new Object[]{id, tipo, valor});
+            }
+
+        } catch (SQLException e) {
         }
-
-    } catch (SQLException e) {
     }
-}
-    
+
     /**
      * @param args the command line arguments
      */

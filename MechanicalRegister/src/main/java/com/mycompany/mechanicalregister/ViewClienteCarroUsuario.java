@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -24,9 +25,9 @@ public class ViewClienteCarroUsuario extends javax.swing.JFrame {
     public ViewClienteCarroUsuario() {
         initComponents();
         getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
-        tabClienteCarro.getTableHeader().setFont(new Font("Segoe UI",Font.BOLD,12));
+        tabClienteCarro.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
         tabClienteCarro.getTableHeader().setOpaque(false);
-        tabClienteCarro.getTableHeader().setBackground(new Color(93,40,221));
+        tabClienteCarro.getTableHeader().setBackground(new Color(93, 40, 221));
         tabClienteCarro.getTableHeader().setForeground(new Color(0, 0, 0));
         tabClienteCarro.setRowHeight(25);
         listarTab();
@@ -138,9 +139,7 @@ public class ViewClienteCarroUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
-        this.dispose();
-        MenuUsuario menu = new MenuUsuario();
-        menu.setVisible(true);
+        voltar();
     }//GEN-LAST:event_btVoltarActionPerformed
 
     private void btConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarActionPerformed
@@ -150,7 +149,7 @@ public class ViewClienteCarroUsuario extends javax.swing.JFrame {
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         setLocationRelativeTo(null);
     }//GEN-LAST:event_formWindowActivated
-    
+
     public void listarTab() {
         DefaultTableModel tabModel = (DefaultTableModel) tabClienteCarro.getModel();
         tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
@@ -166,12 +165,28 @@ public class ViewClienteCarroUsuario extends javax.swing.JFrame {
                 String placa = resultSet.getString("placa");
                 String marca = resultSet.getString("marca");
                 String modelo = resultSet.getString("modelo");
-                tabModel.addRow(new Object[]{ nome, placa, marca, modelo});
+                tabModel.addRow(new Object[]{nome, placa, marca, modelo});
             }
 
         } catch (SQLException e) {
         }
-}
+    }
+    
+    public void voltar() {
+
+        int resp = JOptionPane.showConfirmDialog(
+                null,
+                "Deseja realmente voltar?",
+                "VOLTAR",
+                JOptionPane.YES_NO_OPTION
+        );
+        if (resp == 0) {
+            MenuPostgre menu = new MenuPostgre();
+            menu.setVisible(true);
+            dispose();
+        }
+    }
+
     /**
      * @param args the command line arguments
      */

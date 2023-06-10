@@ -25,9 +25,9 @@ public class ViewClienteProduto extends javax.swing.JFrame {
     public ViewClienteProduto() {
         initComponents();
         getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
-        tabClienteProduto.getTableHeader().setFont(new Font("Segoe UI",Font.BOLD,12));
+        tabClienteProduto.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
         tabClienteProduto.getTableHeader().setOpaque(false);
-        tabClienteProduto.getTableHeader().setBackground(new Color(93,40,221));
+        tabClienteProduto.getTableHeader().setBackground(new Color(93, 40, 221));
         tabClienteProduto.getTableHeader().setForeground(new Color(0, 0, 0));
         tabClienteProduto.setRowHeight(25);
         listarTab();
@@ -138,8 +138,7 @@ public class ViewClienteProduto extends javax.swing.JFrame {
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
         voltar();
-        MenuPostgre menu = new MenuPostgre();
-        menu.setVisible(true);
+
     }//GEN-LAST:event_btVoltarActionPerformed
 
     private void btConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarActionPerformed
@@ -149,19 +148,21 @@ public class ViewClienteProduto extends javax.swing.JFrame {
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         setLocationRelativeTo(null);
     }//GEN-LAST:event_formWindowActivated
-   public void voltar(){
-		
-		int resp = JOptionPane.showConfirmDialog(
-				null,
-				"Deseja realmente voltar?",
-				"VOLTAR",
-				JOptionPane.YES_NO_OPTION
-			);
-		if(resp == 0){
-			//System.exit(0);
-			dispose();
-		}
+    public void voltar() {
+
+        int resp = JOptionPane.showConfirmDialog(
+                null,
+                "Deseja realmente voltar?",
+                "VOLTAR",
+                JOptionPane.YES_NO_OPTION
+        );
+        if (resp == 0) {
+            MenuPostgre menu = new MenuPostgre();
+            menu.setVisible(true);
+            dispose();
+        }
     }
+
     public void listarTab() {
         DefaultTableModel tabModel = (DefaultTableModel) tabClienteProduto.getModel();
         tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
@@ -183,9 +184,7 @@ public class ViewClienteProduto extends javax.swing.JFrame {
         } catch (SQLException e) {
         }
     }
- 
-    
-    
+
     /**
      * @param args the command line arguments
      */

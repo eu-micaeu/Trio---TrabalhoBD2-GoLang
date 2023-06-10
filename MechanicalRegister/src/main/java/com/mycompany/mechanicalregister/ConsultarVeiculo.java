@@ -139,9 +139,7 @@ public class ConsultarVeiculo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
-        voltar();
-        MenuPostgre menu = new MenuPostgre();
-        menu.setVisible(true);
+
     }//GEN-LAST:event_btVoltarActionPerformed
 
     private void btConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarActionPerformed
@@ -151,19 +149,22 @@ public class ConsultarVeiculo extends javax.swing.JFrame {
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         setLocationRelativeTo(null);
     }//GEN-LAST:event_formWindowActivated
-        public void voltar(){
+    public void voltar() {
 
-                        int resp = JOptionPane.showConfirmDialog(
-                                        null,
-                                        "Deseja realmente voltar?",
-                                        "VOLTAR",
-                                        JOptionPane.YES_NO_OPTION
-                                );
-                        if(resp == 0){
-                                //System.exit(0);
-                                dispose();
-                        }
-            }
+        int resp = JOptionPane.showConfirmDialog(
+                null,
+                "Deseja realmente voltar?",
+                "VOLTAR",
+                JOptionPane.YES_NO_OPTION
+        );
+        if (resp == 0) {
+            voltar();
+            MenuPostgre menu = new MenuPostgre();
+            menu.setVisible(true);
+            dispose();
+        }
+    }
+
     public void listarTab() {
         DefaultTableModel tabModel = (DefaultTableModel) tabVeiculo.getModel();
         tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
@@ -188,7 +189,7 @@ public class ConsultarVeiculo extends javax.swing.JFrame {
         } catch (SQLException e) {
         }
     }
-    
+
     public void listarTabUnic() {
         DefaultTableModel tabModel = (DefaultTableModel) tabVeiculo.getModel();
         tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
@@ -207,10 +208,10 @@ public class ConsultarVeiculo extends javax.swing.JFrame {
                 String cor = resultSet.getString("cor");
                 String motor = resultSet.getString("motor");
                 int id_cliente = resultSet.getInt("id_cliente");
-                if(Integer.parseInt(cxConsultar.getText()) == id_veiculo){
+                if (Integer.parseInt(cxConsultar.getText()) == id_veiculo) {
                     tabModel.addRow(new Object[]{id_veiculo, ano, marca, modelo, cor, motor, id_cliente});
                 }
-                
+
             }
 
         } catch (SQLException e) {

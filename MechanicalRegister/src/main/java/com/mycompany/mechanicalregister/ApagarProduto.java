@@ -26,9 +26,9 @@ public class ApagarProduto extends javax.swing.JFrame {
     public ApagarProduto() {
         initComponents();
         getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
-        tabApagarProduto.getTableHeader().setFont(new Font("Segoe UI",Font.BOLD,12));
+        tabApagarProduto.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
         tabApagarProduto.getTableHeader().setOpaque(false);
-        tabApagarProduto.getTableHeader().setBackground(new Color(93,40,221));
+        tabApagarProduto.getTableHeader().setBackground(new Color(93, 40, 221));
         tabApagarProduto.getTableHeader().setForeground(new Color(0, 0, 0));
         tabApagarProduto.setRowHeight(25);
         listarTab();
@@ -141,27 +141,28 @@ public class ApagarProduto extends javax.swing.JFrame {
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
         voltar();
-        MenuPostgre menu = new MenuPostgre();
-        menu.setVisible(true);
+
     }//GEN-LAST:event_btVoltarActionPerformed
 
     private void btApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApagarActionPerformed
         listarTabDel();
         listarTab();
     }//GEN-LAST:event_btApagarActionPerformed
-     public void voltar(){
+    public void voltar() {
 
-                int resp = JOptionPane.showConfirmDialog(
-                                null,
-                                "Deseja realmente voltar?",
-                                "VOLTAR",
-                                JOptionPane.YES_NO_OPTION
-                        );
-                if(resp == 0){
-                        //System.exit(0);
-                        dispose();
-                }
+        int resp = JOptionPane.showConfirmDialog(
+                null,
+                "Deseja realmente voltar?",
+                "VOLTAR",
+                JOptionPane.YES_NO_OPTION
+        );
+        if (resp == 0) {
+            MenuPostgre menu = new MenuPostgre();
+            menu.setVisible(true);
+            dispose();
+        }
     }
+
     public void listarTabDel() {
         DefaultTableModel tabModel = (DefaultTableModel) tabApagarProduto.getModel();
         tabModel.setRowCount(0);
@@ -177,7 +178,7 @@ public class ApagarProduto extends javax.swing.JFrame {
         } catch (SQLException e) {
         }
     }
-    
+
     public void listarTab() {
         DefaultTableModel tabModel = (DefaultTableModel) tabApagarProduto.getModel();
         tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
@@ -199,7 +200,7 @@ public class ApagarProduto extends javax.swing.JFrame {
         } catch (SQLException e) {
         }
     }
-    
+
     /**
      * @param args the command line arguments
      */

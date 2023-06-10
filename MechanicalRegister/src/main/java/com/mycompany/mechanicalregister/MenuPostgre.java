@@ -364,9 +364,9 @@ public class MenuPostgre extends javax.swing.JFrame {
     }//GEN-LAST:event_btInserirFuncionarioActionPerformed
 
     private void btConsultarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarClienteActionPerformed
-       ConsultarCliente consultarCliente = new ConsultarCliente();
-       consultarCliente.setVisible(true);
-       dispose();
+        ConsultarCliente consultarCliente = new ConsultarCliente();
+        consultarCliente.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btConsultarClienteActionPerformed
 
     private void btConsultarServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarServicoActionPerformed
@@ -400,7 +400,7 @@ public class MenuPostgre extends javax.swing.JFrame {
     }//GEN-LAST:event_btApagarClienteActionPerformed
 
     private void btApagarServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApagarServicoActionPerformed
-         ApagarServico apagarServico = new ApagarServico();
+        ApagarServico apagarServico = new ApagarServico();
         apagarServico.setVisible(true);
         dispose();
     }//GEN-LAST:event_btApagarServicoActionPerformed
@@ -412,7 +412,7 @@ public class MenuPostgre extends javax.swing.JFrame {
     }//GEN-LAST:event_btApagarProdutoActionPerformed
 
     private void btApagarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApagarFuncionarioActionPerformed
-         ApagarFuncionario apagarFuncionario = new ApagarFuncionario();
+        ApagarFuncionario apagarFuncionario = new ApagarFuncionario();
         apagarFuncionario.setVisible(true);
         dispose();
     }//GEN-LAST:event_btApagarFuncionarioActionPerformed
@@ -441,25 +441,23 @@ public class MenuPostgre extends javax.swing.JFrame {
 
     private void btSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairActionPerformed
         voltar();
-        MechanicalRegister identificacao = new MechanicalRegister();
-        identificacao.setVisible(true);
-       
     }//GEN-LAST:event_btSairActionPerformed
 
-     public void voltar(){
-		
-		int resp = JOptionPane.showConfirmDialog(
-				null,
-				"Deseja realmente voltar?",
-				"Voltar",
-				JOptionPane.YES_NO_OPTION
-			);
-		if(resp == 0){
-			//System.exit(0);
-			dispose();
-		}
+    public void voltar() {
+
+        int resp = JOptionPane.showConfirmDialog(
+                null,
+                "Deseja realmente voltar?",
+                "Voltar",
+                JOptionPane.YES_NO_OPTION
+        );
+        if (resp == 0) {
+            MechanicalRegister identificacao = new MechanicalRegister();
+            identificacao.setVisible(true);
+            dispose();
+        }
     }
-	
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
