@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -148,11 +149,23 @@ public class ConsultarProduto extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowActivated
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
-        dispose();
+        voltar();
         MenuPostgre menu = new MenuPostgre();
         menu.setVisible(true);
     }//GEN-LAST:event_btVoltarActionPerformed
-
+    public void voltar(){
+		
+		int resp = JOptionPane.showConfirmDialog(
+				null,
+				"Deseja realmente voltar?",
+				"VOLTAR",
+				JOptionPane.YES_NO_OPTION
+			);
+		if(resp == 0){
+			//System.exit(0);
+			dispose();
+		}
+    }
     public void listarTab() {
         DefaultTableModel tabModel = (DefaultTableModel) tabConsultarProduto.getModel();
         tabModel.setRowCount(0); // Limpa as linhas existentes na tabela

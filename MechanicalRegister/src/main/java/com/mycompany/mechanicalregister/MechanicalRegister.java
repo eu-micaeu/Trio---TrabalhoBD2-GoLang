@@ -142,7 +142,7 @@ public class MechanicalRegister extends javax.swing.JFrame {
     }//GEN-LAST:event_cxUsuarioActionPerformed
 
     private void btFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFecharActionPerformed
-        dispose();
+        sair();
     }//GEN-LAST:event_btFecharActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
@@ -170,9 +170,20 @@ public class MechanicalRegister extends javax.swing.JFrame {
     }
     }//GEN-LAST:event_btEntrarActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    
+     public void sair(){
+		
+		int resp = JOptionPane.showConfirmDialog(
+				null,
+				"Deseja realmente sair?",
+				"Saida",
+				JOptionPane.YES_NO_OPTION
+			);
+		if(resp == 0){
+			//System.exit(0);
+			dispose();
+		}
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

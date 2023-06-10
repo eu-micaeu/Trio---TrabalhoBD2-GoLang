@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -191,7 +192,7 @@ public class InserirFuncionario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
-        dispose();
+        voltar();
         MenuPostgre menu = new MenuPostgre();
         menu.setVisible(true);
     }//GEN-LAST:event_btVoltarActionPerformed
@@ -224,9 +225,19 @@ public class InserirFuncionario extends javax.swing.JFrame {
 
     }//GEN-LAST:event_formWindowActivated
 
-    /**
-     * @param args the command line arguments
-     */
+    public void voltar(){
+		
+		int resp = JOptionPane.showConfirmDialog(
+				null,
+				"Deseja realmente voltar?",
+				"VOLTAR",
+				JOptionPane.YES_NO_OPTION
+			);
+		if(resp == 0){
+			//System.exit(0);
+			dispose();
+		}
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

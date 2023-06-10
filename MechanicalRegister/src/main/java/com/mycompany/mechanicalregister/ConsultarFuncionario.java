@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -152,7 +153,7 @@ public class ConsultarFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_btConsultarActionPerformed
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
-        dispose();
+        voltar();
         MenuPostgre menu = new MenuPostgre();
         menu.setVisible(true);
     }//GEN-LAST:event_btVoltarActionPerformed
@@ -162,10 +163,22 @@ public class ConsultarFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_cxConsultarActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-                setLocationRelativeTo(null);
+        setLocationRelativeTo(null);
 
     }//GEN-LAST:event_formWindowActivated
-
+    public void voltar(){
+		
+		int resp = JOptionPane.showConfirmDialog(
+				null,
+				"Deseja realmente voltar?",
+				"VOLTAR",
+				JOptionPane.YES_NO_OPTION
+			);
+		if(resp == 0){
+			//System.exit(0);
+			dispose();
+		}
+    }
     
     public void listarTab() {
         DefaultTableModel tabModel = (DefaultTableModel) tabFuncionario.getModel();

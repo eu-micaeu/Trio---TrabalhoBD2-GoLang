@@ -4,6 +4,8 @@
  */
 package com.mycompany.mechanicalregister;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author brena
@@ -438,14 +440,26 @@ public class MenuPostgre extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowActivated
 
     private void btSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairActionPerformed
+        voltar();
         MechanicalRegister identificacao = new MechanicalRegister();
         identificacao.setVisible(true);
-        dispose();
+       
     }//GEN-LAST:event_btSairActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+     public void voltar(){
+		
+		int resp = JOptionPane.showConfirmDialog(
+				null,
+				"Deseja realmente voltar?",
+				"Voltar",
+				JOptionPane.YES_NO_OPTION
+			);
+		if(resp == 0){
+			//System.exit(0);
+			dispose();
+		}
+    }
+	
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

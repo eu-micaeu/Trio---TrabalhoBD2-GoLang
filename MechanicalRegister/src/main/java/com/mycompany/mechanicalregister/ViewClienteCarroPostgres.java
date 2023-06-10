@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -140,7 +141,7 @@ public class ViewClienteCarroPostgres extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
-        dispose();
+        voltar();
         MenuPostgre menu = new MenuPostgre();
         menu.setVisible(true);
     }//GEN-LAST:event_btVoltarActionPerformed
@@ -154,6 +155,19 @@ public class ViewClienteCarroPostgres extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowActivated
 
     
+    public void voltar(){
+		
+		int resp = JOptionPane.showConfirmDialog(
+				null,
+				"Deseja realmente voltar?",
+				"VOLTAR",
+				JOptionPane.YES_NO_OPTION
+			);
+		if(resp == 0){
+			//System.exit(0);
+			dispose();
+		}
+    }
     
     public void listarTab() {
         DefaultTableModel tabModel = (DefaultTableModel) tabClienteCarro.getModel();
