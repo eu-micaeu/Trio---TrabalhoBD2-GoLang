@@ -28,7 +28,7 @@ public class ConsultarVeiculo extends javax.swing.JFrame {
         tabVeiculo.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
         tabVeiculo.getTableHeader().setOpaque(false);
         tabVeiculo.getTableHeader().setBackground(new Color(93, 40, 221));
-        tabVeiculo.getTableHeader().setForeground(new Color(255, 255, 255));
+        tabVeiculo.getTableHeader().setForeground(new Color(0, 0, 0));
         tabVeiculo.setRowHeight(25);
         listarTab();
     }

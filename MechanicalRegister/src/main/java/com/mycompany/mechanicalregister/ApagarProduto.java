@@ -28,7 +28,7 @@ public class ApagarProduto extends javax.swing.JFrame {
         tabApagarProduto.getTableHeader().setFont(new Font("Segoe UI",Font.BOLD,12));
         tabApagarProduto.getTableHeader().setOpaque(false);
         tabApagarProduto.getTableHeader().setBackground(new Color(93,40,221));
-        tabApagarProduto.getTableHeader().setForeground(new Color(255,255,255));
+        tabApagarProduto.getTableHeader().setForeground(new Color(0, 0, 0));
         tabApagarProduto.setRowHeight(25);
         listarTab();
 

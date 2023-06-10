@@ -27,7 +27,7 @@ public class ViewClienteCarroUsuario extends javax.swing.JFrame {
         tabClienteCarro.getTableHeader().setFont(new Font("Segoe UI",Font.BOLD,12));
         tabClienteCarro.getTableHeader().setOpaque(false);
         tabClienteCarro.getTableHeader().setBackground(new Color(93,40,221));
-        tabClienteCarro.getTableHeader().setForeground(new Color(255,255,255));
+        tabClienteCarro.getTableHeader().setForeground(new Color(0, 0, 0));
         tabClienteCarro.setRowHeight(25);
         listarTab();
     }

@@ -29,7 +29,7 @@ public class ApagarFuncionario extends javax.swing.JFrame {
         tabApagarFuncionario.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
         tabApagarFuncionario.getTableHeader().setOpaque(false);
         tabApagarFuncionario.getTableHeader().setBackground(new Color(93, 40, 221));
-        tabApagarFuncionario.getTableHeader().setForeground(new Color(255, 255, 255));
+        tabApagarFuncionario.getTableHeader().setForeground(new Color(0, 0, 0));
         tabApagarFuncionario.setRowHeight(25);
         listarTab();
 

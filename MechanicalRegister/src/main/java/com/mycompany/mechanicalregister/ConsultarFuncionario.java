@@ -28,7 +28,7 @@ public class ConsultarFuncionario extends javax.swing.JFrame {
         tabFuncionario.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
         tabFuncionario.getTableHeader().setOpaque(false);
         tabFuncionario.getTableHeader().setBackground(new Color(93, 40, 221));
-        tabFuncionario.getTableHeader().setForeground(new Color(255, 255, 255));
+        tabFuncionario.getTableHeader().setForeground(new Color(0, 0, 0));
         tabFuncionario.setRowHeight(25);
         listarTab();
     }

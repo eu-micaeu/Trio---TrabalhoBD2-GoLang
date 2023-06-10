@@ -28,7 +28,7 @@ public class ConsultarCliente extends javax.swing.JFrame {
         tabCliente.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
         tabCliente.getTableHeader().setOpaque(false);
         tabCliente.getTableHeader().setBackground(new Color(93, 40, 221));
-        tabCliente.getTableHeader().setForeground(new Color(255, 255, 255));
+        tabCliente.getTableHeader().setForeground(new Color(0, 0, 0));
         tabCliente.setRowHeight(25);
         listarTab();
 

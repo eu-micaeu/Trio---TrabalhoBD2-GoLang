@@ -28,7 +28,7 @@ public class ConsultarProduto extends javax.swing.JFrame {
         tabConsultarProduto.getTableHeader().setFont(new Font("Segoe UI",Font.BOLD,12));
         tabConsultarProduto.getTableHeader().setOpaque(false);
         tabConsultarProduto.getTableHeader().setBackground(new Color(93,40,221));
-        tabConsultarProduto.getTableHeader().setForeground(new Color(255,255,255));
+        tabConsultarProduto.getTableHeader().setForeground(new Color(0, 0, 0));
         tabConsultarProduto.setRowHeight(25);
         listarTab();
 

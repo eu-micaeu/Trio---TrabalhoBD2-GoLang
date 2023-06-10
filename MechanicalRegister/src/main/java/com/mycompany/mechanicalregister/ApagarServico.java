@@ -28,7 +28,7 @@ public class ApagarServico extends javax.swing.JFrame {
         tabApagarServico.getTableHeader().setFont(new Font("Segoe UI",Font.BOLD,12));
         tabApagarServico.getTableHeader().setOpaque(false);
         tabApagarServico.getTableHeader().setBackground(new Color(93,40,221));
-        tabApagarServico.getTableHeader().setForeground(new Color(255,255,255));
+        tabApagarServico.getTableHeader().setForeground(new Color(0, 0, 0));
         tabApagarServico.setRowHeight(25);
         listarTab();
 

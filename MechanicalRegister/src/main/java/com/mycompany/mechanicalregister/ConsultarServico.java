@@ -27,7 +27,7 @@ public class ConsultarServico extends javax.swing.JFrame {
         tabConsultarServico.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
         tabConsultarServico.getTableHeader().setOpaque(false);
         tabConsultarServico.getTableHeader().setBackground(new Color(93, 40, 221));
-        tabConsultarServico.getTableHeader().setForeground(new Color(255, 255, 255));
+        tabConsultarServico.getTableHeader().setForeground(new Color(0, 0, 0));
         tabConsultarServico.setRowHeight(25);
         listarTab();
 

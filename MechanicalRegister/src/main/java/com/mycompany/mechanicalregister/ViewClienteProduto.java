@@ -27,7 +27,7 @@ public class ViewClienteProduto extends javax.swing.JFrame {
         tabClienteProduto.getTableHeader().setFont(new Font("Segoe UI",Font.BOLD,12));
         tabClienteProduto.getTableHeader().setOpaque(false);
         tabClienteProduto.getTableHeader().setBackground(new Color(93,40,221));
-        tabClienteProduto.getTableHeader().setForeground(new Color(255,255,255));
+        tabClienteProduto.getTableHeader().setForeground(new Color(0, 0, 0));
         tabClienteProduto.setRowHeight(25);
         listarTab();
     }

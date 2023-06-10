@@ -24,7 +24,7 @@ public class ApagarCliente extends javax.swing.JFrame {
         tabApagarCliente.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
         tabApagarCliente.getTableHeader().setOpaque(false);
         tabApagarCliente.getTableHeader().setBackground(new Color(93, 40, 221));
-        tabApagarCliente.getTableHeader().setForeground(new Color(255, 255, 255));
+        tabApagarCliente.getTableHeader().setForeground(new Color(0, 0, 0));
         tabApagarCliente.setRowHeight(25);
         listarTab();
     }
