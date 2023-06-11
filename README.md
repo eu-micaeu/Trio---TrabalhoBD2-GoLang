@@ -9,7 +9,7 @@ O objetivo deste sistema é auxiliar na gestão das atividades de uma oficina me
 ## 🔨Funcionalidades
 O sistema possui as seguintes funcionalidades principais:
 
-- `Funcionalidade 1` `Cadastro de Clientes`: permite registrar informações dos clientes, como nome, idade,cpf,rg, telefone, entre outros dados .
+- `Funcionalidade 1` `Gerenciar de Clientes`: permite registrar informações dos clientes, como nome, idade,cpf,rg, telefone, entre outros dados. Além de permitir vincular ao cliente , os produtos e serviços que foram adquiridos por eles .
 
 - `Funcionalidade 2` `Gerenciar Serviços`:  incluindo detalhes sobre os serviços realizados,  custos.
 
