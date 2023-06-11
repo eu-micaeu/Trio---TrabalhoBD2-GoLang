@@ -169,20 +169,25 @@ public class ApagarCliente extends javax.swing.JFrame {
         DefaultTableModel tabModel = (DefaultTableModel) tabApagarCliente.getModel();
         tabModel.setRowCount(0);
 
-        Conexao conexao = new Conexao();
-        try (Connection connection = conexao.getConnection()) {
+        try (Connection conexao = new Conexao().getConnection()) {
+            PreparedStatement inicio = conexao.prepareStatement("BEGIN");
+            inicio.execute();
             String query_veic = "DELETE FROM veiculo WHERE id_cliente = ?";
             String query = "DELETE FROM cliente WHERE id_cliente = ?";
             String id_cliente = cxApagar.getText();
 
-            PreparedStatement statement1 = connection.prepareStatement(query_veic);
+            PreparedStatement statement1 = conexao.prepareStatement(query_veic);
             statement1.setInt(1, Integer.parseInt(id_cliente));
             statement1.executeUpdate();
 
-            PreparedStatement statement2 = connection.prepareStatement(query);
+            PreparedStatement statement2 = conexao.prepareStatement(query);
             statement2.setInt(1, Integer.parseInt(id_cliente));
             statement2.executeUpdate();
-
+            PreparedStatement fimC = conexao.prepareStatement("COMMIT");
+            fimC.execute();
+            PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
+            fimR.execute();
+            conexao.close();
         } catch (SQLException e) {
         }
     }
@@ -191,10 +196,11 @@ public class ApagarCliente extends javax.swing.JFrame {
         DefaultTableModel tabModel = (DefaultTableModel) tabApagarCliente.getModel();
         tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
 
-        Conexao conexao = new Conexao();
-        try (Connection connection = conexao.getConnection()) {
+        try (Connection conexao = new Conexao().getConnection()) {
+            PreparedStatement inicio = conexao.prepareStatement("BEGIN");
+            inicio.execute();
             String query = "SELECT id_cliente, nome_cliente, idade, rg, cpf, telefone, data_de_registro FROM cliente";
-            Statement statement = connection.createStatement();
+            Statement statement = conexao.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
 
             while (resultSet.next()) {
@@ -207,7 +213,11 @@ public class ApagarCliente extends javax.swing.JFrame {
                 Timestamp timestamp = resultSet.getTimestamp("data_de_registro");
                 tabModel.addRow(new Object[]{id, nome, idade, rg, cpf, telefone, timestamp});
             }
-
+            PreparedStatement fimC = conexao.prepareStatement("COMMIT");
+            fimC.execute();
+            PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
+            fimR.execute();
+            conexao.close();
         } catch (SQLException e) {
         }
     }

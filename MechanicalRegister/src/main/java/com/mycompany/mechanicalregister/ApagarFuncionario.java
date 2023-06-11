@@ -175,15 +175,20 @@ public class ApagarFuncionario extends javax.swing.JFrame {
         DefaultTableModel tabModel = (DefaultTableModel) tabApagarFuncionario.getModel();
         tabModel.setRowCount(0);
 
-        Conexao conexao = new Conexao();
-        try (Connection connection = conexao.getConnection()) {
+        try (Connection conexao = new Conexao().getConnection()) {
+            PreparedStatement inicio = conexao.prepareStatement("BEGIN");
+            inicio.execute();
             String query = "DELETE FROM funcionario WHERE id_funcionario = ?";
             String id_funcionario = cxApagar.getText();
 
-            PreparedStatement statement2 = connection.prepareStatement(query);
+            PreparedStatement statement2 = conexao.prepareStatement(query);
             statement2.setInt(1, Integer.parseInt(id_funcionario));
             statement2.executeUpdate();
-
+            PreparedStatement fimC = conexao.prepareStatement("COMMIT");
+            fimC.execute();
+            PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
+            fimR.execute();
+            conexao.close();
         } catch (SQLException e) {
         }
     }
@@ -192,10 +197,11 @@ public class ApagarFuncionario extends javax.swing.JFrame {
         DefaultTableModel tabModel = (DefaultTableModel) tabApagarFuncionario.getModel();
         tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
 
-        Conexao conexao = new Conexao();
-        try (Connection connection = conexao.getConnection()) {
+        try (Connection conexao = new Conexao().getConnection()) {
+            PreparedStatement inicio = conexao.prepareStatement("BEGIN");
+            inicio.execute();
             String query = "SELECT id_funcionario, id_servico,idade, nome,  rg, cpf, funcao FROM funcionario";
-            Statement statement = connection.createStatement();
+            Statement statement = conexao.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
 
             while (resultSet.next()) {
@@ -208,7 +214,11 @@ public class ApagarFuncionario extends javax.swing.JFrame {
                 String funcao = resultSet.getString("funcao");
                 tabModel.addRow(new Object[]{id_funcionario, id_servico, idade, nome, rg, cpf, funcao});
             }
-
+            PreparedStatement fimC = conexao.prepareStatement("COMMIT");
+            fimC.execute();
+            PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
+            fimR.execute();
+            conexao.close();
         } catch (SQLException e) {
         }
     }

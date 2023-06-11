@@ -383,13 +383,19 @@ public class InserirCliente extends javax.swing.JFrame {
 
     private void btNaoTemVeicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNaoTemVeicActionPerformed
        try (Connection conexao = new Conexao().getConnection()) {
+            PreparedStatement inicio = conexao.prepareStatement("BEGIN");
+            inicio.execute();
             String sql = String.format("insert into cliente (nome_cliente, idade, id_servico, id_produto, cpf , rg , telefone , data_de_registro) values ('%s', %s, %s, %s, '%s', '%s', '%s', CURRENT_TIMESTAMP);", cxNome.getText(), cxIdade.getText(), cxIdServico.getText(), cxIdProduto.getText(), cxCPF.getText(), cxRG.getText(), cxTelefone.getText());
             PreparedStatement statement = conexao.prepareStatement(sql);
             statement.execute();
+            PreparedStatement fimC = conexao.prepareStatement("COMMIT");
+            fimC.execute();
+            PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
+            fimR.execute();
             conexao.close();
         } catch (SQLException ex) {
 
-        } 
+        }
     }//GEN-LAST:event_btNaoTemVeicActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
@@ -398,6 +404,8 @@ public class InserirCliente extends javax.swing.JFrame {
 
     private void btTemVeicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btTemVeicActionPerformed
         try (Connection conexao = new Conexao().getConnection()) {
+            PreparedStatement inicio = conexao.prepareStatement("BEGIN");
+            inicio.execute();
             String sql = String.format("insert into cliente (nome_cliente, idade, id_servico, id_produto, cpf , rg , telefone , data_de_registro) values ('%s', %s, %s, %s, '%s', '%s', '%s', CURRENT_TIMESTAMP);", cxNome.getText(), cxIdade.getText(), cxIdServico.getText(), cxIdProduto.getText(), cxCPF.getText(), cxRG.getText(), cxTelefone.getText());
             PreparedStatement statement = conexao.prepareStatement(sql);
             statement.execute();
@@ -414,6 +422,10 @@ public class InserirCliente extends javax.swing.JFrame {
             sql = String.format("insert into veiculo (ano, placa, marca, modelo, cor, motor, id_cliente) values (2004, '%s', 'asss', 'dddd', 'azul', 'E', %s)", cxPlaca.getText(),resp);
             statement = conexao.prepareStatement(sql);
             statement.execute();
+            PreparedStatement fimC = conexao.prepareStatement("COMMIT");
+            fimC.execute();
+            PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
+            fimR.execute();
             conexao.close();
         } catch (SQLException ex) {
 

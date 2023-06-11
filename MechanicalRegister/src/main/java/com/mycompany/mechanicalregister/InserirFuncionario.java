@@ -198,6 +198,8 @@ public class InserirFuncionario extends javax.swing.JFrame {
 
     private void btInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInserirActionPerformed
         try (Connection conexao = new Conexao().getConnection()) {
+            PreparedStatement inicio = conexao.prepareStatement("BEGIN");
+            inicio.execute();
             String sql = String.format("insert into funcionario (id_servico, idade, nome,  rg, cpf, funcao) values (%s, %s, '%s', %s, %s, '%s');", cxIdServico.getText(), cxIdade.getText(), cxNome.getText(), cxRG.getText(), cxCPF.getText(), cxFuncao.getText());
             PreparedStatement statement = conexao.prepareStatement(sql);
             statement.execute();
@@ -213,6 +215,10 @@ public class InserirFuncionario extends javax.swing.JFrame {
             }
             statement = conexao.prepareStatement(sql);
             statement.execute();
+            PreparedStatement fimC = conexao.prepareStatement("COMMIT");
+            fimC.execute();
+            PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
+            fimR.execute();
             conexao.close();
         } catch (SQLException ex) {
 

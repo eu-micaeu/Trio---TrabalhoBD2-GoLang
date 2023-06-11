@@ -145,9 +145,15 @@ public class InserirServico extends javax.swing.JFrame {
 
     private void btInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInserirActionPerformed
         try (Connection conexao = new Conexao().getConnection()) {
+            PreparedStatement inicio = conexao.prepareStatement("BEGIN");
+            inicio.execute();
             String sql = String.format("insert into servico (tipo, valor) values ('%s', %s);", cxTipo.getText(), cxValor.getText());
             PreparedStatement statement = conexao.prepareStatement(sql);
             statement.execute();
+            PreparedStatement fimC = conexao.prepareStatement("COMMIT");
+            fimC.execute();
+            PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
+            fimR.execute();
             conexao.close();
         } catch (SQLException ex) {
 

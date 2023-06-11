@@ -7,6 +7,7 @@ package com.mycompany.mechanicalregister;
 import java.awt.Color;
 import java.awt.Font;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -164,7 +165,7 @@ public class ConsultarServico extends javax.swing.JFrame {
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
         voltar();
-        
+
     }//GEN-LAST:event_btVoltarActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
@@ -177,28 +178,30 @@ public class ConsultarServico extends javax.swing.JFrame {
         dispose();
 
     }//GEN-LAST:event_btClienteActionPerformed
-   public void voltar(){
-		
-		int resp = JOptionPane.showConfirmDialog(
-				null,
-				"Deseja realmente voltar?",
-				"VOLTAR",
-				JOptionPane.YES_NO_OPTION
-			);
-		if(resp == 0){
-			MenuPostgre menu = new MenuPostgre();
-                        menu.setVisible(true);
-			dispose();
-		}
+    public void voltar() {
+
+        int resp = JOptionPane.showConfirmDialog(
+                null,
+                "Deseja realmente voltar?",
+                "VOLTAR",
+                JOptionPane.YES_NO_OPTION
+        );
+        if (resp == 0) {
+            MenuPostgre menu = new MenuPostgre();
+            menu.setVisible(true);
+            dispose();
+        }
     }
+
     public void listarTab() {
         DefaultTableModel tabModel = (DefaultTableModel) tabConsultarServico.getModel();
         tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
 
-        Conexao conexao = new Conexao();
-        try (Connection connection = conexao.getConnection()) {
+        try (Connection conexao = new Conexao().getConnection()) {
+            PreparedStatement inicio = conexao.prepareStatement("BEGIN");
+            inicio.execute();
             String query = "SELECT * FROM servico";
-            Statement statement = connection.createStatement();
+            Statement statement = conexao.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
 
             while (resultSet.next()) {
@@ -207,29 +210,37 @@ public class ConsultarServico extends javax.swing.JFrame {
                 float valor = resultSet.getFloat("valor");
                 tabModel.addRow(new Object[]{id, tipo, valor});
             }
-
+            PreparedStatement fimC = conexao.prepareStatement("COMMIT");
+            fimC.execute();
+            PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
+            fimR.execute();
         } catch (SQLException e) {
         }
     }
-    
+
     public void listarTabUnic() {
         DefaultTableModel tabModel = (DefaultTableModel) tabConsultarServico.getModel();
         tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
 
-        Conexao conexao = new Conexao();
-        try (Connection connection = conexao.getConnection()) {
+        try (Connection conexao = new Conexao().getConnection()) {
+            PreparedStatement inicio = conexao.prepareStatement("BEGIN");
+            inicio.execute();
             String query = "SELECT * FROM servico";
-            Statement statement = connection.createStatement();
+            Statement statement = conexao.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
 
             while (resultSet.next()) {
                 int id = resultSet.getInt("id_servico");
                 String tipo = resultSet.getString("tipo");
                 float valor = resultSet.getFloat("valor");
-                if(Integer.parseInt(cxConsultar.getText()) == id){
+                if (Integer.parseInt(cxConsultar.getText()) == id) {
                     tabModel.addRow(new Object[]{id, tipo, valor});
                 }
-                
+                PreparedStatement fimC = conexao.prepareStatement("COMMIT");
+                fimC.execute();
+                PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
+                fimR.execute();
+                conexao.close();
             }
 
         } catch (SQLException e) {

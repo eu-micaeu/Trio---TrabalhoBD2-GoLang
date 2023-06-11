@@ -7,6 +7,7 @@ package com.mycompany.mechanicalregister;
 import java.awt.Color;
 import java.awt.Font;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -148,7 +149,7 @@ public class ConsultarCliente extends javax.swing.JFrame {
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
         voltar();
-        
+
     }//GEN-LAST:event_btVoltarActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
@@ -161,30 +162,32 @@ public class ConsultarCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_btConsultarActionPerformed
 
     private void cxConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cxConsultarActionPerformed
-        
+
     }//GEN-LAST:event_cxConsultarActionPerformed
-    public void voltar(){
-		
-		int resp = JOptionPane.showConfirmDialog(
-				null,
-				"Deseja realmente voltar?",
-				"VOLTAR",
-				JOptionPane.YES_NO_OPTION
-			);
-		if(resp == 0){
-			MenuPostgre menu = new MenuPostgre();
-        menu.setVisible(true);
-			dispose();
-		}
+    public void voltar() {
+
+        int resp = JOptionPane.showConfirmDialog(
+                null,
+                "Deseja realmente voltar?",
+                "VOLTAR",
+                JOptionPane.YES_NO_OPTION
+        );
+        if (resp == 0) {
+            MenuPostgre menu = new MenuPostgre();
+            menu.setVisible(true);
+            dispose();
+        }
     }
+
     public void listarTab() {
         DefaultTableModel tabModel = (DefaultTableModel) tabCliente.getModel();
         tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
 
-        Conexao conexao = new Conexao();
-        try (Connection connection = conexao.getConnection()) {
+        try (Connection conexao = new Conexao().getConnection()) {
+            PreparedStatement inicio = conexao.prepareStatement("BEGIN");
+            inicio.execute();
             String query = "SELECT id_cliente, nome_cliente, idade, rg, cpf, telefone, data_de_registro FROM cliente";
-            Statement statement = connection.createStatement();
+            Statement statement = conexao.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
 
             while (resultSet.next()) {
@@ -197,20 +200,25 @@ public class ConsultarCliente extends javax.swing.JFrame {
                 Timestamp timestamp = resultSet.getTimestamp("data_de_registro");
                 tabModel.addRow(new Object[]{id, nome, idade, rg, cpf, telefone, timestamp});
             }
-
+            PreparedStatement fimC = conexao.prepareStatement("COMMIT");
+            fimC.execute();
+            PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
+            fimR.execute();
+            conexao.close();
         } catch (SQLException e) {
         }
     }
-    
+
     public void listarTabUnic() {
         DefaultTableModel tabModel = (DefaultTableModel) tabCliente.getModel();
         tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
 
-        Conexao conexao = new Conexao();
-        try (Connection connection = conexao.getConnection()) {
-            
+        try (Connection conexao = new Conexao().getConnection()) {
+            PreparedStatement inicio = conexao.prepareStatement("BEGIN");
+            inicio.execute();
+
             String query = "SELECT id_cliente, nome_cliente, idade, rg, cpf, telefone, data_de_registro FROM cliente";
-            Statement statement = connection.createStatement();
+            Statement statement = conexao.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
 
             while (resultSet.next()) {
@@ -221,10 +229,14 @@ public class ConsultarCliente extends javax.swing.JFrame {
                 int cpf = resultSet.getInt("cpf");
                 String telefone = resultSet.getString("telefone");
                 Timestamp timestamp = resultSet.getTimestamp("data_de_registro");
-                if(Integer.parseInt(cxConsultar.getText()) == id){
+                if (Integer.parseInt(cxConsultar.getText()) == id) {
                     tabModel.addRow(new Object[]{id, nome, idade, rg, cpf, telefone, timestamp});
                 }
-                
+                PreparedStatement fimC = conexao.prepareStatement("COMMIT");
+                fimC.execute();
+                PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
+                fimR.execute();
+                conexao.close();
             }
 
         } catch (SQLException e) {

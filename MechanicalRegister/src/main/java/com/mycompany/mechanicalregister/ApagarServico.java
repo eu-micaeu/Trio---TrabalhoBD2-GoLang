@@ -179,14 +179,19 @@ public class ApagarServico extends javax.swing.JFrame {
         DefaultTableModel tabModel = (DefaultTableModel) tabApagarServico.getModel();
         tabModel.setRowCount(0);
 
-        Conexao conexao = new Conexao();
-        try (Connection connection = conexao.getConnection()) {
+        try (Connection conexao = new Conexao().getConnection()) {
+            PreparedStatement inicio = conexao.prepareStatement("BEGIN");
+            inicio.execute();
             String query = "DELETE FROM servico WHERE id_servico = ?";
             String id_cliente = cxApagar.getText();
-            PreparedStatement statement2 = connection.prepareStatement(query);
+            PreparedStatement statement2 = conexao.prepareStatement(query);
             statement2.setInt(1, Integer.parseInt(id_cliente));
             statement2.executeUpdate();
-
+            PreparedStatement fimC = conexao.prepareStatement("COMMIT");
+            fimC.execute();
+            PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
+            fimR.execute();
+            conexao.close();
         } catch (SQLException e) {
         }
     }
@@ -195,10 +200,11 @@ public class ApagarServico extends javax.swing.JFrame {
         DefaultTableModel tabModel = (DefaultTableModel) tabApagarServico.getModel();
         tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
 
-        Conexao conexao = new Conexao();
-        try (Connection connection = conexao.getConnection()) {
+        try (Connection conexao = new Conexao().getConnection()) {
+            PreparedStatement inicio = conexao.prepareStatement("BEGIN");
+            inicio.execute();
             String query = "SELECT * FROM servico";
-            Statement statement = connection.createStatement();
+            Statement statement = conexao.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
 
             while (resultSet.next()) {
@@ -207,6 +213,11 @@ public class ApagarServico extends javax.swing.JFrame {
                 float valor = resultSet.getFloat("valor");
                 tabModel.addRow(new Object[]{id, tipo, valor});
             }
+            PreparedStatement fimC = conexao.prepareStatement("COMMIT");
+            fimC.execute();
+            PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
+            fimR.execute();
+            conexao.close();
 
         } catch (SQLException e) {
         }

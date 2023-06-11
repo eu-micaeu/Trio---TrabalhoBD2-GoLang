@@ -7,6 +7,7 @@ package com.mycompany.mechanicalregister;
 import java.awt.Color;
 import java.awt.Font;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -169,11 +170,11 @@ public class BackupCliente extends javax.swing.JFrame {
         DefaultTableModel tabModel = (DefaultTableModel) tabBackup.getModel();
         tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
 
-        Conexao conexao = new Conexao();
-        try (Connection connection = conexao.getConnection()) {
-            String query = "select id_cliente, nome_cliente, idade, id_servico, id_produto, cpf, rg, telefone, data_exclusao,usuario\n"
-                    + "from backup_cliente;";
-            Statement statement = connection.createStatement();
+        try (Connection conexao = new Conexao().getConnection()) {
+            PreparedStatement inicio = conexao.prepareStatement("BEGIN");
+            inicio.execute();
+            String query = "select id_cliente, nome_cliente, idade, id_servico, id_produto, cpf, rg, telefone, data_exclusao,usuario from backup_cliente;";
+            Statement statement = conexao.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
 
             while (resultSet.next()) {
@@ -189,6 +190,11 @@ public class BackupCliente extends javax.swing.JFrame {
                 String usuario = resultSet.getString("usuario");
                 tabModel.addRow(new Object[]{id_cliente, nome, idade, id_servico, id_produto, cpf, rg, telefone, timestamp, usuario});
             }
+            PreparedStatement fimC = conexao.prepareStatement("COMMIT");
+            fimC.execute();
+            PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
+            fimR.execute();
+            conexao.close();
 
         } catch (SQLException e) {
         }

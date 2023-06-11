@@ -7,6 +7,7 @@ package com.mycompany.mechanicalregister;
 import java.awt.Color;
 import java.awt.Font;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -26,9 +27,9 @@ public class ConsultarProduto extends javax.swing.JFrame {
     public ConsultarProduto() {
         initComponents();
         getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
-        tabConsultarProduto.getTableHeader().setFont(new Font("Segoe UI",Font.BOLD,12));
+        tabConsultarProduto.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
         tabConsultarProduto.getTableHeader().setOpaque(false);
-        tabConsultarProduto.getTableHeader().setBackground(new Color(93,40,221));
+        tabConsultarProduto.getTableHeader().setBackground(new Color(93, 40, 221));
         tabConsultarProduto.getTableHeader().setForeground(new Color(0, 0, 0));
         tabConsultarProduto.setRowHeight(25);
         listarTab();
@@ -168,28 +169,30 @@ public class ConsultarProduto extends javax.swing.JFrame {
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
         voltar();
     }//GEN-LAST:event_btVoltarActionPerformed
-    public void voltar(){
-		
-		int resp = JOptionPane.showConfirmDialog(
-				null,
-				"Deseja realmente voltar?",
-				"VOLTAR",
-				JOptionPane.YES_NO_OPTION
-			);
-		if(resp == 0){
-			MenuPostgre menu = new MenuPostgre();
-                        menu.setVisible(true);
-			dispose();
-		}
+    public void voltar() {
+
+        int resp = JOptionPane.showConfirmDialog(
+                null,
+                "Deseja realmente voltar?",
+                "VOLTAR",
+                JOptionPane.YES_NO_OPTION
+        );
+        if (resp == 0) {
+            MenuPostgre menu = new MenuPostgre();
+            menu.setVisible(true);
+            dispose();
+        }
     }
+
     public void listarTab() {
         DefaultTableModel tabModel = (DefaultTableModel) tabConsultarProduto.getModel();
         tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
 
-        Conexao conexao = new Conexao();
-        try (Connection connection = conexao.getConnection()) {
+        try (Connection conexao = new Conexao().getConnection()) {
+            PreparedStatement inicio = conexao.prepareStatement("BEGIN");
+            inicio.execute();
             String query = "SELECT * FROM produto";
-            Statement statement = connection.createStatement();
+            Statement statement = conexao.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
 
             while (resultSet.next()) {
@@ -199,19 +202,24 @@ public class ConsultarProduto extends javax.swing.JFrame {
                 int quantidade = resultSet.getInt("quantidade");
                 tabModel.addRow(new Object[]{id, nome, valor, quantidade});
             }
-
+            PreparedStatement fimC = conexao.prepareStatement("COMMIT");
+            fimC.execute();
+            PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
+            fimR.execute();
+            conexao.close();
         } catch (SQLException e) {
         }
     }
-    
+
     public void listarTabUnic() {
         DefaultTableModel tabModel = (DefaultTableModel) tabConsultarProduto.getModel();
         tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
 
-        Conexao conexao = new Conexao();
-        try (Connection connection = conexao.getConnection()) {
+        try (Connection conexao = new Conexao().getConnection()) {
+            PreparedStatement inicio = conexao.prepareStatement("BEGIN");
+            inicio.execute();
             String query = "SELECT * FROM produto";
-            Statement statement = connection.createStatement();
+            Statement statement = conexao.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
 
             while (resultSet.next()) {
@@ -219,10 +227,14 @@ public class ConsultarProduto extends javax.swing.JFrame {
                 String nome = resultSet.getString("nome_produto");
                 float valor = resultSet.getFloat("valor");
                 int quantidade = resultSet.getInt("quantidade");
-                if(Integer.parseInt(cxConsultar.getText()) == id){
+                if (Integer.parseInt(cxConsultar.getText()) == id) {
                     tabModel.addRow(new Object[]{id, nome, valor, quantidade});
                 }
-                
+                PreparedStatement fimC = conexao.prepareStatement("COMMIT");
+                fimC.execute();
+                PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
+                fimR.execute();
+                conexao.close();
             }
 
         } catch (SQLException e) {

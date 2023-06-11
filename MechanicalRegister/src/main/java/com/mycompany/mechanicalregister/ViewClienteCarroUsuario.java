@@ -7,6 +7,7 @@ package com.mycompany.mechanicalregister;
 import java.awt.Color;
 import java.awt.Font;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -154,10 +155,11 @@ public class ViewClienteCarroUsuario extends javax.swing.JFrame {
         DefaultTableModel tabModel = (DefaultTableModel) tabClienteCarro.getModel();
         tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
 
-        Conexao conexao = new Conexao();
-        try (Connection connection = conexao.getConnection()) {
+        try (Connection conexao = new Conexao().getConnection()) {
+            PreparedStatement inicio = conexao.prepareStatement("BEGIN");
+            inicio.execute();
             String query = "SELECT nome_cliente,placa,marca,modelo FROM carro_cliente";
-            Statement statement = connection.createStatement();
+            Statement statement = conexao.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
 
             while (resultSet.next()) {
@@ -167,7 +169,11 @@ public class ViewClienteCarroUsuario extends javax.swing.JFrame {
                 String modelo = resultSet.getString("modelo");
                 tabModel.addRow(new Object[]{nome, placa, marca, modelo});
             }
-
+            PreparedStatement fimC = conexao.prepareStatement("COMMIT");
+            fimC.execute();
+            PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
+            fimR.execute();
+            conexao.close();
         } catch (SQLException e) {
         }
     }

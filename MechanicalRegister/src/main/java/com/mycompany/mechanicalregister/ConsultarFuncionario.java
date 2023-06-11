@@ -7,6 +7,7 @@ package com.mycompany.mechanicalregister;
 import java.awt.Color;
 import java.awt.Font;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -166,28 +167,29 @@ public class ConsultarFuncionario extends javax.swing.JFrame {
         setLocationRelativeTo(null);
 
     }//GEN-LAST:event_formWindowActivated
-    public void voltar(){
-		
-		int resp = JOptionPane.showConfirmDialog(
-				null,
-				"Deseja realmente voltar?",
-				"VOLTAR",
-				JOptionPane.YES_NO_OPTION
-			);
-		if(resp == 0){
-			//System.exit(0);
-			dispose();
-		}
+    public void voltar() {
+
+        int resp = JOptionPane.showConfirmDialog(
+                null,
+                "Deseja realmente voltar?",
+                "VOLTAR",
+                JOptionPane.YES_NO_OPTION
+        );
+        if (resp == 0) {
+            //System.exit(0);
+            dispose();
+        }
     }
-    
+
     public void listarTab() {
         DefaultTableModel tabModel = (DefaultTableModel) tabFuncionario.getModel();
         tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
 
-        Conexao conexao = new Conexao();
-        try (Connection connection = conexao.getConnection()) {
+        try (Connection conexao = new Conexao().getConnection()) {
+            PreparedStatement inicio = conexao.prepareStatement("BEGIN");
+            inicio.execute();
             String query = "SELECT id_funcionario, id_servico,idade, nome,  rg, cpf, funcao FROM funcionario";
-            Statement statement = connection.createStatement();
+            Statement statement = conexao.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
 
             while (resultSet.next()) {
@@ -198,22 +200,27 @@ public class ConsultarFuncionario extends javax.swing.JFrame {
                 int rg = resultSet.getInt("rg");
                 int cpf = resultSet.getInt("cpf");
                 String funcao = resultSet.getString("funcao");
-                tabModel.addRow(new Object[]{id_funcionario, id_servico,idade, nome,  rg, cpf, funcao});
+                tabModel.addRow(new Object[]{id_funcionario, id_servico, idade, nome, rg, cpf, funcao});
             }
-
+            PreparedStatement fimC = conexao.prepareStatement("COMMIT");
+            fimC.execute();
+            PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
+            fimR.execute();
+            conexao.close();
         } catch (SQLException e) {
         }
     }
-    
+
     public void listarTabUnic() {
         DefaultTableModel tabModel = (DefaultTableModel) tabFuncionario.getModel();
         tabModel.setRowCount(0); // Limpa as linhas existentes na tabela
 
-        Conexao conexao = new Conexao();
-        try (Connection connection = conexao.getConnection()) {
-            
+        try (Connection conexao = new Conexao().getConnection()) {
+            PreparedStatement inicio = conexao.prepareStatement("BEGIN");
+            inicio.execute();
+
             String query = "SELECT id_funcionario, id_servico,idade, nome,  rg, cpf, funcao FROM funcionario";
-            Statement statement = connection.createStatement();
+            Statement statement = conexao.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
 
             while (resultSet.next()) {
@@ -224,16 +231,21 @@ public class ConsultarFuncionario extends javax.swing.JFrame {
                 int rg = resultSet.getInt("rg");
                 int cpf = resultSet.getInt("cpf");
                 String funcao = resultSet.getString("funcao");
-                
-                if(Integer.parseInt(cxConsultar.getText()) == id_funcionario){
-                    tabModel.addRow(new Object[]{id_funcionario, id_servico,idade, nome,  rg, cpf, funcao});
+
+                if (Integer.parseInt(cxConsultar.getText()) == id_funcionario) {
+                    tabModel.addRow(new Object[]{id_funcionario, id_servico, idade, nome, rg, cpf, funcao});
                 }
-                
+                PreparedStatement fimC = conexao.prepareStatement("COMMIT");
+                fimC.execute();
+                PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
+                fimR.execute();
+                conexao.close();
             }
 
         } catch (SQLException e) {
         }
     }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
