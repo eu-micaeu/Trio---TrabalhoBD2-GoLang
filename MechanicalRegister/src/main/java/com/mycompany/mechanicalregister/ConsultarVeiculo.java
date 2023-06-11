@@ -139,7 +139,7 @@ public class ConsultarVeiculo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
-
+        voltar();
     }//GEN-LAST:event_btVoltarActionPerformed
 
     private void btConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarActionPerformed
@@ -158,7 +158,6 @@ public class ConsultarVeiculo extends javax.swing.JFrame {
                 JOptionPane.YES_NO_OPTION
         );
         if (resp == 0) {
-            voltar();
             MenuPostgre menu = new MenuPostgre();
             menu.setVisible(true);
             dispose();
