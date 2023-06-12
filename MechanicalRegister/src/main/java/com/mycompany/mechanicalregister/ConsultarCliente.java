@@ -173,7 +173,7 @@ public class ConsultarCliente extends javax.swing.JFrame {
                 JOptionPane.YES_NO_OPTION
         );
         if (resp == 0) {
-            MenuPostgre menu = new MenuPostgre();
+            MenuPostgres menu = new MenuPostgres();
             menu.setVisible(true);
             dispose();
         }

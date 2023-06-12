@@ -151,7 +151,7 @@ public class MechanicalRegister extends javax.swing.JFrame {
 
     private void btEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEntrarActionPerformed
         if ("postgres".equals(cxUsuario.getText()) && "postgres".equals(cxSenha.getText())) {
-            MenuPostgre menu = new MenuPostgre();
+            MenuPostgres menu = new MenuPostgres();
             menu.setVisible(true);
             this.dispose();
         }else if("usuario".equals(cxUsuario.getText()) && "usuario".equals(cxSenha.getText())){

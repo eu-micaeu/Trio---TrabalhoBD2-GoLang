@@ -155,7 +155,7 @@ public class ConsultarFuncionario extends javax.swing.JFrame {
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
         voltar();
-        MenuPostgre menu = new MenuPostgre();
+        MenuPostgres menu = new MenuPostgres();
         menu.setVisible(true);
     }//GEN-LAST:event_btVoltarActionPerformed
 
