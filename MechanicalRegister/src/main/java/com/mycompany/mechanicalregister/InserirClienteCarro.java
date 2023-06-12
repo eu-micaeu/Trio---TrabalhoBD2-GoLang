@@ -14,12 +14,12 @@ import java.sql.SQLException;
  *
  * @author brena
  */
-public class InserirClienteCarroUsuario extends javax.swing.JFrame {
+public class InserirClienteCarro extends javax.swing.JFrame {
 
     /**
      * Creates new form InserirClienteCarroUsuario
      */
-    public InserirClienteCarroUsuario() {
+    public InserirClienteCarro() {
         initComponents();
         getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
     }
@@ -162,32 +162,20 @@ public class InserirClienteCarroUsuario extends javax.swing.JFrame {
         try (Connection conexao = new Conexao().getConnection()) {
             PreparedStatement inicio = conexao.prepareStatement("BEGIN");
             inicio.execute();
-            String sql = String.format("insert into carro_cliente (nome, placa ,marca, modelo) values ('%s','%s' '%s', '%s');", cxNome.getText(),cxPlaca.getText(), cxMarca.getText(),cxModelo.getText());
+            String sql = String.format("insert into carro_cliente (nome_cliente, placa, marca, modelo) values ('%s', '%s', '%s', '%s');", cxNome.getText(), cxPlaca.getText(), cxMarca.getText(), cxModelo.getText());
             PreparedStatement statement = conexao.prepareStatement(sql);
-            statement.execute();
-            String resp;
-            
-            sql = String.format("insert into cliente (nome_cliente,data_de_registro) values ('%s',CURRENT_TIMESTAMP);", cxNome.getText());
-            statement = conexao.prepareStatement(sql);
-            statement.execute();
-            
-            resp = "SELECT MAX(id_cliente) FROM cliente";
-            statement = conexao.prepareStatement(resp);
-            ResultSet resultSet = statement.executeQuery();
-            if (resultSet.next()) {
-                int maxIdCliente = resultSet.getInt(1);
-                resp = String.valueOf(maxIdCliente);
-            } else {
-                resp = "Nenhum registro encontrado";
-            }
-            sql = String.format("insert into veiculo (placa, marca, modelo, id_cliente) values ('%s', 'asss', 'dddd',%s)", cxPlaca.getText(),resp);
-            statement = conexao.prepareStatement(sql);
             statement.execute();
             PreparedStatement fimC = conexao.prepareStatement("COMMIT");
             fimC.execute();
             PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
             fimR.execute();
             conexao.close();
+            JOptionPane.showMessageDialog(
+                        null,
+                        "Pre-cadastro do cliente cadastrado com sucesso!",
+                        "Cadastro de cliente com carro",
+                        JOptionPane.INFORMATION_MESSAGE
+                );
            
         } catch (SQLException ex) {
 
@@ -231,20 +219,21 @@ public class InserirClienteCarroUsuario extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InserirClienteCarroUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InserirClienteCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InserirClienteCarroUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InserirClienteCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InserirClienteCarroUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InserirClienteCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InserirClienteCarroUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InserirClienteCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InserirClienteCarroUsuario().setVisible(true);
+                new InserirClienteCarro().setVisible(true);
             }
         });
     }

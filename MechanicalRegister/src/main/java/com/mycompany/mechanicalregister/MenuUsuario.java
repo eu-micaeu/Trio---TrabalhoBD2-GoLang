@@ -138,7 +138,7 @@ public class MenuUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_btSairActionPerformed
 
     private void btClienteCarro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btClienteCarro1ActionPerformed
-        InserirClienteCarroUsuario clientecarro = new InserirClienteCarroUsuario();
+        InserirClienteCarro clientecarro = new InserirClienteCarro();
         clientecarro.setVisible(true);
         dispose();
     }//GEN-LAST:event_btClienteCarro1ActionPerformed

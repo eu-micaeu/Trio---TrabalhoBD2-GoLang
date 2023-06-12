@@ -218,7 +218,13 @@ public class ApagarFuncionario extends javax.swing.JFrame {
             fimC.execute();
             PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
             fimR.execute();
-            conexao.close();
+            conexao.close();JOptionPane.showMessageDialog(
+                        null,
+                        "Funcionario apagado com sucesso!",
+                        "",
+                        JOptionPane.INFORMATION_MESSAGE
+                );
+            
         } catch (SQLException e) {
         }
     }

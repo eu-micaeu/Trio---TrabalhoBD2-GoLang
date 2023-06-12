@@ -373,6 +373,12 @@ public class InserirCliente extends javax.swing.JFrame {
             PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
             fimR.execute();
             conexao.close();
+            JOptionPane.showMessageDialog(
+                        null,
+                        "Cliente cadastrado com sucesso!",
+                        "",
+                        JOptionPane.INFORMATION_MESSAGE
+                );
         } catch (SQLException ex) {
 
         }
@@ -407,6 +413,12 @@ public class InserirCliente extends javax.swing.JFrame {
             PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
             fimR.execute();
             conexao.close();
+            JOptionPane.showMessageDialog(
+                        null,
+                        "Cliente cadastrado com sucesso!",
+                        "",
+                        JOptionPane.INFORMATION_MESSAGE
+                );
         } catch (SQLException ex) {
 
         }

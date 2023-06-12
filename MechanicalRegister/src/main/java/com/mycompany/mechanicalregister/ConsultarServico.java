@@ -225,7 +225,7 @@ public class ConsultarServico extends javax.swing.JFrame {
         try (Connection conexao = new Conexao().getConnection()) {
             PreparedStatement inicio = conexao.prepareStatement("BEGIN");
             inicio.execute();
-            String query = "SELECT * FROM servico";
+            String query = String.format("SELECT * FROM servico where id_servico = %s", cxConsultar.getText());
             Statement statement = conexao.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
 
@@ -233,9 +233,6 @@ public class ConsultarServico extends javax.swing.JFrame {
                 int id = resultSet.getInt("id_servico");
                 String tipo = resultSet.getString("tipo");
                 float valor = resultSet.getFloat("valor");
-                if (Integer.parseInt(cxConsultar.getText()) == id) {
-                    tabModel.addRow(new Object[]{id, tipo, valor});
-                }
                 PreparedStatement fimC = conexao.prepareStatement("COMMIT");
                 fimC.execute();
                 PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");

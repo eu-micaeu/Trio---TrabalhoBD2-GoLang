@@ -158,6 +158,12 @@ public class InserirProduto extends javax.swing.JFrame {
             PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
             fimR.execute();
             conexao.close();
+            JOptionPane.showMessageDialog(
+                        null,
+                        "Produto cadastrado com sucesso!",
+                        "",
+                        JOptionPane.INFORMATION_MESSAGE
+                );
         } catch (SQLException ex) {
 
         }

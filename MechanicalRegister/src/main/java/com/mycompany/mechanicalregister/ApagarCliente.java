@@ -188,6 +188,12 @@ public class ApagarCliente extends javax.swing.JFrame {
             PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
             fimR.execute();
             conexao.close();
+            JOptionPane.showMessageDialog(
+                        null,
+                        "Cliente apagado com sucesso!",
+                        "",
+                        JOptionPane.INFORMATION_MESSAGE
+                );
         } catch (SQLException e) {
         }
     }

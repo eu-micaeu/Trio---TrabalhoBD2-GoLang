@@ -216,8 +216,7 @@ public class ConsultarCliente extends javax.swing.JFrame {
         try (Connection conexao = new Conexao().getConnection()) {
             PreparedStatement inicio = conexao.prepareStatement("BEGIN");
             inicio.execute();
-
-            String query = "SELECT id_cliente, nome_cliente, idade, rg, cpf, telefone, data_de_registro FROM cliente";
+            String query = String.format("SELECT id_cliente, nome_cliente, idade, rg, cpf, telefone, data_de_registro FROM cliente WHERE id_cliente = %s;", cxConsultar.getText());
             Statement statement = conexao.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
 
@@ -229,9 +228,7 @@ public class ConsultarCliente extends javax.swing.JFrame {
                 int cpf = resultSet.getInt("cpf");
                 String telefone = resultSet.getString("telefone");
                 Timestamp timestamp = resultSet.getTimestamp("data_de_registro");
-                if (Integer.parseInt(cxConsultar.getText()) == id) {
-                    tabModel.addRow(new Object[]{id, nome, idade, rg, cpf, telefone, timestamp});
-                }
+                tabModel.addRow(new Object[]{id, nome, idade, rg, cpf, telefone, timestamp});
                 PreparedStatement fimC = conexao.prepareStatement("COMMIT");
                 fimC.execute();
                 PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");

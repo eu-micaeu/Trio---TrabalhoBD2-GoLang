@@ -207,6 +207,12 @@ public class ApagarProduto extends javax.swing.JFrame {
             PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
             fimR.execute();
             conexao.close();
+            JOptionPane.showMessageDialog(
+                        null,
+                        "Produto apagado com sucesso!",
+                        "",
+                        JOptionPane.INFORMATION_MESSAGE
+                );
         } catch (SQLException e) {
         }
     }

@@ -190,6 +190,13 @@ public class ConsultarVeiculo extends javax.swing.JFrame {
             fimC.execute();
             PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
             fimR.execute();
+            conexao.close();
+            JOptionPane.showMessageDialog(
+                        null,
+                        "Cliente consultado com sucesso!",
+                        "",
+                        JOptionPane.INFORMATION_MESSAGE
+                );
 
         } catch (SQLException e) {
         }

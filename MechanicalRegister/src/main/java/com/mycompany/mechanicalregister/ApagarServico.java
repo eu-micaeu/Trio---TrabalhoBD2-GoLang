@@ -218,6 +218,12 @@ public class ApagarServico extends javax.swing.JFrame {
             PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
             fimR.execute();
             conexao.close();
+            JOptionPane.showMessageDialog(
+                        null,
+                        "Serviço apagado com sucesso!",
+                        "",
+                        JOptionPane.INFORMATION_MESSAGE
+                );
 
         } catch (SQLException e) {
         }

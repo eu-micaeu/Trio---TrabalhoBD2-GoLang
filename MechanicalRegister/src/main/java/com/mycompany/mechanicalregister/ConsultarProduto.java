@@ -218,7 +218,7 @@ public class ConsultarProduto extends javax.swing.JFrame {
         try (Connection conexao = new Conexao().getConnection()) {
             PreparedStatement inicio = conexao.prepareStatement("BEGIN");
             inicio.execute();
-            String query = "SELECT * FROM produto";
+            String query = String.format("SELECT * FROM produto where id_produto = %s", cxConsultar.getText());
             Statement statement = conexao.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
 
@@ -227,9 +227,7 @@ public class ConsultarProduto extends javax.swing.JFrame {
                 String nome = resultSet.getString("nome_produto");
                 float valor = resultSet.getFloat("valor");
                 int quantidade = resultSet.getInt("quantidade");
-                if (Integer.parseInt(cxConsultar.getText()) == id) {
-                    tabModel.addRow(new Object[]{id, nome, valor, quantidade});
-                }
+                tabModel.addRow(new Object[]{id, nome, valor, quantidade});
                 PreparedStatement fimC = conexao.prepareStatement("COMMIT");
                 fimC.execute();
                 PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
