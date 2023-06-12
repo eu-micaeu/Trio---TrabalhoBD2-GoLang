@@ -246,14 +246,17 @@ public class MenuPostgres extends javax.swing.JFrame {
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("BACKUP DE CLIENTES QUE FORAM APAGADOS");
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("CLIENTES QUE POSSUEM VEICULO REGISTRADO NO SISTEMA");
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("CLIENTES QUE COMPRARAM ALGUM PRODUTO");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
