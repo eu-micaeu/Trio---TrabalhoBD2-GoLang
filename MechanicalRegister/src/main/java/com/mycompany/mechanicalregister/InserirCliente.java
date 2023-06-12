@@ -362,7 +362,7 @@ public class InserirCliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btNaoTemVeicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNaoTemVeicActionPerformed
-       try (Connection conexao = new Conexao().getConnection()) {
+        try (Connection conexao = new Conexao().getConnection()) {
             PreparedStatement inicio = conexao.prepareStatement("BEGIN");
             inicio.execute();
             String sql = String.format("insert into cliente (nome_cliente, idade, id_servico, id_produto, cpf , rg , telefone , data_de_registro) values ('%s', %s, %s, %s, '%s', '%s', '%s', CURRENT_TIMESTAMP);", cxNome.getText(), cxIdade.getText(), cxIdServico.getText(), cxIdProduto.getText(), cxCPF.getText(), cxRG.getText(), cxTelefone.getText());
@@ -401,11 +401,11 @@ public class InserirCliente extends javax.swing.JFrame {
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
                 int maxIdCliente = resultSet.getInt(1);
-                resp = String.valueOf(maxIdCliente);
+                resp = maxIdCliente + "";
             } else {
                 resp = "Nenhum registro encontrado";
             }
-            sql = String.format("insert into veiculo (ano, placa, marca, modelo, cor, motor, id_cliente) values (%s, '%s', '%s', '%s', '%s', 'E', %s)", cxAno.getText(),cxPlaca.getText(),resp, cxAno.getText(), cxModelo.getText(), cxAno.getText(), cxMotor.getText());
+            sql = String.format("insert into veiculo (ano, placa, marca, modelo, cor, motor, id_cliente) values (%s, '%s', '%s', '%s', '%s', '%s', %s)", cxAno.getText(),cxPlaca.getText(),cxMarca.getText(), cxModelo.getText(), cxCor.getText(), cxMotor.getText(), resp);
             statement = conexao.prepareStatement(sql);
             statement.execute();
             PreparedStatement fimC = conexao.prepareStatement("COMMIT");
@@ -420,7 +420,7 @@ public class InserirCliente extends javax.swing.JFrame {
                         JOptionPane.INFORMATION_MESSAGE
                 );
         } catch (SQLException ex) {
-
+            
         }
     }//GEN-LAST:event_btTemVeicActionPerformed
 
