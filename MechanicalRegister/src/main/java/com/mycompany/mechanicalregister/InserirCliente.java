@@ -405,7 +405,7 @@ public class InserirCliente extends javax.swing.JFrame {
             } else {
                 resp = "Nenhum registro encontrado";
             }
-            sql = String.format("insert into veiculo (ano, placa, marca, modelo, cor, motor, id_cliente) values (2004, '%s', 'asss', 'dddd', 'azul', 'E', %s)", cxPlaca.getText(),resp);
+            sql = String.format("insert into veiculo (ano, placa, marca, modelo, cor, motor, id_cliente) values (%s, '%s', '%s', '%s', '%s', 'E', %s)", cxAno.getText(),cxPlaca.getText(),resp, cxAno.getText(), cxModelo.getText(), cxAno.getText(), cxMotor.getText());
             statement = conexao.prepareStatement(sql);
             statement.execute();
             PreparedStatement fimC = conexao.prepareStatement("COMMIT");

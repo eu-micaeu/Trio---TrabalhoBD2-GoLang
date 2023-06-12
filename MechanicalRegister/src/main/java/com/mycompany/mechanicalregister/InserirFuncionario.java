@@ -202,17 +202,6 @@ public class InserirFuncionario extends javax.swing.JFrame {
             inicio.execute();
             String sql = String.format("insert into funcionario (id_servico, idade, nome,  rg, cpf, funcao) values (%s, %s, '%s', %s, %s, '%s');", cxIdServico.getText(), cxIdade.getText(), cxNome.getText(), cxRG.getText(), cxCPF.getText(), cxFuncao.getText());
             PreparedStatement statement = conexao.prepareStatement(sql);
-            statement.execute();
-            String resp;
-            resp = "SELECT MAX(id_funcionario) FROM funcionario";
-            statement = conexao.prepareStatement(resp);
-            ResultSet resultSet = statement.executeQuery();
-            if (resultSet.next()) {
-                int maxIdCliente = resultSet.getInt(1);
-                resp = String.valueOf(maxIdCliente);
-            } else {
-                resp = "Nenhum registro encontrado";
-            }
             statement = conexao.prepareStatement(sql);
             statement.execute();
             PreparedStatement fimC = conexao.prepareStatement("COMMIT");
