@@ -158,17 +158,37 @@ public class InserirClienteCarroUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInserirActionPerformed
+             
         try (Connection conexao = new Conexao().getConnection()) {
             PreparedStatement inicio = conexao.prepareStatement("BEGIN");
             inicio.execute();
             String sql = String.format("insert into carro_cliente (nome, placa ,marca, modelo) values ('%s','%s' '%s', '%s');", cxNome.getText(),cxPlaca.getText(), cxMarca.getText(),cxModelo.getText());
             PreparedStatement statement = conexao.prepareStatement(sql);
             statement.execute();
+            String resp;
+            
+            sql = String.format("insert into cliente (nome_cliente,data_de_registro) values ('%s',CURRENT_TIMESTAMP);", cxNome.getText());
+            statement = conexao.prepareStatement(sql);
+            statement.execute();
+            
+            resp = "SELECT MAX(id_cliente) FROM cliente";
+            statement = conexao.prepareStatement(resp);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                int maxIdCliente = resultSet.getInt(1);
+                resp = String.valueOf(maxIdCliente);
+            } else {
+                resp = "Nenhum registro encontrado";
+            }
+            sql = String.format("insert into veiculo (placa, marca, modelo, id_cliente) values ('%s', 'asss', 'dddd',%s)", cxPlaca.getText(),resp);
+            statement = conexao.prepareStatement(sql);
+            statement.execute();
             PreparedStatement fimC = conexao.prepareStatement("COMMIT");
             fimC.execute();
             PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
             fimR.execute();
             conexao.close();
+           
         } catch (SQLException ex) {
 
         }
