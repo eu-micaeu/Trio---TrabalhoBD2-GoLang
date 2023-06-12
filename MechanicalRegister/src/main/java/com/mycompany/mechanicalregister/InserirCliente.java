@@ -414,8 +414,7 @@ public class InserirCliente extends javax.swing.JFrame {
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
         voltar();
-        MenuPostgres menu = new MenuPostgres();
-        menu.setVisible(true);
+       
     }//GEN-LAST:event_btVoltarActionPerformed
 
     private void btprodutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btprodutoActionPerformed
@@ -430,18 +429,19 @@ public class InserirCliente extends javax.swing.JFrame {
        dispose();
     }//GEN-LAST:event_btServicoActionPerformed
 
-      public void voltar(){
-		
-		int resp = JOptionPane.showConfirmDialog(
-				null,
-				"Deseja realmente voltar?",
-				"VOLTAR",
-				JOptionPane.YES_NO_OPTION
-			);
-		if(resp == 0){
-			//System.exit(0);
-			dispose();
-		}
+     public void voltar() {
+
+        int resp = JOptionPane.showConfirmDialog(
+                null,
+                "Deseja realmente voltar?",
+                "VOLTAR",
+                JOptionPane.YES_NO_OPTION
+        );
+        if (resp == 0) {
+            MenuPostgres menu = new MenuPostgres();
+            menu.setVisible(true);
+            dispose();
+        }
     }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
