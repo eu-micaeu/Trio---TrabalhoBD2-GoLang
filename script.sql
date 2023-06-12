@@ -178,7 +178,7 @@ BEGIN
 	values (NEW.placa,NEW.marca, NEW.modelo, id_cli);			
 	RETURN NEW;							
 END;
-$$ LANGUAGE plpgsql;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
 					  
 CREATE TRIGGER carro_cliente INSTEAD OF
 INSERT ON carro_cliente FOR EACH ROW EXECUTE

@@ -187,7 +187,7 @@ public class ViewClienteCarroUsuario extends javax.swing.JFrame {
                 JOptionPane.YES_NO_OPTION
         );
         if (resp == 0) {
-            MenuPostgres menu = new MenuPostgres();
+            MenuUsuario menu = new MenuUsuario();
             menu.setVisible(true);
             dispose();
         }
