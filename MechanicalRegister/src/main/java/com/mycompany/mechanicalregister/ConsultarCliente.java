@@ -212,6 +212,7 @@ public class ConsultarCliente extends javax.swing.JFrame {
         }
     }
 
+    // mostrar somente os dados referentes ao id_cliente informado 
     public void listarTabUnic() {
         DefaultTableModel tabModel = (DefaultTableModel) tabCliente.getModel();
         tabModel.setRowCount(0); // Limpa as linhas existentes na tabela

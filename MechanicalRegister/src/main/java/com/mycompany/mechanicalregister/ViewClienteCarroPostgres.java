@@ -115,7 +115,7 @@ public class ViewClienteCarroPostgres extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btVoltarActionPerformed
 
-  
+ // Lista dos dados da view cliente_carro, relação entre as tabelas cliente a de veículo
     public void listarTab() {
         DefaultTableModel tabModel = (DefaultTableModel) tabClienteCarro.getModel();
         tabModel.setRowCount(0); // Limpa as linhas existentes na tabela

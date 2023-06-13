@@ -150,7 +150,9 @@ public class ApagarCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_btApagarActionPerformed
 
     
-
+// // A tabela veículo e cliente possuem relação , por meio da chave estrangeira id_cliente presente na tabela veículo 
+    //Assim, todos os dados de cliente que correspondem na tabela veículo, também são deletados
+    //A exclusão é feita após o usuário informa o id_cliente que deseja excluir
     public void listarTabDel() {
         DefaultTableModel tabModel = (DefaultTableModel) tabApagarCliente.getModel();
         tabModel.setRowCount(0);

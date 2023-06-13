@@ -153,6 +153,7 @@ public class BackupCliente extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }//GEN-LAST:event_formWindowActivated
     
+// Lista na tabela os dados de backup cliente, que são os clientes que foram deletados anteriormente
 
     public void listarTab() {
         DefaultTableModel tabModel = (DefaultTableModel) tabBackup.getModel();
