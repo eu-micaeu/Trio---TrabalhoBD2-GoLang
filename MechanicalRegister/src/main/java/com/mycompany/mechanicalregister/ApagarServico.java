@@ -134,7 +134,7 @@ public class ApagarServico extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(cxApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(59, 59, 59)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE))
         );
 
         pack();
