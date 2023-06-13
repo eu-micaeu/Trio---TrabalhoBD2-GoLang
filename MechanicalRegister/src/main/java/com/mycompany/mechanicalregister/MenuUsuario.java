@@ -130,7 +130,6 @@ public class MenuUsuario extends javax.swing.JFrame {
     private void btClienteCarroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btClienteCarroActionPerformed
         ViewClienteCarroUsuario clienteCarro = new ViewClienteCarroUsuario();
         clienteCarro.setVisible(true);
-        dispose();
     }//GEN-LAST:event_btClienteCarroActionPerformed
 
     private void btSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairActionPerformed
@@ -140,7 +139,6 @@ public class MenuUsuario extends javax.swing.JFrame {
     private void btClienteCarro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btClienteCarro1ActionPerformed
         InserirClienteCarro clientecarro = new InserirClienteCarro();
         clientecarro.setVisible(true);
-        dispose();
     }//GEN-LAST:event_btClienteCarro1ActionPerformed
 
     public void voltar() {
