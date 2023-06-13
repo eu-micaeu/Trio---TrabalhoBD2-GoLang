@@ -389,7 +389,14 @@ public class InserirCliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btNaoTemVeicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNaoTemVeicActionPerformed
-        if (cxPlaca.getText().isEmpty()) {
+      
+// Verifica se a caixa de texto PLACA está vazia. Se estiver vazia, o código será executado.
+// Tenta estabelecer uma conexão com o banco de dados.
+// Utiliza o comando BEGIN para iniciar uma transação no banco de dados, usando um objeto PreparedStatement.
+// Constrói um código SQL para inserir clientes no banco, com base nos valores das caixas de texto.
+// A string SQL é executada através de outro objeto PreparedStatement chamado "statement".
+     
+        if (cxPlaca.getText().isEmpty()) { 
             try (Connection conexao = new Conexao().getConnection()) {
                 PreparedStatement inicio = conexao.prepareStatement("BEGIN");
                 inicio.execute();
@@ -426,6 +433,9 @@ public class InserirCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowActivated
 
     private void btTemVeicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btTemVeicActionPerformed
+        
+// Verifica se a caixa de texto de PLACA está vazia, pois é um campo obrigatório para realizar a inserção.
+// O objetivo é cadastrar um cliente na tabela "cliente" do banco de dados, bem como na tabela "veículo" usando a chave estrangeira id_cliente.
         if (cxPlaca.getText().isEmpty()) {
             JOptionPane.showMessageDialog(
                     null,
