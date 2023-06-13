@@ -116,11 +116,8 @@ public class ApagarServico extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 976, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14))
+                .addContainerGap(74, Short.MAX_VALUE))
+            .addComponent(jScrollPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,8 +134,7 @@ public class ApagarServico extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(cxApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(59, 59, 59)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(274, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE))
         );
 
         pack();
@@ -149,7 +145,7 @@ public class ApagarServico extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowActivated
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
-        voltar();
+        dispose();
 
     }//GEN-LAST:event_btVoltarActionPerformed
 
@@ -157,20 +153,7 @@ public class ApagarServico extends javax.swing.JFrame {
         listarTabDel();
         listarTab();
     }//GEN-LAST:event_btApagarActionPerformed
-    public void voltar() {
-
-        int resp = JOptionPane.showConfirmDialog(
-                null,
-                "Deseja realmente voltar?",
-                "VOLTAR",
-                JOptionPane.YES_NO_OPTION
-        );
-        if (resp == 0) {
-            MenuPostgres menu = new MenuPostgres();
-            menu.setVisible(true);
-            dispose();
-        }
-    }
+   
 
     public void listarTabDel() {
         DefaultTableModel tabModel = (DefaultTableModel) tabApagarServico.getModel();
@@ -215,12 +198,7 @@ public class ApagarServico extends javax.swing.JFrame {
             PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
             fimR.execute();
             conexao.close();
-            JOptionPane.showMessageDialog(
-                        null,
-                        "Serviço apagado com sucesso!",
-                        "",
-                        JOptionPane.INFORMATION_MESSAGE
-                );
+            
 
         } catch (SQLException e) {
         }

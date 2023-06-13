@@ -135,8 +135,7 @@ public class ApagarFuncionario extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(cxApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(69, 69, 69)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(254, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE))
         );
 
         pack();
@@ -148,7 +147,7 @@ public class ApagarFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_btApagarActionPerformed
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
-        voltar();
+        dispose();
 
     }//GEN-LAST:event_btVoltarActionPerformed
 
@@ -156,20 +155,7 @@ public class ApagarFuncionario extends javax.swing.JFrame {
         setLocationRelativeTo(null);
 
     }//GEN-LAST:event_formWindowActivated
-    public void voltar() {
 
-        int resp = JOptionPane.showConfirmDialog(
-                null,
-                "Deseja realmente voltar?",
-                "VOLTAR",
-                JOptionPane.YES_NO_OPTION
-        );
-        if (resp == 0) {
-            MenuPostgres menu = new MenuPostgres();
-            menu.setVisible(true);
-            dispose();
-        }
-    }
 
     public void listarTabDel() {
         DefaultTableModel tabModel = (DefaultTableModel) tabApagarFuncionario.getModel();
@@ -218,13 +204,7 @@ public class ApagarFuncionario extends javax.swing.JFrame {
             fimC.execute();
             PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
             fimR.execute();
-            conexao.close();JOptionPane.showMessageDialog(
-                        null,
-                        "Funcionario apagado com sucesso!",
-                        "",
-                        JOptionPane.INFORMATION_MESSAGE
-                );
-            
+            conexao.close();
         } catch (SQLException e) {
         }
     }

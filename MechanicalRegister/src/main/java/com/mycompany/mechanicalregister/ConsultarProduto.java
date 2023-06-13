@@ -51,7 +51,6 @@ public class ConsultarProduto extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         btCliente = new javax.swing.JButton();
         btConsultar = new javax.swing.JButton();
-        btVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -88,7 +87,7 @@ public class ConsultarProduto extends javax.swing.JFrame {
         btCliente.setBackground(new java.awt.Color(93, 40, 221));
         btCliente.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         btCliente.setForeground(new java.awt.Color(255, 255, 255));
-        btCliente.setText("VOLTAR - CLIENTE");
+        btCliente.setText("VOLTAR");
         btCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btClienteActionPerformed(evt);
@@ -105,16 +104,6 @@ public class ConsultarProduto extends javax.swing.JFrame {
             }
         });
 
-        btVoltar.setBackground(new java.awt.Color(93, 40, 221));
-        btVoltar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        btVoltar.setForeground(new java.awt.Color(255, 255, 255));
-        btVoltar.setText("VOLTAR - MENU");
-        btVoltar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btVoltarActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -125,11 +114,10 @@ public class ConsultarProduto extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(30, 30, 30)
                 .addComponent(cxConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btConsultar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btConsultar, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -139,14 +127,11 @@ public class ConsultarProduto extends javax.swing.JFrame {
                 .addComponent(btConsultar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btVoltar)
                     .addComponent(jLabel2)
-                    .addComponent(cxConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btCliente)
-                .addGap(34, 34, 34)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(260, Short.MAX_VALUE))
+                    .addComponent(cxConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btCliente))
+                .addGap(76, 76, 76)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 436, Short.MAX_VALUE))
         );
 
         pack();
@@ -161,15 +146,9 @@ public class ConsultarProduto extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowActivated
 
     private void btClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btClienteActionPerformed
-        InserirCliente cliente = new InserirCliente();
-        cliente.setVisible(true);
-        dispose();
+dispose();
 
     }//GEN-LAST:event_btClienteActionPerformed
-
-    private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
-        voltar();
-    }//GEN-LAST:event_btVoltarActionPerformed
     public void voltar() {
 
         int resp = JOptionPane.showConfirmDialog(
@@ -279,7 +258,6 @@ public class ConsultarProduto extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btCliente;
     private javax.swing.JButton btConsultar;
-    private javax.swing.JButton btVoltar;
     private javax.swing.JTextField cxConsultar;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;

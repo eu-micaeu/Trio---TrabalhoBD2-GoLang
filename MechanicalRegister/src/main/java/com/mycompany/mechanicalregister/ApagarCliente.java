@@ -129,8 +129,7 @@ public class ApagarCliente extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(cxApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(60, 60, 60)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(208, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE))
         );
 
         pack();
@@ -141,7 +140,7 @@ public class ApagarCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowActivated
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
-        voltar();
+        dispose();
 
     }//GEN-LAST:event_btVoltarActionPerformed
 
@@ -150,20 +149,7 @@ public class ApagarCliente extends javax.swing.JFrame {
         listarTab();
     }//GEN-LAST:event_btApagarActionPerformed
 
-    public void voltar() {
-
-        int resp = JOptionPane.showConfirmDialog(
-                null,
-                "Deseja realmente voltar?",
-                "VOLTAR",
-                JOptionPane.YES_NO_OPTION
-        );
-        if (resp == 0) {
-            MenuPostgres menu = new MenuPostgres();
-            menu.setVisible(true);
-            dispose();
-        }
-    }
+    
 
     public void listarTabDel() {
         DefaultTableModel tabModel = (DefaultTableModel) tabApagarCliente.getModel();
@@ -188,12 +174,7 @@ public class ApagarCliente extends javax.swing.JFrame {
             PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
             fimR.execute();
             conexao.close();
-            JOptionPane.showMessageDialog(
-                        null,
-                        "Cliente apagado com sucesso!",
-                        "",
-                        JOptionPane.INFORMATION_MESSAGE
-                );
+            
         } catch (SQLException e) {
         }
     }

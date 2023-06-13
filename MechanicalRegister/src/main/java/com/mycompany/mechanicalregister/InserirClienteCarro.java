@@ -184,7 +184,7 @@ public class InserirClienteCarro extends javax.swing.JFrame {
     }//GEN-LAST:event_btInserirActionPerformed
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
-        voltar();
+        dispose();
        
     }//GEN-LAST:event_btVoltarActionPerformed
 

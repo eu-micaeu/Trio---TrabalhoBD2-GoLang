@@ -282,48 +282,45 @@ public class MenuPostgres extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(btInserirFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel1)
                             .addComponent(btConsultarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btConsultarServico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btConsultarProduto, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
+                            .addComponent(btConsultarProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btConsultarVeiculo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btConsultarFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(150, 150, 150)
+                            .addComponent(btConsultarFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(24, 24, 24)
                                 .addComponent(jLabel3))
                             .addComponent(btApagarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btApagarServico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btApagarProduto, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
-                            .addComponent(btApagarFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(btApagarProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btApagarFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(77, 77, 77)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(255, 255, 255)
+                                .addGap(62, 62, 62)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btbackup, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btClientCarro, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(193, 193, 193)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(62, 62, 62)
-                                        .addComponent(btClienteProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel5)))
+                                .addGap(62, 62, 62)
+                                .addComponent(btClienteProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel5)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(286, 286, 286)
+                                .addGap(93, 93, 93)
                                 .addComponent(btSair, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(231, 231, 231)
+                                .addGap(38, 38, 38)
                                 .addComponent(jLabel6))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(230, 230, 230)
-                                .addComponent(jLabel4)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                                .addGap(37, 37, 37)
+                                .addComponent(jLabel4)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -355,7 +352,7 @@ public class MenuPostgres extends javax.swing.JFrame {
                     .addComponent(btApagarFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
                 .addComponent(btConsultarVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
+                .addGap(18, 18, 18)
                 .addComponent(btbackup, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
@@ -369,7 +366,7 @@ public class MenuPostgres extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addGap(18, 18, 18)
                 .addComponent(btSair, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         pack();
@@ -378,97 +375,81 @@ public class MenuPostgres extends javax.swing.JFrame {
     private void btInserirClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInserirClienteActionPerformed
         InserirCliente inserirCliente = new InserirCliente();
         inserirCliente.setVisible(true);
-        dispose();
     }//GEN-LAST:event_btInserirClienteActionPerformed
 
     private void btInserirServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInserirServicoActionPerformed
         InserirServico inserirServico = new InserirServico();
         inserirServico.setVisible(true);
-        dispose();
     }//GEN-LAST:event_btInserirServicoActionPerformed
 
     private void btInserirProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInserirProdutoActionPerformed
         InserirProduto inserirProduto = new InserirProduto();
         inserirProduto.setVisible(true);
-        dispose();
     }//GEN-LAST:event_btInserirProdutoActionPerformed
 
     private void btInserirFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInserirFuncionarioActionPerformed
         InserirFuncionario inserirFuncionario = new InserirFuncionario();
         inserirFuncionario.setVisible(true);
-        dispose();
     }//GEN-LAST:event_btInserirFuncionarioActionPerformed
 
     private void btConsultarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarClienteActionPerformed
         ConsultarCliente consultarCliente = new ConsultarCliente();
         consultarCliente.setVisible(true);
-        dispose();
     }//GEN-LAST:event_btConsultarClienteActionPerformed
 
     private void btConsultarServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarServicoActionPerformed
         ConsultarServico consultarServico = new ConsultarServico();
         consultarServico.setVisible(true);
-        dispose();
     }//GEN-LAST:event_btConsultarServicoActionPerformed
 
     private void btConsultarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarProdutoActionPerformed
         ConsultarProduto consultarProduto = new ConsultarProduto();
         consultarProduto.setVisible(true);
-        dispose();
     }//GEN-LAST:event_btConsultarProdutoActionPerformed
 
     private void btConsultarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarFuncionarioActionPerformed
         ConsultarFuncionario Funcionario = new ConsultarFuncionario();
         Funcionario.setVisible(true);
-        dispose();
     }//GEN-LAST:event_btConsultarFuncionarioActionPerformed
 
     private void btConsultarVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarVeiculoActionPerformed
         ConsultarVeiculo consultarVeiculo = new ConsultarVeiculo();
         consultarVeiculo.setVisible(true);
-        dispose();
     }//GEN-LAST:event_btConsultarVeiculoActionPerformed
 
     private void btApagarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApagarClienteActionPerformed
         ApagarCliente apagarCliente = new ApagarCliente();
         apagarCliente.setVisible(true);
-        dispose();
     }//GEN-LAST:event_btApagarClienteActionPerformed
 
     private void btApagarServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApagarServicoActionPerformed
         ApagarServico apagarServico = new ApagarServico();
         apagarServico.setVisible(true);
-        dispose();
     }//GEN-LAST:event_btApagarServicoActionPerformed
 
     private void btApagarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApagarProdutoActionPerformed
         ApagarProduto apagarProduto = new ApagarProduto();
         apagarProduto.setVisible(true);
-        dispose();
     }//GEN-LAST:event_btApagarProdutoActionPerformed
 
     private void btApagarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApagarFuncionarioActionPerformed
         ApagarFuncionario apagarFuncionario = new ApagarFuncionario();
         apagarFuncionario.setVisible(true);
-        dispose();
     }//GEN-LAST:event_btApagarFuncionarioActionPerformed
 
     private void btbackupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btbackupActionPerformed
         BackupCliente backup = new BackupCliente();
         backup.setVisible(true);
-        dispose();
     }//GEN-LAST:event_btbackupActionPerformed
 
     private void btClientCarroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btClientCarroActionPerformed
         ViewClienteCarroPostgres clienteCarro = new ViewClienteCarroPostgres();
         clienteCarro.setVisible(true);
-        dispose();
     }//GEN-LAST:event_btClientCarroActionPerformed
 
     private void btClienteProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btClienteProdutoActionPerformed
         ViewClienteProduto clienteProduto = new ViewClienteProduto();
         clienteProduto.setVisible(true);
-        dispose();// TODO add your handling code here:
     }//GEN-LAST:event_btClienteProdutoActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated

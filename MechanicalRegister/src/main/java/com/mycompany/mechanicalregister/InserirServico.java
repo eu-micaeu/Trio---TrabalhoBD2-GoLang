@@ -134,7 +134,7 @@ public class InserirServico extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
-        voltar();
+        dispose();
 
     }//GEN-LAST:event_btVoltarActionPerformed
 
@@ -169,20 +169,7 @@ public class InserirServico extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }//GEN-LAST:event_formWindowActivated
 
-    public void voltar() {
-
-        int resp = JOptionPane.showConfirmDialog(
-                null,
-                "Deseja realmente voltar?",
-                "VOLTAR",
-                JOptionPane.YES_NO_OPTION
-        );
-        if (resp == 0) {
-            MenuPostgres menu = new MenuPostgres();
-            menu.setVisible(true);
-            dispose();
-        }
-    }
+    
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

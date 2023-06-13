@@ -133,15 +133,14 @@ public class ConsultarVeiculo extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(47, 47, 47)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(219, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
-        voltar();
+        dispose();
     }//GEN-LAST:event_btVoltarActionPerformed
 
     private void btConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarActionPerformed
@@ -151,20 +150,6 @@ public class ConsultarVeiculo extends javax.swing.JFrame {
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         setLocationRelativeTo(null);
     }//GEN-LAST:event_formWindowActivated
-    public void voltar() {
-
-        int resp = JOptionPane.showConfirmDialog(
-                null,
-                "Deseja realmente voltar?",
-                "VOLTAR",
-                JOptionPane.YES_NO_OPTION
-        );
-        if (resp == 0) {
-            MenuPostgres menu = new MenuPostgres();
-            menu.setVisible(true);
-            dispose();
-        }
-    }
 
     public void listarTab() {
         DefaultTableModel tabModel = (DefaultTableModel) tabVeiculo.getModel();
@@ -193,12 +178,6 @@ public class ConsultarVeiculo extends javax.swing.JFrame {
             PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
             fimR.execute();
             conexao.close();
-            JOptionPane.showMessageDialog(
-                        null,
-                        "Cliente consultado com sucesso!",
-                        "",
-                        JOptionPane.INFORMATION_MESSAGE
-                );
 
         } catch (SQLException e) {
         }
@@ -211,7 +190,7 @@ public class ConsultarVeiculo extends javax.swing.JFrame {
         try (Connection conexao = new Conexao().getConnection()) {
             PreparedStatement inicio = conexao.prepareStatement("BEGIN");
             inicio.execute();
-            String query = "select id_veiculo, ano, marca, modelo,cor,motor,id_cliente from veiculo";
+            String query = String.format("SELECT id_veiculo, ano, marca, modelo,cor,motor,id_cliente from veiculo WHERE id_veiculo = %s", cxConsultar.getText());
             Statement statement = conexao.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
 
@@ -223,9 +202,7 @@ public class ConsultarVeiculo extends javax.swing.JFrame {
                 String cor = resultSet.getString("cor");
                 String motor = resultSet.getString("motor");
                 int id_cliente = resultSet.getInt("id_cliente");
-                if (Integer.parseInt(cxConsultar.getText()) == id_veiculo) {
-                    tabModel.addRow(new Object[]{id_veiculo, ano, marca, modelo, cor, motor, id_cliente});
-                }
+                   tabModel.addRow(new Object[]{id_veiculo, ano, marca, modelo, cor, motor, id_cliente});
                 PreparedStatement fimC = conexao.prepareStatement("COMMIT");
                 fimC.execute();
                 PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
