@@ -179,6 +179,9 @@ public class ConsultarCliente extends javax.swing.JFrame {
         }
     }
 
+ // listar na tabela os valores do banco de dados da tabela "cliente"
+// A variável "query" define a consulta SQL a ser executada no banco de dados
+// O objeto "ResultSet" contém o conjunto de dados resultantes da consulta
     public void listarTab() {
         DefaultTableModel tabModel = (DefaultTableModel) tabCliente.getModel();
         tabModel.setRowCount(0); // Limpa as linhas existentes na tabela

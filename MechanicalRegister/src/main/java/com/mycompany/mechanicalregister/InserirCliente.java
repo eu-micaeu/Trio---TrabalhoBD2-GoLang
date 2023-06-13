@@ -394,7 +394,7 @@ public class InserirCliente extends javax.swing.JFrame {
 // Tenta estabelecer uma conexão com o banco de dados.
 // Utiliza o comando BEGIN para iniciar uma transação no banco de dados, usando um objeto PreparedStatement.
 // Constrói um código SQL para inserir clientes no banco, com base nos valores das caixas de texto.
-// A string SQL é executada através de outro objeto PreparedStatement chamado "statement".
+// A string SQL é executada através de outro objeto PreparedStatement chamado "statement".+
      
         if (cxPlaca.getText().isEmpty()) { 
             try (Connection conexao = new Conexao().getConnection()) {
