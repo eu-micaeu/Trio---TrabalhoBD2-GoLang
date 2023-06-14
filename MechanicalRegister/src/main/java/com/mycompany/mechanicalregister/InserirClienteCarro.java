@@ -192,6 +192,7 @@ public class InserirClienteCarro extends javax.swing.JFrame {
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         setLocationRelativeTo(null);
     }//GEN-LAST:event_formWindowActivated
+
     	
     public void limpar(){
 	cxNome.setText("");
@@ -214,6 +215,7 @@ public class InserirClienteCarro extends javax.swing.JFrame {
             dispose();
         }
     }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

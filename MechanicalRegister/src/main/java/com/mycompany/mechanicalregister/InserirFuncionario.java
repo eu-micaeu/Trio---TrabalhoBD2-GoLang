@@ -218,6 +218,7 @@ public class InserirFuncionario extends javax.swing.JFrame {
 
     }//GEN-LAST:event_formWindowActivated
 
+
     public void limpar(){
 	cxNome.setText("");
 	cxIdade.setText("");
