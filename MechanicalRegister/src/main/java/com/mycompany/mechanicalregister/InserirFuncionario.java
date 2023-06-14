@@ -217,20 +217,6 @@ public class InserirFuncionario extends javax.swing.JFrame {
 
     }//GEN-LAST:event_formWindowActivated
 
-    public void voltar() {
-
-        int resp = JOptionPane.showConfirmDialog(
-                null,
-                "Deseja realmente voltar?",
-                "VOLTAR",
-                JOptionPane.YES_NO_OPTION
-        );
-        if (resp == 0) {
-            MenuPostgres menu = new MenuPostgres();
-            menu.setVisible(true);
-            dispose();
-        }
-    }
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
