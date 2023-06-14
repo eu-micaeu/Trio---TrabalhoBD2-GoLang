@@ -34,43 +34,43 @@ public class InserirCliente extends javax.swing.JFrame {
     private void initComponents() {
 
         rotConsultar = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        rotIdade = new javax.swing.JLabel();
+        rotNome = new javax.swing.JLabel();
+        rotCPF = new javax.swing.JLabel();
         cxIdade = new javax.swing.JTextField();
         cxRG = new javax.swing.JTextField();
         cxNome = new javax.swing.JTextField();
         cxTelefone = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
+        rotIdProduto = new javax.swing.JLabel();
         btNaoTemVeic = new javax.swing.JButton();
         cxIdProduto = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
+        rotIdServico = new javax.swing.JLabel();
         cxIdServico = new javax.swing.JTextField();
         cxCPF = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        rotTelefone = new javax.swing.JLabel();
+        rotRG = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
+        rotPlaca = new javax.swing.JLabel();
         cxPlaca = new javax.swing.JTextField();
-        jLabel14 = new javax.swing.JLabel();
+        rotAno = new javax.swing.JLabel();
         cxAno = new javax.swing.JTextField();
         cxMarca = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
+        rotMarca = new javax.swing.JLabel();
         cxModelo = new javax.swing.JTextField();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
+        rotModelo = new javax.swing.JLabel();
+        rotCor = new javax.swing.JLabel();
         cxCor = new javax.swing.JTextField();
-        jLabel18 = new javax.swing.JLabel();
+        rotMotor = new javax.swing.JLabel();
         cxMotor = new javax.swing.JTextField();
         btTemVeic = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         btVoltar = new javax.swing.JButton();
         btproduto = new javax.swing.JButton();
         btServico = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
+        rotEletrico = new javax.swing.JLabel();
+        rotHibidro = new javax.swing.JLabel();
+        rotCombustao = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -84,21 +84,21 @@ public class InserirCliente extends javax.swing.JFrame {
         rotConsultar.setForeground(new java.awt.Color(255, 255, 255));
         rotConsultar.setText("INSERIR - CLIENTE");
 
-        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("IDADE:");
+        rotIdade.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        rotIdade.setForeground(new java.awt.Color(255, 255, 255));
+        rotIdade.setText("IDADE:");
 
-        jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("NOME:");
+        rotNome.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        rotNome.setForeground(new java.awt.Color(255, 255, 255));
+        rotNome.setText("NOME:");
 
-        jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("CPF:");
+        rotCPF.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        rotCPF.setForeground(new java.awt.Color(255, 255, 255));
+        rotCPF.setText("CPF:");
 
-        jLabel10.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("ID PRODUTO:");
+        rotIdProduto.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        rotIdProduto.setForeground(new java.awt.Color(255, 255, 255));
+        rotIdProduto.setText("ID PRODUTO:");
 
         btNaoTemVeic.setBackground(new java.awt.Color(93, 40, 221));
         btNaoTemVeic.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
@@ -110,45 +110,45 @@ public class InserirCliente extends javax.swing.JFrame {
             }
         });
 
-        jLabel11.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("ID SERVIÇO:");
+        rotIdServico.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        rotIdServico.setForeground(new java.awt.Color(255, 255, 255));
+        rotIdServico.setText("ID SERVIÇO:");
 
-        jLabel9.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("TELEFONE:");
+        rotTelefone.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        rotTelefone.setForeground(new java.awt.Color(255, 255, 255));
+        rotTelefone.setText("TELEFONE:");
 
-        jLabel7.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("RG:");
+        rotRG.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        rotRG.setForeground(new java.awt.Color(255, 255, 255));
+        rotRG.setText("RG:");
 
         jLabel12.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("INSERIR - VEICULO:");
 
-        jLabel13.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("PLACA:");
+        rotPlaca.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        rotPlaca.setForeground(new java.awt.Color(255, 255, 255));
+        rotPlaca.setText("PLACA:");
 
-        jLabel14.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("ANO:");
+        rotAno.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        rotAno.setForeground(new java.awt.Color(255, 255, 255));
+        rotAno.setText("ANO:");
 
-        jLabel15.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("MARCA:");
+        rotMarca.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        rotMarca.setForeground(new java.awt.Color(255, 255, 255));
+        rotMarca.setText("MARCA:");
 
-        jLabel16.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText("MODELO:");
+        rotModelo.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        rotModelo.setForeground(new java.awt.Color(255, 255, 255));
+        rotModelo.setText("MODELO:");
 
-        jLabel17.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel17.setText("COR:");
+        rotCor.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        rotCor.setForeground(new java.awt.Color(255, 255, 255));
+        rotCor.setText("COR:");
 
-        jLabel18.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText("MOTOR:");
+        rotMotor.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        rotMotor.setForeground(new java.awt.Color(255, 255, 255));
+        rotMotor.setText("MOTOR:");
 
         btTemVeic.setBackground(new java.awt.Color(93, 40, 221));
         btTemVeic.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
@@ -191,17 +191,17 @@ public class InserirCliente extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("E - ELÉTRICO ");
+        rotEletrico.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        rotEletrico.setForeground(new java.awt.Color(255, 255, 255));
+        rotEletrico.setText("E - ELÉTRICO ");
 
-        jLabel8.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("H - HÍBRIDO");
+        rotHibidro.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        rotHibidro.setForeground(new java.awt.Color(255, 255, 255));
+        rotHibidro.setText("H - HÍBRIDO");
 
-        jLabel19.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setText("C - COMBUSTÃO");
+        rotCombustao.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        rotCombustao.setForeground(new java.awt.Color(255, 255, 255));
+        rotCombustao.setText("C - COMBUSTÃO");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -213,41 +213,41 @@ public class InserirCliente extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(rotCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(20, 20, 20)
                                 .addComponent(cxCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(61, 61, 61)
-                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(rotMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(20, 20, 20)
                                 .addComponent(cxMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(rotTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(20, 20, 20)
                                         .addComponent(cxTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(rotRG, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(20, 20, 20)
                                         .addComponent(cxRG, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(rotModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(20, 20, 20)
                                         .addComponent(cxModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(rotCor, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(20, 20, 20)
                                         .addComponent(cxCor, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel2)
+                                    .addComponent(rotEletrico)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                             .addComponent(btTemVeic, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(btVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(btNaoTemVeic, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(rotMotor, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGap(20, 20, 20)
                                             .addComponent(cxMotor, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -256,8 +256,8 @@ public class InserirCliente extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(rotIdProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(rotIdServico, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(20, 20, 20)
@@ -272,29 +272,29 @@ public class InserirCliente extends javax.swing.JFrame {
                                 .addComponent(btproduto)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel19)
-                            .addComponent(jLabel8))
+                            .addComponent(rotCombustao)
+                            .addComponent(rotHibidro))
                         .addGap(423, 423, 423))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(rotNome, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(20, 20, 20)
                                         .addComponent(cxNome, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(rotIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(20, 20, 20)
                                         .addComponent(cxIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(61, 61, 61)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(rotAno, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(20, 20, 20)
                                         .addComponent(cxAno, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(rotPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(20, 20, 20)
                                         .addComponent(cxPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(layout.createSequentialGroup()
@@ -318,42 +318,42 @@ public class InserirCliente extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rotNome, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cxNome, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rotPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cxPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rotIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cxIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rotAno, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cxAno, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rotCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cxCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rotMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cxMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rotRG, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cxRG, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rotModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cxModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rotTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cxTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rotCor, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cxCor, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(rotIdProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(rotIdServico, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(cxIdProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
@@ -368,14 +368,14 @@ public class InserirCliente extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rotMotor, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cxMotor, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2)
+                        .addComponent(rotEletrico)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel8)
+                        .addComponent(rotHibidro)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel19)
+                        .addComponent(rotCombustao)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                         .addComponent(btTemVeic, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -544,22 +544,21 @@ public class InserirCliente extends javax.swing.JFrame {
             }
         });
     }
-    	public void limpar(){
-		cxNome.setText("");
-		cxIdade.setText("");
-		cxCPF.setText("");
-		cxNome.setText("");
-		cxRG.setText("");
-		cxTelefone.setText("");
-                cxIdProduto.setText("");
-                cxIdServico.setText("");
-		cxPlaca.setText("");
-		cxAno.setText("");
-                cxMarca.setText("");
-                cxModelo.setText("");
-                cxCor.setText("");
-                cxMotor.setText("");
-	}
+    public void limpar(){
+	cxNome.setText("");
+	cxIdade.setText("");
+	cxCPF.setText("");
+	cxRG.setText("");
+	cxTelefone.setText("");
+        cxIdProduto.setText("");
+        cxIdServico.setText("");
+	cxPlaca.setText("");
+	cxAno.setText("");
+        cxMarca.setText("");
+        cxModelo.setText("");
+        cxCor.setText("");
+        cxMotor.setText("");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btNaoTemVeic;
@@ -581,24 +580,24 @@ public class InserirCliente extends javax.swing.JFrame {
     private javax.swing.JTextField cxRG;
     private javax.swing.JTextField cxTelefone;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel rotAno;
+    private javax.swing.JLabel rotCPF;
+    private javax.swing.JLabel rotCombustao;
     private javax.swing.JLabel rotConsultar;
+    private javax.swing.JLabel rotCor;
+    private javax.swing.JLabel rotEletrico;
+    private javax.swing.JLabel rotHibidro;
+    private javax.swing.JLabel rotIdProduto;
+    private javax.swing.JLabel rotIdServico;
+    private javax.swing.JLabel rotIdade;
+    private javax.swing.JLabel rotMarca;
+    private javax.swing.JLabel rotModelo;
+    private javax.swing.JLabel rotMotor;
+    private javax.swing.JLabel rotNome;
+    private javax.swing.JLabel rotPlaca;
+    private javax.swing.JLabel rotRG;
+    private javax.swing.JLabel rotTelefone;
     // End of variables declaration//GEN-END:variables
 }

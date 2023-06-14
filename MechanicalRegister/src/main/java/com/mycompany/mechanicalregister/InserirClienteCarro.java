@@ -34,16 +34,16 @@ public class InserirClienteCarro extends javax.swing.JFrame {
     private void initComponents() {
 
         rotConsultar = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        rotNome = new javax.swing.JLabel();
         cxNome = new javax.swing.JTextField();
         btInserir = new javax.swing.JButton();
         btVoltar = new javax.swing.JButton();
-        jLabel13 = new javax.swing.JLabel();
+        rotPlaca = new javax.swing.JLabel();
         cxPlaca = new javax.swing.JTextField();
         cxMarca = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
+        rotMarca = new javax.swing.JLabel();
         cxModelo = new javax.swing.JTextField();
-        jLabel16 = new javax.swing.JLabel();
+        rotModelo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -57,9 +57,9 @@ public class InserirClienteCarro extends javax.swing.JFrame {
         rotConsultar.setForeground(new java.awt.Color(255, 255, 255));
         rotConsultar.setText("INSERIR - CLIENTE - CARRO");
 
-        jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("NOME:");
+        rotNome.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        rotNome.setForeground(new java.awt.Color(255, 255, 255));
+        rotNome.setText("NOME:");
 
         btInserir.setBackground(new java.awt.Color(93, 40, 221));
         btInserir.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
@@ -81,17 +81,17 @@ public class InserirClienteCarro extends javax.swing.JFrame {
             }
         });
 
-        jLabel13.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("PLACA:");
+        rotPlaca.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        rotPlaca.setForeground(new java.awt.Color(255, 255, 255));
+        rotPlaca.setText("PLACA:");
 
-        jLabel15.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("MARCA:");
+        rotMarca.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        rotMarca.setForeground(new java.awt.Color(255, 255, 255));
+        rotMarca.setText("MARCA:");
 
-        jLabel16.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText("MODELO:");
+        rotModelo.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        rotModelo.setForeground(new java.awt.Color(255, 255, 255));
+        rotModelo.setText("MODELO:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -103,20 +103,20 @@ public class InserirClienteCarro extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(rotPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(20, 20, 20)
                                 .addComponent(cxPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(rotMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(20, 20, 20)
                                     .addComponent(cxMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(rotModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(20, 20, 20)
                                     .addComponent(cxModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(rotNome, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(cxNome, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(rotConsultar))
@@ -134,19 +134,19 @@ public class InserirClienteCarro extends javax.swing.JFrame {
                 .addComponent(rotConsultar)
                 .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rotNome, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cxNome, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rotPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cxPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rotMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cxMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rotModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cxModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -181,6 +181,7 @@ public class InserirClienteCarro extends javax.swing.JFrame {
         } catch (SQLException ex) {
 
         }
+        limpar();
     }//GEN-LAST:event_btInserirActionPerformed
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
@@ -191,7 +192,14 @@ public class InserirClienteCarro extends javax.swing.JFrame {
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         setLocationRelativeTo(null);
     }//GEN-LAST:event_formWindowActivated
-
+    	
+    public void limpar(){
+	cxNome.setText("");
+	cxPlaca.setText("");
+        cxMarca.setText("");
+        cxModelo.setText("");
+    }
+    
     public void voltar() {
 
         int resp = JOptionPane.showConfirmDialog(
@@ -246,10 +254,10 @@ public class InserirClienteCarro extends javax.swing.JFrame {
     private javax.swing.JTextField cxModelo;
     private javax.swing.JTextField cxNome;
     private javax.swing.JTextField cxPlaca;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel rotConsultar;
+    private javax.swing.JLabel rotMarca;
+    private javax.swing.JLabel rotModelo;
+    private javax.swing.JLabel rotNome;
+    private javax.swing.JLabel rotPlaca;
     // End of variables declaration//GEN-END:variables
 }

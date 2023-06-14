@@ -33,20 +33,20 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                          <Component id="rotInserir" min="-2" max="-2" attributes="0"/>
                           <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jLabel14" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="rotValor" min="-2" pref="150" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                                   <Component id="cxValor" min="-2" pref="336" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jLabel15" min="-2" pref="164" max="-2" attributes="0"/>
+                                  <Component id="rotQuantidade" min="-2" pref="164" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="cxQuantidade" min="-2" pref="336" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jLabel13" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="rotNome" min="-2" pref="150" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                                   <Component id="cxNome" min="-2" pref="336" max="-2" attributes="0"/>
                               </Group>
@@ -64,20 +64,20 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
-              <Component id="jLabel12" min="-2" pref="30" max="-2" attributes="0"/>
+              <Component id="rotInserir" min="-2" pref="30" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel13" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="rotNome" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="cxNome" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel14" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="rotValor" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="cxValor" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel15" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="rotQuantidade" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="cxQuantidade" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="148" max="32767" attributes="0"/>
@@ -91,7 +91,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel12">
+    <Component class="javax.swing.JLabel" name="rotInserir">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="24" style="1"/>
@@ -102,7 +102,7 @@
         <Property name="text" type="java.lang.String" value="INSERIR - PRODUTO:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel13">
+    <Component class="javax.swing.JLabel" name="rotNome">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="24" style="1"/>
@@ -115,7 +115,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="cxNome">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel14">
+    <Component class="javax.swing.JLabel" name="rotValor">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="24" style="1"/>
@@ -130,7 +130,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="cxQuantidade">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel15">
+    <Component class="javax.swing.JLabel" name="rotQuantidade">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="24" style="1"/>

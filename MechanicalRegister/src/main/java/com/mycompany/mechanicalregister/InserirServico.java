@@ -33,10 +33,10 @@ public class InserirServico extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        rotTipo = new javax.swing.JLabel();
         btVoltar = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        rotValor = new javax.swing.JLabel();
+        rotInserir = new javax.swing.JLabel();
         cxValor = new javax.swing.JTextField();
         cxTipo = new javax.swing.JTextField();
         btInserir = new javax.swing.JButton();
@@ -49,9 +49,9 @@ public class InserirServico extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("TIPO");
+        rotTipo.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        rotTipo.setForeground(new java.awt.Color(255, 255, 255));
+        rotTipo.setText("TIPO");
 
         btVoltar.setBackground(new java.awt.Color(93, 40, 221));
         btVoltar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
@@ -63,13 +63,13 @@ public class InserirServico extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("VALOR");
+        rotValor.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        rotValor.setForeground(new java.awt.Color(255, 255, 255));
+        rotValor.setText("VALOR");
 
-        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("INSERIR SERVIÇO");
+        rotInserir.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        rotInserir.setForeground(new java.awt.Color(255, 255, 255));
+        rotInserir.setText("INSERIR SERVIÇO");
 
         cxValor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,7 +94,7 @@ public class InserirServico extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(129, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
+                    .addComponent(rotInserir)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(btInserir, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -102,8 +102,8 @@ public class InserirServico extends javax.swing.JFrame {
                             .addComponent(btVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel1)
-                                .addComponent(jLabel2))
+                                .addComponent(rotTipo)
+                                .addComponent(rotValor))
                             .addGap(38, 38, 38)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(cxTipo)
@@ -114,14 +114,14 @@ public class InserirServico extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(163, 163, 163)
-                .addComponent(jLabel3)
+                .addComponent(rotInserir)
                 .addGap(55, 55, 55)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(rotTipo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(cxTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
+                    .addComponent(rotValor)
                     .addComponent(cxValor, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(98, 98, 98)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -163,13 +163,17 @@ public class InserirServico extends javax.swing.JFrame {
         } catch (SQLException ex) {
 
         }
+        limpar();
     }//GEN-LAST:event_btInserirActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         setLocationRelativeTo(null);
     }//GEN-LAST:event_formWindowActivated
 
-    
+    public void limpar(){
+	cxTipo.setText("");
+        cxValor.setText("");
+    }
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -208,8 +212,8 @@ public class InserirServico extends javax.swing.JFrame {
     private javax.swing.JButton btVoltar;
     private javax.swing.JTextField cxTipo;
     private javax.swing.JTextField cxValor;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel rotInserir;
+    private javax.swing.JLabel rotTipo;
+    private javax.swing.JLabel rotValor;
     // End of variables declaration//GEN-END:variables
 }

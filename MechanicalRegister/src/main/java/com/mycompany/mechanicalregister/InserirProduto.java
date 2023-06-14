@@ -34,13 +34,13 @@ public class InserirProduto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
+        rotInserir = new javax.swing.JLabel();
+        rotNome = new javax.swing.JLabel();
         cxNome = new javax.swing.JTextField();
-        jLabel14 = new javax.swing.JLabel();
+        rotValor = new javax.swing.JLabel();
         cxValor = new javax.swing.JTextField();
         cxQuantidade = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
+        rotQuantidade = new javax.swing.JLabel();
         btInserir = new javax.swing.JButton();
         btVoltar = new javax.swing.JButton();
 
@@ -52,21 +52,21 @@ public class InserirProduto extends javax.swing.JFrame {
             }
         });
 
-        jLabel12.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("INSERIR - PRODUTO:");
+        rotInserir.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        rotInserir.setForeground(new java.awt.Color(255, 255, 255));
+        rotInserir.setText("INSERIR - PRODUTO:");
 
-        jLabel13.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("NOME:");
+        rotNome.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        rotNome.setForeground(new java.awt.Color(255, 255, 255));
+        rotNome.setText("NOME:");
 
-        jLabel14.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("VALOR:");
+        rotValor.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        rotValor.setForeground(new java.awt.Color(255, 255, 255));
+        rotValor.setText("VALOR:");
 
-        jLabel15.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("QUANTIDADE:");
+        rotQuantidade.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        rotQuantidade.setForeground(new java.awt.Color(255, 255, 255));
+        rotQuantidade.setText("QUANTIDADE:");
 
         btInserir.setBackground(new java.awt.Color(93, 40, 221));
         btInserir.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
@@ -98,18 +98,18 @@ public class InserirProduto extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(8, 8, 8)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel12)
+                            .addComponent(rotInserir)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(rotValor, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(20, 20, 20)
                                     .addComponent(cxValor, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(rotQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(cxQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(rotNome, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(20, 20, 20)
                                     .addComponent(cxNome, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(btVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -120,18 +120,18 @@ public class InserirProduto extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(144, 144, 144)
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(rotInserir, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(52, 52, 52)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rotNome, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cxNome, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rotValor, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cxValor, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rotQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cxQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -164,6 +164,7 @@ public class InserirProduto extends javax.swing.JFrame {
         } catch (SQLException ex) {
 
         }
+        limpar();
     }//GEN-LAST:event_btInserirActionPerformed
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
@@ -175,7 +176,11 @@ public class InserirProduto extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }//GEN-LAST:event_formWindowActivated
 
-    
+    public void limpar(){
+	cxNome.setText("");
+        cxValor.setText("");
+        cxQuantidade.setText("");
+    }
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -216,9 +221,9 @@ public class InserirProduto extends javax.swing.JFrame {
     private javax.swing.JTextField cxNome;
     private javax.swing.JTextField cxQuantidade;
     private javax.swing.JTextField cxValor;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel rotInserir;
+    private javax.swing.JLabel rotNome;
+    private javax.swing.JLabel rotQuantidade;
+    private javax.swing.JLabel rotValor;
     // End of variables declaration//GEN-END:variables
 }

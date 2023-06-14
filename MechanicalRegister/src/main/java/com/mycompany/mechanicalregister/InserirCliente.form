@@ -33,23 +33,23 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLabel5" min="-2" pref="150" max="-2" attributes="0"/>
+                              <Component id="rotCPF" min="-2" pref="150" max="-2" attributes="0"/>
                               <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
                               <Component id="cxCPF" min="-2" pref="336" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                              <Component id="jLabel15" min="-2" pref="150" max="-2" attributes="0"/>
+                              <Component id="rotMarca" min="-2" pref="150" max="-2" attributes="0"/>
                               <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
                               <Component id="cxMarca" min="-2" pref="336" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="jLabel9" min="-2" pref="150" max="-2" attributes="0"/>
+                                      <Component id="rotTelefone" min="-2" pref="150" max="-2" attributes="0"/>
                                       <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
                                       <Component id="cxTelefone" min="-2" pref="336" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <Component id="jLabel7" min="-2" pref="150" max="-2" attributes="0"/>
+                                      <Component id="rotRG" min="-2" pref="150" max="-2" attributes="0"/>
                                       <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
                                       <Component id="cxRG" min="-2" pref="336" max="-2" attributes="0"/>
                                   </Group>
@@ -57,16 +57,16 @@
                               <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="jLabel16" min="-2" pref="150" max="-2" attributes="0"/>
+                                      <Component id="rotModelo" min="-2" pref="150" max="-2" attributes="0"/>
                                       <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
                                       <Component id="cxModelo" min="-2" pref="336" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <Component id="jLabel17" min="-2" pref="150" max="-2" attributes="0"/>
+                                      <Component id="rotCor" min="-2" pref="150" max="-2" attributes="0"/>
                                       <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
                                       <Component id="cxCor" min="-2" pref="336" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rotEletrico" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                           <Component id="btTemVeic" alignment="0" min="-2" pref="376" max="-2" attributes="0"/>
@@ -74,7 +74,7 @@
                                           <Component id="btNaoTemVeic" alignment="1" min="-2" pref="376" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel18" min="-2" pref="150" max="-2" attributes="0"/>
+                                          <Component id="rotMotor" min="-2" pref="150" max="-2" attributes="0"/>
                                           <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
                                           <Component id="cxMotor" min="-2" pref="336" max="-2" attributes="0"/>
                                       </Group>
@@ -89,8 +89,8 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel10" min="-2" pref="150" max="-2" attributes="0"/>
-                                  <Component id="jLabel11" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="rotIdProduto" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="rotIdServico" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
@@ -112,8 +112,8 @@
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel19" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="rotCombustao" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="rotHibidro" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="423" max="-2" attributes="0"/>
                   </Group>
@@ -122,12 +122,12 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel4" min="-2" pref="150" max="-2" attributes="0"/>
+                                      <Component id="rotNome" min="-2" pref="150" max="-2" attributes="0"/>
                                       <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
                                       <Component id="cxNome" min="-2" pref="336" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="jLabel3" min="-2" pref="150" max="-2" attributes="0"/>
+                                      <Component id="rotIdade" min="-2" pref="150" max="-2" attributes="0"/>
                                       <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
                                       <Component id="cxIdade" min="-2" pref="336" max="-2" attributes="0"/>
                                   </Group>
@@ -135,12 +135,12 @@
                               <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="jLabel14" min="-2" pref="150" max="-2" attributes="0"/>
+                                      <Component id="rotAno" min="-2" pref="150" max="-2" attributes="0"/>
                                       <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
                                       <Component id="cxAno" min="-2" pref="336" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <Component id="jLabel13" min="-2" pref="150" max="-2" attributes="0"/>
+                                      <Component id="rotPlaca" min="-2" pref="150" max="-2" attributes="0"/>
                                       <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
                                       <Component id="cxPlaca" min="-2" pref="336" max="-2" attributes="0"/>
                                   </Group>
@@ -175,39 +175,39 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel4" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="rotNome" min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="cxNome" min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="jLabel13" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="rotPlaca" min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="cxPlaca" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel3" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="rotIdade" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="cxIdade" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="jLabel14" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="rotAno" min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="cxAno" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel5" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="rotCPF" min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="cxCPF" min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="jLabel15" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="rotMarca" min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="cxMarca" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel7" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="rotRG" min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="cxRG" min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="jLabel16" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="rotModelo" min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="cxModelo" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel9" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="rotTelefone" min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="cxTelefone" min="-2" pref="30" max="-2" attributes="0"/>
-                  <Component id="jLabel17" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="rotCor" min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="cxCor" min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -215,9 +215,9 @@
                       <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="jLabel10" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="rotIdProduto" min="-2" pref="30" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jLabel11" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="rotIdServico" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Component id="cxIdProduto" min="-2" pref="30" max="-2" attributes="0"/>
@@ -237,15 +237,15 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel18" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="rotMotor" min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="cxMotor" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="rotEletrico" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                      <Component id="rotHibidro" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
+                      <Component id="rotCombustao" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="44" max="32767" attributes="0"/>
                       <Component id="btTemVeic" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -271,7 +271,7 @@
         <Property name="text" type="java.lang.String" value="INSERIR - CLIENTE"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel3">
+    <Component class="javax.swing.JLabel" name="rotIdade">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="24" style="1"/>
@@ -282,7 +282,7 @@
         <Property name="text" type="java.lang.String" value="IDADE:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
+    <Component class="javax.swing.JLabel" name="rotNome">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="24" style="1"/>
@@ -293,7 +293,7 @@
         <Property name="text" type="java.lang.String" value="NOME:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel5">
+    <Component class="javax.swing.JLabel" name="rotCPF">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="24" style="1"/>
@@ -312,7 +312,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="cxTelefone">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel10">
+    <Component class="javax.swing.JLabel" name="rotIdProduto">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="24" style="1"/>
@@ -342,7 +342,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="cxIdProduto">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel11">
+    <Component class="javax.swing.JLabel" name="rotIdServico">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="24" style="1"/>
@@ -357,7 +357,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="cxCPF">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel9">
+    <Component class="javax.swing.JLabel" name="rotTelefone">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="24" style="1"/>
@@ -368,7 +368,7 @@
         <Property name="text" type="java.lang.String" value="TELEFONE:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel7">
+    <Component class="javax.swing.JLabel" name="rotRG">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="24" style="1"/>
@@ -392,7 +392,7 @@
         <Property name="text" type="java.lang.String" value="INSERIR - VEICULO:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel13">
+    <Component class="javax.swing.JLabel" name="rotPlaca">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="24" style="1"/>
@@ -405,7 +405,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="cxPlaca">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel14">
+    <Component class="javax.swing.JLabel" name="rotAno">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="24" style="1"/>
@@ -420,7 +420,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="cxMarca">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel15">
+    <Component class="javax.swing.JLabel" name="rotMarca">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="24" style="1"/>
@@ -433,7 +433,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="cxModelo">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel16">
+    <Component class="javax.swing.JLabel" name="rotModelo">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="24" style="1"/>
@@ -444,7 +444,7 @@
         <Property name="text" type="java.lang.String" value="MODELO:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel17">
+    <Component class="javax.swing.JLabel" name="rotCor">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="24" style="1"/>
@@ -457,7 +457,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="cxCor">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel18">
+    <Component class="javax.swing.JLabel" name="rotMotor">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="24" style="1"/>
@@ -540,7 +540,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btServicoActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JLabel" name="rotEletrico">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="12" style="0"/>
@@ -551,7 +551,7 @@
         <Property name="text" type="java.lang.String" value="E - EL&#xc9;TRICO "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel8">
+    <Component class="javax.swing.JLabel" name="rotHibidro">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="12" style="0"/>
@@ -562,7 +562,7 @@
         <Property name="text" type="java.lang.String" value="H - H&#xcd;BRIDO"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel19">
+    <Component class="javax.swing.JLabel" name="rotCombustao">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="12" style="0"/>

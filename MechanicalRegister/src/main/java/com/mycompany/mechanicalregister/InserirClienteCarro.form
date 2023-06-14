@@ -33,24 +33,24 @@
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel13" min="-2" pref="150" max="-2" attributes="0"/>
+                              <Component id="rotPlaca" min="-2" pref="150" max="-2" attributes="0"/>
                               <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
                               <Component id="cxPlaca" min="-2" pref="336" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jLabel15" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="rotMarca" min="-2" pref="150" max="-2" attributes="0"/>
                                   <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
                                   <Component id="cxMarca" min="-2" pref="336" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel16" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="rotModelo" min="-2" pref="150" max="-2" attributes="0"/>
                                   <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
                                   <Component id="cxModelo" min="-2" pref="336" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLabel4" min="-2" pref="150" max="-2" attributes="0"/>
+                              <Component id="rotNome" min="-2" pref="150" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="cxNome" min="-2" pref="338" max="-2" attributes="0"/>
                           </Group>
@@ -75,22 +75,22 @@
               <Component id="rotConsultar" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel4" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="rotNome" min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="cxNome" min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel13" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="rotPlaca" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="cxPlaca" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel15" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="rotMarca" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="cxMarca" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel16" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="rotModelo" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="cxModelo" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="128" max="32767" attributes="0"/>
@@ -115,7 +115,7 @@
         <Property name="text" type="java.lang.String" value="INSERIR - CLIENTE - CARRO"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
+    <Component class="javax.swing.JLabel" name="rotNome">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="24" style="1"/>
@@ -162,7 +162,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btVoltarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel13">
+    <Component class="javax.swing.JLabel" name="rotPlaca">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="24" style="1"/>
@@ -177,7 +177,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="cxMarca">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel15">
+    <Component class="javax.swing.JLabel" name="rotMarca">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="24" style="1"/>
@@ -190,7 +190,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="cxModelo">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel16">
+    <Component class="javax.swing.JLabel" name="rotModelo">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="24" style="1"/>
