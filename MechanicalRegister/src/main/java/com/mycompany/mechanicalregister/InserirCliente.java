@@ -478,7 +478,7 @@ public class InserirCliente extends javax.swing.JFrame {
 
         }
         }
-        
+        limpar();
     }//GEN-LAST:event_btTemVeicActionPerformed
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
@@ -544,6 +544,22 @@ public class InserirCliente extends javax.swing.JFrame {
             }
         });
     }
+    	public void limpar(){
+		cxNome.setText("");
+		cxIdade.setText("");
+		cxCPF.setText("");
+		cxNome.setText("");
+		cxRG.setText("");
+		cxTelefone.setText("");
+                cxIdProduto.setText("");
+                cxIdServico.setText("");
+		cxPlaca.setText("");
+		cxAno.setText("");
+                cxMarca.setText("");
+                cxModelo.setText("");
+                cxCor.setText("");
+                cxMotor.setText("");
+	}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btNaoTemVeic;
