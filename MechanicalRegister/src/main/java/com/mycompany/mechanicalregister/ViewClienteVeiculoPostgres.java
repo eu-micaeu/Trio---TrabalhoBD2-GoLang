@@ -18,12 +18,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author brena
  */
-public class ViewClienteCarroPostgres extends javax.swing.JFrame {
+public class ViewClienteVeiculoPostgres extends javax.swing.JFrame {
 
     /**
      * Creates new form ViewClienteCarro
      */
-    public ViewClienteCarroPostgres() {
+    public ViewClienteVeiculoPostgres() {
         initComponents();
         getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
         tabClienteCarro.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
@@ -160,21 +160,23 @@ public class ViewClienteCarroPostgres extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewClienteCarroPostgres.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewClienteVeiculoPostgres.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewClienteCarroPostgres.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewClienteVeiculoPostgres.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewClienteCarroPostgres.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewClienteVeiculoPostgres.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewClienteCarroPostgres.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewClienteVeiculoPostgres.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewClienteCarroPostgres().setVisible(true);
+                new ViewClienteVeiculoPostgres().setVisible(true);
             }
         });
     }

@@ -46,7 +46,7 @@ public class MenuUsuario extends javax.swing.JFrame {
         btClienteCarro.setBackground(new java.awt.Color(93, 40, 221));
         btClienteCarro.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         btClienteCarro.setForeground(new java.awt.Color(255, 255, 255));
-        btClienteCarro.setText("CLIENTES COM CARRO");
+        btClienteCarro.setText("CLIENTES - VEÍCULO");
         btClienteCarro.setPreferredSize(new java.awt.Dimension(100, 50));
         btClienteCarro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,7 +76,7 @@ public class MenuUsuario extends javax.swing.JFrame {
         btClienteCarro1.setBackground(new java.awt.Color(93, 40, 221));
         btClienteCarro1.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         btClienteCarro1.setForeground(new java.awt.Color(255, 255, 255));
-        btClienteCarro1.setText("CLIENTES COM CARRO");
+        btClienteCarro1.setText("CLIENTES - VEÍCULO");
         btClienteCarro1.setPreferredSize(new java.awt.Dimension(100, 50));
         btClienteCarro1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,7 +128,7 @@ public class MenuUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowActivated
 
     private void btClienteCarroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btClienteCarroActionPerformed
-        ViewClienteCarroUsuario clienteCarro = new ViewClienteCarroUsuario();
+        ViewClienteVeiculoUsuario clienteCarro = new ViewClienteVeiculoUsuario();
         clienteCarro.setVisible(true);
     }//GEN-LAST:event_btClienteCarroActionPerformed
 

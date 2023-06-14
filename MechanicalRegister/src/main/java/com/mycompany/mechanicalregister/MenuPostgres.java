@@ -443,7 +443,7 @@ public class MenuPostgres extends javax.swing.JFrame {
     }//GEN-LAST:event_btbackupActionPerformed
 
     private void btClientCarroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btClientCarroActionPerformed
-        ViewClienteCarroPostgres clienteCarro = new ViewClienteCarroPostgres();
+        ViewClienteVeiculoPostgres clienteCarro = new ViewClienteVeiculoPostgres();
         clienteCarro.setVisible(true);
     }//GEN-LAST:event_btClientCarroActionPerformed
 

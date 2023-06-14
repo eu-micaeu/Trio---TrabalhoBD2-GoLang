@@ -179,7 +179,7 @@ public class ConsultarCliente extends javax.swing.JFrame {
         }
     }
 
- // listar na tabela os valores do banco de dados da tabela "cliente"
+    // listar na tabela os valores do banco de dados da tabela "cliente"
 // A variável "query" define a consulta SQL a ser executada no banco de dados
 // O objeto "ResultSet" contém o conjunto de dados resultantes da consulta
     public void listarTab() {
@@ -189,7 +189,7 @@ public class ConsultarCliente extends javax.swing.JFrame {
         try (Connection conexao = new Conexao().getConnection()) {
             PreparedStatement inicio = conexao.prepareStatement("BEGIN");
             inicio.execute();
-            String query = "SELECT id_cliente, nome_cliente, idade, rg, cpf, telefone, data_de_registro FROM cliente";
+            String query = "SELECT * FROM cliente";
             Statement statement = conexao.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
 
@@ -197,18 +197,20 @@ public class ConsultarCliente extends javax.swing.JFrame {
                 int id = resultSet.getInt("id_cliente");
                 String nome = resultSet.getString("nome_cliente");
                 int idade = resultSet.getInt("idade");
-                int rg = resultSet.getInt("rg");
-                int cpf = resultSet.getInt("cpf");
+                long rg = resultSet.getLong("rg");
+                long cpf = resultSet.getLong("cpf");
                 String telefone = resultSet.getString("telefone");
                 Timestamp timestamp = resultSet.getTimestamp("data_de_registro");
                 tabModel.addRow(new Object[]{id, nome, idade, rg, cpf, telefone, timestamp});
+                PreparedStatement fimC = conexao.prepareStatement("COMMIT");
+                fimC.execute();
+                PreparedStatement fimR = conexao.prepareStatement("ROLLBACK");
+                fimR.execute();
             }
-            PreparedStatement fimC = conexao.prepareStatement("COMMIT");
-            fimC.execute();
-            PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
-            fimR.execute();
+
             conexao.close();
         } catch (SQLException e) {
+            System.out.println("Deu erro");
         }
     }
 
@@ -228,17 +230,18 @@ public class ConsultarCliente extends javax.swing.JFrame {
                 int id = resultSet.getInt("id_cliente");
                 String nome = resultSet.getString("nome_cliente");
                 int idade = resultSet.getInt("idade");
-                int rg = resultSet.getInt("rg");
-                int cpf = resultSet.getInt("cpf");
+                long rg = resultSet.getLong("rg");
+                long cpf = resultSet.getLong("cpf");
                 String telefone = resultSet.getString("telefone");
                 Timestamp timestamp = resultSet.getTimestamp("data_de_registro");
                 tabModel.addRow(new Object[]{id, nome, idade, rg, cpf, telefone, timestamp});
                 PreparedStatement fimC = conexao.prepareStatement("COMMIT");
                 fimC.execute();
-                PreparedStatement fimR = conexao.prepareStatement("ROLLBACk");
+                PreparedStatement fimR = conexao.prepareStatement("ROLLBACK");
                 fimR.execute();
-                conexao.close();
+
             }
+            conexao.close();
 
         } catch (SQLException e) {
         }
