@@ -196,8 +196,8 @@ public class ApagarCliente extends javax.swing.JFrame {
                 int id = resultSet.getInt("id_cliente");
                 String nome = resultSet.getString("nome_cliente");
                 int idade = resultSet.getInt("idade");
-                int rg = resultSet.getInt("rg");
-                int cpf = resultSet.getInt("cpf");
+                long rg = resultSet.getLong("rg");
+                long cpf = resultSet.getLong("cpf");
                 String telefone = resultSet.getString("telefone");
                 Timestamp timestamp = resultSet.getTimestamp("data_de_registro");
                 tabModel.addRow(new Object[]{id, nome, idade, rg, cpf, telefone, timestamp});
