@@ -1,0 +1,9 @@
+Adm:
+
+usuario: postgres
+senha: postgres
+
+User:
+
+usuario: usuario
+senha: usuario
