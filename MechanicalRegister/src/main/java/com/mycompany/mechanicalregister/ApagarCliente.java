@@ -82,13 +82,13 @@ public class ApagarCliente extends javax.swing.JFrame {
         tabApagarCliente.setForeground(new java.awt.Color(255, 255, 255));
         tabApagarCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "NOME", "IDADE", "RG", "CPF", "TELEFONE"
+                "ID", "NOME", "IDADE", "RG", "CPF", "TELEFONE", "DATA_DE_REGISTRO"
             }
         ));
         tabApagarCliente.setFocusable(false);

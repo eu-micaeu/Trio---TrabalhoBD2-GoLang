@@ -34,6 +34,12 @@ public class MenuUsuario extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         btClienteCarro1 = new javax.swing.JButton();
+        btConsultarFuncionario = new javax.swing.JButton();
+        btConsultarCliente = new javax.swing.JButton();
+        btConsultarServico = new javax.swing.JButton();
+        btConsultarProduto = new javax.swing.JButton();
+        btbackup = new javax.swing.JButton();
+        btConsultarVeiculo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -44,7 +50,7 @@ public class MenuUsuario extends javax.swing.JFrame {
         });
 
         btClienteCarro.setBackground(new java.awt.Color(93, 40, 221));
-        btClienteCarro.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        btClienteCarro.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         btClienteCarro.setForeground(new java.awt.Color(255, 255, 255));
         btClienteCarro.setText("CLIENTES - VEÍCULO");
         btClienteCarro.setPreferredSize(new java.awt.Dimension(100, 50));
@@ -84,40 +90,123 @@ public class MenuUsuario extends javax.swing.JFrame {
             }
         });
 
+        btConsultarFuncionario.setBackground(new java.awt.Color(93, 40, 221));
+        btConsultarFuncionario.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        btConsultarFuncionario.setForeground(new java.awt.Color(255, 255, 255));
+        btConsultarFuncionario.setText("FUNC.");
+        btConsultarFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btConsultarFuncionarioActionPerformed(evt);
+            }
+        });
+
+        btConsultarCliente.setBackground(new java.awt.Color(93, 40, 221));
+        btConsultarCliente.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        btConsultarCliente.setForeground(new java.awt.Color(255, 255, 255));
+        btConsultarCliente.setText("CLIENTE");
+        btConsultarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btConsultarClienteActionPerformed(evt);
+            }
+        });
+
+        btConsultarServico.setBackground(new java.awt.Color(93, 40, 221));
+        btConsultarServico.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        btConsultarServico.setForeground(new java.awt.Color(255, 255, 255));
+        btConsultarServico.setText("SERVIÇO");
+        btConsultarServico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btConsultarServicoActionPerformed(evt);
+            }
+        });
+
+        btConsultarProduto.setBackground(new java.awt.Color(93, 40, 221));
+        btConsultarProduto.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        btConsultarProduto.setForeground(new java.awt.Color(255, 255, 255));
+        btConsultarProduto.setText("PRODUTO");
+        btConsultarProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btConsultarProdutoActionPerformed(evt);
+            }
+        });
+
+        btbackup.setBackground(new java.awt.Color(93, 40, 221));
+        btbackup.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        btbackup.setForeground(new java.awt.Color(255, 255, 255));
+        btbackup.setText("BACKUP CLIENTE");
+        btbackup.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btbackupActionPerformed(evt);
+            }
+        });
+
+        btConsultarVeiculo.setBackground(new java.awt.Color(93, 40, 221));
+        btConsultarVeiculo.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        btConsultarVeiculo.setForeground(new java.awt.Color(255, 255, 255));
+        btConsultarVeiculo.setText("VEÍCULO");
+        btConsultarVeiculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btConsultarVeiculoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(104, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btClienteCarro1, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btClienteCarro, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(95, 95, 95)
-                        .addComponent(jLabel3))
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(73, 73, 73)
+                                .addComponent(jLabel2))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(15, 15, 15)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(btConsultarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btConsultarServico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btConsultarProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btConsultarVeiculo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btConsultarFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btClienteCarro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btbackup, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btClienteCarro1, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(92, 92, 92)
+                                .addComponent(jLabel3))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(66, 66, 66)
-                        .addComponent(btSair, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(jLabel2)))
-                .addGap(99, 99, 99))
+                        .addGap(64, 64, 64)
+                        .addComponent(btSair, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(130, 130, 130)
+                .addContainerGap()
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
                 .addComponent(btClienteCarro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btConsultarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(btConsultarServico, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(btConsultarProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(btConsultarFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(btConsultarVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btbackup, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addComponent(btClienteCarro1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51)
+                .addGap(37, 37, 37)
                 .addComponent(btSair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(201, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         pack();
@@ -137,9 +226,39 @@ public class MenuUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_btSairActionPerformed
 
     private void btClienteCarro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btClienteCarro1ActionPerformed
-        InserirClienteCarro clientecarro = new InserirClienteCarro();
+        InserirClienteVeiculo clientecarro = new InserirClienteVeiculo();
         clientecarro.setVisible(true);
     }//GEN-LAST:event_btClienteCarro1ActionPerformed
+
+    private void btConsultarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarFuncionarioActionPerformed
+        ConsultarFuncionario Funcionario = new ConsultarFuncionario();
+        Funcionario.setVisible(true);
+    }//GEN-LAST:event_btConsultarFuncionarioActionPerformed
+
+    private void btConsultarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarClienteActionPerformed
+        ConsultarCliente consultarCliente = new ConsultarCliente();
+        consultarCliente.setVisible(true);
+    }//GEN-LAST:event_btConsultarClienteActionPerformed
+
+    private void btConsultarServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarServicoActionPerformed
+        ConsultarServico consultarServico = new ConsultarServico();
+        consultarServico.setVisible(true);
+    }//GEN-LAST:event_btConsultarServicoActionPerformed
+
+    private void btConsultarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarProdutoActionPerformed
+        ConsultarProduto consultarProduto = new ConsultarProduto();
+        consultarProduto.setVisible(true);
+    }//GEN-LAST:event_btConsultarProdutoActionPerformed
+
+    private void btbackupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btbackupActionPerformed
+        BackupCliente backup = new BackupCliente();
+        backup.setVisible(true);
+    }//GEN-LAST:event_btbackupActionPerformed
+
+    private void btConsultarVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarVeiculoActionPerformed
+        ConsultarVeiculo consultarVeiculo = new ConsultarVeiculo();
+        consultarVeiculo.setVisible(true);
+    }//GEN-LAST:event_btConsultarVeiculoActionPerformed
 
     public void voltar() {
 
@@ -194,7 +313,13 @@ public class MenuUsuario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btClienteCarro;
     private javax.swing.JButton btClienteCarro1;
+    private javax.swing.JButton btConsultarCliente;
+    private javax.swing.JButton btConsultarFuncionario;
+    private javax.swing.JButton btConsultarProduto;
+    private javax.swing.JButton btConsultarServico;
+    private javax.swing.JButton btConsultarVeiculo;
     private javax.swing.JButton btSair;
+    private javax.swing.JButton btbackup;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables

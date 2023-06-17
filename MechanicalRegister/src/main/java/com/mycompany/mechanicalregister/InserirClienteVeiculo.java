@@ -14,12 +14,12 @@ import java.sql.SQLException;
  *
  * @author brena
  */
-public class InserirClienteCarro extends javax.swing.JFrame {
+public class InserirClienteVeiculo extends javax.swing.JFrame {
 
     /**
      * Creates new form InserirClienteCarroUsuario
      */
-    public InserirClienteCarro() {
+    public InserirClienteVeiculo() {
         initComponents();
         getContentPane().setBackground(new java.awt.Color(0, 0, 0)); // Define o fundo como preto
     }
@@ -163,7 +163,7 @@ public class InserirClienteCarro extends javax.swing.JFrame {
         try (Connection conexao = new Conexao().getConnection()) {
             PreparedStatement inicio = conexao.prepareStatement("BEGIN");
             inicio.execute();
-            String sql = String.format("insert into carro_cliente (nome_cliente, placa, marca, modelo) values ('%s', '%s', '%s', '%s');", cxNome.getText(), cxPlaca.getText(), cxMarca.getText(), cxModelo.getText());
+            String sql = String.format("insert into cliente_veiculo (nome_cliente, placa, marca, modelo) values ('%s', '%s', '%s', '%s');", cxNome.getText(), cxPlaca.getText(), cxMarca.getText(), cxModelo.getText());
             PreparedStatement statement = conexao.prepareStatement(sql);
             statement.execute();
             PreparedStatement fimC = conexao.prepareStatement("COMMIT");
@@ -201,20 +201,7 @@ public class InserirClienteCarro extends javax.swing.JFrame {
         cxModelo.setText("");
     }
     
-    public void voltar() {
-
-        int resp = JOptionPane.showConfirmDialog(
-                null,
-                "Deseja realmente voltar?",
-                "VOLTAR",
-                JOptionPane.YES_NO_OPTION
-        );
-        if (resp == 0) {
-            MenuUsuario menu = new MenuUsuario();
-            menu.setVisible(true);
-            dispose();
-        }
-    }
+    
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -230,21 +217,23 @@ public class InserirClienteCarro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InserirClienteCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InserirClienteVeiculo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InserirClienteCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InserirClienteVeiculo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InserirClienteCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InserirClienteVeiculo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InserirClienteCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InserirClienteVeiculo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InserirClienteCarro().setVisible(true);
+                new InserirClienteVeiculo().setVisible(true);
             }
         });
     }

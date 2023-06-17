@@ -122,7 +122,7 @@ public class ViewClienteVeiculoUsuario extends javax.swing.JFrame {
         try (Connection conexao = new Conexao().getConnection()) {
             PreparedStatement inicio = conexao.prepareStatement("BEGIN");
             inicio.execute();
-            String query = "SELECT nome_cliente,placa,marca,modelo FROM carro_cliente";
+            String query = "SELECT nome_cliente,placa,marca,modelo FROM cliente_veiculo";
             Statement statement = conexao.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
 
