@@ -61,6 +61,20 @@ CREATE TABLE cliente(
 	FOREIGN KEY (id_servico) REFERENCES servico (id_servico),
 	FOREIGN KEY (id_produto) REFERENCES produto (id_produto)
 );
+insert into cliente(nome_cliente, idade, id_servico, id_produto, cpf, rg, telefone, data_de_registro) 
+values ( 'Marcelo Fernandes', 27, 3,2,2569836547,32653652235, 65987898985, CURRENT_TIMESTAMP);
+
+insert into cliente(nome_cliente, idade, id_servico, id_produto, cpf, rg, telefone, data_de_registro) 
+values ( 'Marissa Chaves', 48, 1,3,25325657,3265335, 65987895, CURRENT_TIMESTAMP);
+
+insert into cliente(nome_cliente, idade, id_servico, id_produto, cpf, rg, telefone, data_de_registro) 
+values ( 'Neide Alves', 77, 2,2,2569326547,3265368235, 65988985, CURRENT_TIMESTAMP);
+
+insert into cliente(nome_cliente, idade, id_servico, id_produto, cpf, rg, telefone, data_de_registro) 
+values ( 'Jose de Souza', 78, 2,6,25698336, 32653652235, 659878985, CURRENT_TIMESTAMP);
+
+insert into cliente(nome_cliente, idade, id_servico, id_produto, cpf, rg, telefone, data_de_registro) 
+values ( 'Fernando de Cunha',45 , 3,2,25698116, 32622652235, 657778985, CURRENT_TIMESTAMP);
 
 insert into servico (tipo, valor)
 values ('Nenhum', 0);
@@ -154,18 +168,21 @@ CREATE ROLE usuario WITH
 LOGIN
 PASSWORD 'usuario';
 
-GRANT SELECT, INSERT ON carro_cliente TO
+GRANT SELECT, INSERT ON cliente_veiculo TO
+usuario;
+
+GRANT SELECT ON backup_cliente, cliente, funcionario, veiculo, produto, servico TO
 usuario;
 
 -- Criação de no mínimo uma visão (view) a partir de duas ou mais tabelas (0,5):
 
-CREATE VIEW carro_cliente as 
+CREATE VIEW cliente_veiculo as 
 SELECT nome_cliente,placa, marca, modelo FROM cliente cli, veiculo veic
 WHERE cli.id_cliente = veic.id_cliente;
 
 -- Criação de trigger que permita inserção de dados na view, e atribuição de privilégio ao usuário criado anteriormente para ver e inserir usando a view (1,0):
 
-CREATE OR REPLACE FUNCTION carro_cliente() RETURNS TRIGGER
+CREATE OR REPLACE FUNCTION cliente_veiculo() RETURNS TRIGGER
 AS $$
 DECLARE
 id_cli integer;
@@ -180,14 +197,11 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql SECURITY DEFINER;
 					  
-CREATE TRIGGER carro_cliente INSTEAD OF
-INSERT ON carro_cliente FOR EACH ROW EXECUTE
-PROCEDURE carro_cliente();
+CREATE TRIGGER cliente_veiculo INSTEAD OF
+INSERT ON cliente_veiculo FOR EACH ROW EXECUTE
+PROCEDURE cliente_veiculo();
 
 --  Consulta  SQL  que  envolva no mínimo uma operação JOIN  (0,5):
 
 select id_cliente, nome_cliente from cliente cli NATURAL JOIN servico ser where ser.id_servico != 1; -- Clientes que compraram algum produto
-
-
-
 
