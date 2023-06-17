@@ -2,6 +2,10 @@
 -- Maria Gabriella Victor Gomes da Silva / RA: 2143364
 -- Micael Ribeiro Rocha / RA: 2454424
 
+-- username = "postgres";
+-- password = "BoAfUtIdRiH97dLonFcT";
+-- url = "jdbc:postgresql://containers-us-west-84.railway.app:5884/railway";
+
 -- 2.Implementação no PostGreSQL (3,5 pontos):
 
 -- Geração e execução do código SQL para criação das tabelas e inserção de pelo menos 5 linhas de dados por tabela (0,5):

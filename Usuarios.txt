@@ -1,9 +1,9 @@
-Adm:
+CHEFE:
 
 usuario: postgres
 senha: postgres
 
-User:
+GERENTE:
 
 usuario: usuario
 senha: usuario
