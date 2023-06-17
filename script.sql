@@ -61,6 +61,7 @@ CREATE TABLE cliente(
 	FOREIGN KEY (id_servico) REFERENCES servico (id_servico),
 	FOREIGN KEY (id_produto) REFERENCES produto (id_produto)
 );
+
 insert into cliente(nome_cliente, idade, id_servico, id_produto, cpf, rg, telefone, data_de_registro) 
 values ( 'Marcelo Fernandes', 27, 3,2,2569836547,32653652235, 65987898985, CURRENT_TIMESTAMP);
 
@@ -75,6 +76,7 @@ values ( 'Jose de Souza', 78, 2,6,25698336, 32653652235, 659878985, CURRENT_TIME
 
 insert into cliente(nome_cliente, idade, id_servico, id_produto, cpf, rg, telefone, data_de_registro) 
 values ( 'Fernando de Cunha',45 , 3,2,25698116, 32622652235, 657778985, CURRENT_TIMESTAMP);
+
 
 insert into servico (tipo, valor)
 values ('Nenhum', 0);
@@ -94,6 +96,7 @@ values ('Manutenção de embreagem', 300.00);
 insert into servico (tipo, valor)
 values ('Revisão dos componentes do freio', 300.00);
 
+
 insert into produto (nome_produto,valor,quantidade) 
 values ('nenhum', 0, 0);
 
@@ -112,11 +115,39 @@ values ('Disco de freio dianteiro', 381, 12);
 insert into produto (nome_produto,valor,quantidade) 
 values ('Lubrificante 0W20 honda sintético', 90.25, 15);
 
-insert into funcionario (id_servico, idade, nome, cpf, rg, funcao)
-values ('3', 42, 'Jorse Santos Pratos', 234242423, 34555, 'Mecanico');
 
 insert into funcionario (id_servico, idade, nome, cpf, rg, funcao)
-values ('3', 26, 'Jessica Passos Braga', 234242423, 34555, 'Mecanico');
+values (3, 42, 'Jorse Santos Pratos', 234242423, 34555, 'Mecanico');
+
+insert into funcionario (id_servico, idade, nome, cpf, rg, funcao)
+values (2, 26, 'Jessica Passos Braga', 234242424, 34595, 'Instrutor');
+
+insert into funcionario (id_servico, idade, nome, cpf, rg, funcao)
+values (3, 27, 'Maria Cecília', 235678902, 34545, 'Atendente');
+
+insert into funcionario (id_servico, idade, nome, cpf, rg, funcao)
+values (3, 26, 'Ricardo Menezes', 234242423, 34585, 'Mecanico');
+
+insert into funcionario (id_servico, idade, nome, cpf, rg, funcao)
+values (5, 50, 'Jorge Santos', 234240987, 34575, 'Gerente');
+
+
+
+insert into veiculo (ano,placa, marca, modelo, cor, motor,id_cliente) 
+values (2021, 'SDC-1584', 'Honda', 'Civic', 'preto','H',76);
+
+insert into veiculo (ano, placa, marca, modelo, cor, motor,id_cliente) 
+values (2010, 'XCR-2165', 'Volkswagen', 'Gol','Vermelho','C',77);
+
+insert into veiculo (ano, placa, marca, modelo, cor, motor,id_cliente) 
+values (2020, 'RHY-3265', 'Ford', 'Fusion','Cinza','H',78);
+
+insert into veiculo (ano, placa, marca, modelo, cor, motor,id_cliente) 
+values (2022, 'KLC-0376', 'Tesla','Branco', 'ModelS','E',79);
+
+insert into veiculo (ano, placa, marca, modelo, cor, motor,id_cliente) 
+values (1994, 'LIU-9875', 'Volkswagen', 'Fusca','Verde','C',80);
+
 
 -- Criação de trigger/função de backup de dados excluídos de uma tabela, registrando os dados da linha apagada (sem restrições de chave), com usuário e data (0,5):
 
