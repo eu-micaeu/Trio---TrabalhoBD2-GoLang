@@ -20,6 +20,8 @@ O sistema possui as seguintes funcionalidades principais:
 ## ✔️Tecnologias utilizadas
 O sistema foi desenvolvido utilizando as seguintes tecnologias:
 
+Diagrama Entidade Relacionamento : BrModelo
+
 Linguagem de programação: Java
 
 Banco de dados: PostgreSQL
